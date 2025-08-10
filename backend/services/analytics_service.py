@@ -382,7 +382,31 @@ class AnalyticsService:
         Returns:
             Processing status or None if not found
         """
-        return self.processing_status.get(dataset_id)
+        # First check in-memory cache
+        status = self.processing_status.get(dataset_id)
+        if status:
+            return status
+            
+        # If not in memory, check persistent cache
+        try:
+            cached_status = await cache_service.get(f"status:{dataset_id}")
+            if cached_status:
+                # Convert cache data back to ProcessingStatusResponse
+                from datetime import datetime
+                return ProcessingStatusResponse(
+                    dataset_id=dataset_id,
+                    status=ProcessingStatus(cached_status["status"]),
+                    message=cached_status.get("message", ""),
+                    progress=cached_status.get("progress", 0.0),
+                    created_at=datetime.fromisoformat(cached_status["created_at"].replace("Z", "+00:00")),
+                    updated_at=datetime.fromisoformat(cached_status["updated_at"].replace("Z", "+00:00")),
+                    completion_time=datetime.fromisoformat(cached_status["completion_time"].replace("Z", "+00:00")) if cached_status.get("completion_time") else None,
+                    error_details=cached_status.get("error_details")
+                )
+        except Exception as e:
+            logger.error(f"Error loading status from cache for {dataset_id}: {e}")
+            
+        return None
 
     async def update_processing_status(
         self,

@@ -69,12 +69,14 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
       // Generate KPI queries
       config.kpis.forEach((kpi) => {
         let query = "";
-
         // Check if KPI has a custom SQL query from LLM
         if ((kpi as any).sql_query) {
-          // Use the LLM-generated SQL query directly
+          // Use LLM query and apply filters while keeping the query starting with SELECT
           query = (kpi as any).sql_query;
-          console.log(`Using LLM-generated SQL for KPI ${kpi.id}:`, query);
+          const whereClause = buildWhereClause(filters);
+          if (whereClause) {
+            query = applyFiltersToDatasetReferences(query, whereClause);
+          }
         } else {
           // Fallback to the old logic for backward compatibility
           if (
@@ -126,35 +128,83 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
           }
         }
 
-        // Apply filters to KPI queries (only if not using custom SQL)
+        // Apply filters to KPI queries only if not using custom SQL
         if (!(kpi as any).sql_query) {
           const whereClause = buildWhereClause(filters);
           if (whereClause) {
             query += ` WHERE ${whereClause}`;
           }
         }
-
         kpiQueries[kpi.id] = query;
+        
         promises.push(
           executeQuery(datasetId, query)
             .then((result) => ({ type: "kpi", id: kpi.id, result }))
-            .catch((error) => ({
-              type: "kpi",
-              id: kpi.id,
-              error: error.message,
-            }))
+            .catch((error) => {
+              console.error(`❌ KPI ${kpi.id} error:`, error);
+              
+              // If LLM query failed, try a simple fallback
+              if ((kpi as any).sql_query && (error.message.includes('syntax error') || error.message.includes('Binder Error') || error.message.includes('GROUP BY') || error.message.includes('not found in FROM clause'))) {
+                console.log(`🔄 Attempting fallback query for KPI ${kpi.id}`);
+                
+                // Generate simple fallback based on KPI type
+                let fallbackQuery = '';
+                if (kpi.calculation.toLowerCase() === 'sum') {
+                  fallbackQuery = `SELECT COALESCE(SUM(${kpi.value_column}), 0) as value FROM dataset`;
+                } else if (kpi.calculation.toLowerCase() === 'avg') {
+                  fallbackQuery = `SELECT COALESCE(AVG(${kpi.value_column}), 0) as value FROM dataset`;
+                } else if (kpi.calculation.toLowerCase() === 'count') {
+                  fallbackQuery = `SELECT COUNT(*) as value FROM dataset`;
+                } else if (kpi.calculation.toLowerCase() === 'percentage') {
+                  fallbackQuery = `SELECT COUNT(*) as value FROM dataset`; // Simple count as fallback
+                } else {
+                  fallbackQuery = `SELECT COUNT(*) as value FROM dataset`;
+                }
+                
+                // Apply filters to fallback query
+                const whereClause = buildWhereClause(filters);
+                if (whereClause) {
+                  fallbackQuery += ` WHERE ${whereClause}`;
+                }
+                
+                console.log(`📊 KPI ${kpi.id} fallback query:`, fallbackQuery);
+                
+                return executeQuery(datasetId, fallbackQuery)
+                  .then((result) => {
+                    console.log(`✅ KPI ${kpi.id} fallback result:`, result);
+                    return { type: "kpi", id: kpi.id, result };
+                  })
+                  .catch((fallbackError) => {
+                    console.error(`❌ KPI ${kpi.id} fallback also failed:`, fallbackError);
+                    return {
+                      type: "kpi",
+                      id: kpi.id,
+                      error: `LLM query failed: ${error.message}. Fallback failed: ${fallbackError.message}`,
+                    };
+                  });
+              }
+              
+              return {
+                type: "kpi",
+                id: kpi.id,
+                error: error.message,
+              };
+            })
         );
       });
 
-      // Generate chart queries
+              // Generate chart queries
       config.charts.forEach((chart) => {
         let query = "";
 
         // Check if chart has a custom SQL query from LLM
         if ((chart as any).sql_query) {
-          // Use the LLM-generated SQL query directly
+          // Use LLM query and apply filters while keeping the query starting with SELECT
           query = (chart as any).sql_query;
-          console.log(`Using LLM-generated SQL for Chart ${chart.id}:`, query);
+          const whereClause = buildWhereClause(filters);
+          if (whereClause) {
+            query = applyFiltersToDatasetReferences(query, whereClause);
+          }
         } else {
           // Fallback to the old logic for backward compatibility
           if (chart.x_axis && chart.y_axis) {
@@ -169,7 +219,9 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
                 ? chart.aggregation.toUpperCase()
                 : "COUNT";
 
-              query += `, ${aggregation}(${chart.y_axis}) as ${chart.y_axis}`;
+              // Use proper alias to avoid column name conflicts
+              const valueAlias = chart.type === 'pie' ? 'count' : 'value';
+              query += `, ${aggregation}(${chart.y_axis}) as ${valueAlias}`;
               query += ` FROM dataset`;
 
               // Apply filters
@@ -210,11 +262,50 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
         promises.push(
           executeQuery(datasetId, query)
             .then((result) => ({ type: "chart", id: chart.id, result }))
-            .catch((error) => ({
-              type: "chart",
-              id: chart.id,
-              error: error.message,
-            }))
+            .catch((error) => {
+              console.error(`❌ Chart ${chart.id} error:`, error);
+              
+              // If LLM query failed, try a simple fallback
+              if ((chart as any).sql_query && (error.message.includes('syntax error') || error.message.includes('Binder Error') || error.message.includes('GROUP BY') || error.message.includes('not found in FROM clause'))) {
+                console.log(`🔄 Attempting fallback query for Chart ${chart.id}`);
+                
+                // Generate simple fallback chart query
+                let fallbackQuery = '';
+                if (chart.x_axis && chart.y_axis) {
+                  fallbackQuery = `SELECT ${chart.x_axis}, COUNT(*) as count FROM dataset WHERE ${chart.x_axis} IS NOT NULL GROUP BY ${chart.x_axis} ORDER BY count DESC LIMIT 10`;
+                } else {
+                  fallbackQuery = `SELECT 'No Data' as category, 0 as count FROM dataset LIMIT 1`;
+                }
+                
+                // Apply filters to fallback query
+                const whereClause = buildWhereClause(filters);
+                if (whereClause && chart.x_axis) {
+                  fallbackQuery = fallbackQuery.replace('WHERE ', `WHERE ${whereClause} AND `);
+                }
+                
+                console.log(`📊 Chart ${chart.id} fallback query:`, fallbackQuery);
+                
+                return executeQuery(datasetId, fallbackQuery)
+                  .then((result) => {
+                    console.log(`✅ Chart ${chart.id} fallback result:`, result);
+                    return { type: "chart", id: chart.id, result };
+                  })
+                  .catch((fallbackError) => {
+                    console.error(`❌ Chart ${chart.id} fallback also failed:`, fallbackError);
+                    return {
+                      type: "chart",
+                      id: chart.id,
+                      error: `LLM query failed: ${error.message}. Fallback failed: ${fallbackError.message}`,
+                    };
+                  });
+              }
+              
+              return {
+                type: "chart",
+                id: chart.id,
+                error: error.message,
+              };
+            })
         );
       });
 
@@ -253,6 +344,140 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
     }
   };
 
+
+
+  // Inject filters into existing SQL query
+  const injectFiltersIntoSQL = (originalQuery: string, whereClause: string): string => {
+    const query = originalQuery.trim();
+    
+    // If query already has WHERE clause, combine with AND
+    if (query.toUpperCase().includes(' WHERE ')) {
+      // For complex queries with WHERE + GROUP BY/ORDER BY/LIMIT, we need to be smarter
+      const whereIndex = query.toUpperCase().indexOf(' WHERE ');
+      const beforeWhere = query.substring(0, whereIndex);
+      
+      // Find the end of the WHERE clause (before GROUP BY, ORDER BY, or LIMIT)
+      let whereClauseEnd = query.length;
+      const afterWhereText = query.substring(whereIndex + 7);
+      
+      // Find where the WHERE clause ends
+      const groupByMatch = afterWhereText.toUpperCase().match(/^(.*?)\s+(GROUP\s+BY\s+.*)$/i);
+      const orderByMatch = afterWhereText.toUpperCase().match(/^(.*?)\s+(ORDER\s+BY\s+.*)$/i);
+      const limitMatch = afterWhereText.toUpperCase().match(/^(.*?)\s+(LIMIT\s+.*)$/i);
+      
+      let whereCondition = afterWhereText;
+      let restOfQuery = '';
+      
+      if (groupByMatch) {
+        whereCondition = groupByMatch[1];
+        restOfQuery = ` ${groupByMatch[2]}`;
+      } else if (orderByMatch) {
+        whereCondition = orderByMatch[1];
+        restOfQuery = ` ${orderByMatch[2]}`;
+      } else if (limitMatch) {
+        whereCondition = limitMatch[1];
+        restOfQuery = ` ${limitMatch[2]}`;
+      }
+      
+      return `${beforeWhere} WHERE (${whereCondition.trim()}) AND (${whereClause})${restOfQuery}`;
+    }
+    
+    // For queries without WHERE, find insertion point before GROUP BY, ORDER BY, or LIMIT
+    let insertionPoint = query.length;
+    
+    // Check for GROUP BY first (comes before ORDER BY and LIMIT)
+    const groupByMatch = query.toUpperCase().match(/\s+(GROUP\s+BY\s+.*)$/i);
+    if (groupByMatch) {
+      insertionPoint = query.length - groupByMatch[1].length - 1;
+      return `${query.substring(0, insertionPoint)} WHERE ${whereClause} ${groupByMatch[1]}`;
+    }
+    
+    // Check for ORDER BY (comes before LIMIT)
+    const orderByMatch = query.toUpperCase().match(/\s+(ORDER\s+BY\s+.*)$/i);
+    if (orderByMatch) {
+      insertionPoint = query.length - orderByMatch[1].length - 1;
+      return `${query.substring(0, insertionPoint)} WHERE ${whereClause} ${orderByMatch[1]}`;
+    }
+    
+    // Check for LIMIT (comes last)
+    const limitMatch = query.toUpperCase().match(/\s+(LIMIT\s+.*)$/i);
+    if (limitMatch) {
+      insertionPoint = query.length - limitMatch[1].length - 1;
+      return `${query.substring(0, insertionPoint)} WHERE ${whereClause} ${limitMatch[1]}`;
+    }
+    
+    // No special clauses, just append WHERE at the end
+    return `${query} WHERE ${whereClause}`;
+  };
+
+  // Apply filters using a robust CTE approach that rewrites queries to read from
+  // a filtered view of the dataset. This safely handles subqueries and joins.
+  const applyFiltersViaCTE = (originalQuery: string, whereClause: string): string => {
+    const query = originalQuery.trim();
+    if (!whereClause) return query;
+    // Only proceed if the base table 'dataset' is present
+    if (!/\bdataset\b/i.test(query)) return query;
+
+    const filteredCTE = `filtered_dataset AS (SELECT * FROM dataset WHERE ${whereClause})`;
+    let rewritten = query;
+
+    // If the query already has a WITH clause, append our CTE at the start
+    if (/^\s*WITH\s/i.test(query)) {
+      rewritten = rewritten.replace(/^\s*WITH\s/i, `WITH ${filteredCTE}, `);
+    } else {
+      // Otherwise, prepend a new WITH clause
+      rewritten = `WITH ${filteredCTE} ${query}`;
+    }
+
+    // Replace FROM/JOIN references to the base table with the filtered CTE
+    // FROM dataset [AS alias]
+    rewritten = rewritten.replace(/(\bFROM\s+)(dataset)(\s+AS\s+\w+|\s+\w+)?\b/gi, (_m, p1, _p2, p3 = "") => `${p1}filtered_dataset${p3}`);
+    // JOIN dataset [AS alias]
+    rewritten = rewritten.replace(/(\bJOIN\s+)(dataset)(\s+AS\s+\w+|\s+\w+)?\b/gi, (_m, p1, _p2, p3 = "") => `${p1}filtered_dataset${p3}`);
+    // Comma separated table lists: ", dataset [AS alias]"
+    rewritten = rewritten.replace(/,\s*dataset(\s+AS\s+\w+|\s+\w+)?\b/gi, (_m, p1 = "") => `, filtered_dataset${p1}`);
+
+    return rewritten;
+  };
+
+  // Apply filters by wrapping every reference to the base table `dataset` with a filtered derived table.
+  // This keeps the query starting with SELECT (passes backend safety) and works with subqueries.
+  const applyFiltersToDatasetReferences = (originalQuery: string, whereClause: string): string => {
+    const query = originalQuery.trim();
+    if (!whereClause) return query;
+    if (!/\bdataset\b/i.test(query)) return query;
+
+    // Helper to produce a replacement string with optional alias
+    const filteredDerived = (alias: string) => `(SELECT * FROM dataset WHERE ${whereClause}) AS ${alias}`;
+    const reservedRegex = '(WHERE|GROUP|ORDER|LIMIT|HAVING|WINDOW|UNION|INTERSECT|EXCEPT|OFFSET|FETCH|JOIN|LEFT|RIGHT|FULL|INNER|OUTER|ON|USING|AND|OR)';
+
+    let rewritten = query;
+
+    // FROM dataset AS alias
+    rewritten = rewritten.replace(/\bFROM\s+dataset\s+AS\s+(\w+)\b/gi, (_m, alias: string) => `FROM ${filteredDerived(alias)}`);
+    // FROM dataset alias (avoid consuming WHERE/GROUP/...)
+    rewritten = rewritten.replace(new RegExp(`\\bFROM\\s+dataset\\s+(?!${reservedRegex}\\b)(\\w+)\\b`, 'gi'), (_m, alias: string) => `FROM ${filteredDerived(alias)}`);
+    // FROM dataset (no alias)
+    rewritten = rewritten.replace(/\bFROM\s+dataset\b/gi, () => `FROM ${filteredDerived('dataset')}`);
+
+    // JOIN dataset AS alias
+    rewritten = rewritten.replace(/\bJOIN\s+dataset\s+AS\s+(\w+)\b/gi, (_m, alias: string) => `JOIN ${filteredDerived(alias)}`);
+    // JOIN dataset alias (avoid reserved)
+    rewritten = rewritten.replace(new RegExp(`\\bJOIN\\s+dataset\\s+(?!${reservedRegex}\\b)(\\w+)\\b`, 'gi'), (_m, alias: string) => `JOIN ${filteredDerived(alias)}`);
+    // JOIN dataset (no alias)
+    rewritten = rewritten.replace(/\bJOIN\s+dataset\b/gi, () => `JOIN ${filteredDerived('dataset')}`);
+
+    // Comma-style lists
+    // , dataset AS alias
+    rewritten = rewritten.replace(/,\s*dataset\s+AS\s+(\w+)\b/gi, (_m, alias: string) => `, ${filteredDerived(alias)}`);
+    // , dataset alias (avoid reserved)
+    rewritten = rewritten.replace(new RegExp(`,\\s*dataset\\s+(?!${reservedRegex}\\b)(\\w+)\\b`, 'gi'), (_m, alias: string) => `, ${filteredDerived(alias)}`);
+    // , dataset (no alias)
+    rewritten = rewritten.replace(/,\s*dataset\b/gi, () => `, ${filteredDerived('dataset')}`);
+
+    return rewritten;
+  };
+
   // Build WHERE clause from active filters
   const buildWhereClause = (activeFilters: FilterState): string => {
     const conditions: string[] = [];
@@ -265,28 +490,31 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
         case "categorical":
         case "multi_select":
           if (Array.isArray(value) && value.length > 0) {
-            const values = value.map((v) => `'${v}'`).join(", ");
+            const values = value.map((v) => `'${String(v).replace(/'/g, "''")}'`).join(", ");
             conditions.push(`${filter.column} IN (${values})`);
           } else if (typeof value === "string" && value) {
-            conditions.push(`${filter.column} = '${value}'`);
+            conditions.push(`${filter.column} = '${value.replace(/'/g, "''")}'`);
           }
           break;
         case "numeric_range":
-          if (
-            typeof value === "object" &&
-            value.min !== undefined &&
-            value.max !== undefined
-          ) {
-            conditions.push(
-              `${filter.column} BETWEEN ${value.min} AND ${value.max}`
-            );
+          if (typeof value === "object") {
+            if (value.min !== undefined && value.min !== null && value.min !== "") {
+              const minVal = parseFloat(value.min);
+              if (!isNaN(minVal)) {
+                conditions.push(`${filter.column} >= ${minVal}`);
+              }
+            }
+            if (value.max !== undefined && value.max !== null && value.max !== "") {
+              const maxVal = parseFloat(value.max);
+              if (!isNaN(maxVal)) {
+                conditions.push(`${filter.column} <= ${maxVal}`);
+              }
+            }
           }
           break;
         case "date_range":
           if (typeof value === "object" && value.start && value.end) {
-            conditions.push(
-              `${filter.column} BETWEEN '${value.start}' AND '${value.end}'`
-            );
+            conditions.push(`${filter.column} BETWEEN '${value.start}' AND '${value.end}'`);
           }
           break;
       }
@@ -294,6 +522,8 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
 
     return conditions.join(" AND ");
   };
+
+
 
   // Load data when component mounts or filters change
   useEffect(() => {
@@ -389,6 +619,7 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
                   filter={filter}
                   value={filters[filter.id]}
                   onChange={(value: any) => {
+                    console.log(`Filter changed: ${filter.name} = ${JSON.stringify(value)}`);
                     setFilters((prev) => ({
                       ...prev,
                       [filter.id]: value,
@@ -500,3 +731,4 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
     </div>
   );
 }
+

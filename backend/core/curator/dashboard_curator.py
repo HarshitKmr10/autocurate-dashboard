@@ -1062,7 +1062,7 @@ Choose the simplest chart type that will work with your data."""
             unique_filters = self._deduplicate_filters(all_filters)
 
             logger.info(f"Generated {len(unique_filters)} intelligent filters")
-            return unique_filters[:5]  # Limit to 5 filters
+            return unique_filters[:3]  # Limit to 3 filters for simplicity
 
         except Exception as e:
             logger.error(f"GPT filter generation failed: {e}. Using basic filters.")
@@ -1272,7 +1272,7 @@ Focus on the most commonly filtered columns in business analysis."""
                 )
             )
 
-        # Add categorical filters for low-cardinality columns
+        # Add categorical filters for low-cardinality columns (limit to 2 for simplicity)
         for col_name in profile.categorical_columns[:2]:
             col_profile = next(
                 (col for col in profile.columns if col.name == col_name), None
