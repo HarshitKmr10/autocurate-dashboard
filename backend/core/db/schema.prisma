@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-py"
+  interface   = "sync"
+  recursive_type_depth = 5
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Dataset {
+  id          String   @id @default(cuid())
+  filename    String
+  fileSize    Int
+  rowCount    Int?
+  columnCount Int?
+  status      ProcessingStatus @default(PENDING)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  analytics   Analytics?
+  
+  @@map("datasets")
+}
+
+model Analytics {
+  id          String   @id @default(cuid())
+  datasetId   String   @unique
+  profile     Json     // Data profile as JSON
+  domainInfo  Json     // Domain classification as JSON
+  dashboardConfig Json // Dashboard configuration as JSON
+  processedAt DateTime @default(now())
+  
+  // Relations
+  dataset     Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  
+  @@map("analytics")
+}
+
+enum ProcessingStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+} 

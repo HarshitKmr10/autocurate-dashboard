@@ -1,0 +1,1001 @@
+order_id,order_date,customer_id,customer_name,product_category,product_name,quantity,unit_price,total_amount,payment_method,shipping_country,order_status
+ORD_0001,2024-12-12,CUST_1447,Customer CUST_1447,Sports,Product_17,2,423.8,847.6,Credit Card,Canada,Processing
+ORD_0002,2024-12-05,CUST_3721,Customer CUST_3721,Home & Garden,Product_40,1,196.29,196.29,PayPal,Canada,Cancelled
+ORD_0003,2025-04-10,CUST_7650,Customer CUST_7650,Home & Garden,Product_89,4,450.12,1800.48,Credit Card,Canada,Cancelled
+ORD_0004,2024-09-24,CUST_1076,Customer CUST_1076,Sports,Product_62,4,37.16,148.64,Bank Transfer,Germany,Completed
+ORD_0005,2024-08-20,CUST_5709,Customer CUST_5709,Clothing,Product_20,2,146.59,293.18,Credit Card,Canada,Processing
+ORD_0006,2025-06-15,CUST_2485,Customer CUST_2485,Books,Product_30,2,308.52,617.04,Credit Card,France,Cancelled
+ORD_0007,2025-08-03,CUST_8465,Customer CUST_8465,Home & Garden,Product_7,1,302.51,302.51,Bank Transfer,UK,Shipped
+ORD_0008,2025-08-01,CUST_5017,Customer CUST_5017,Clothing,Product_42,1,324.49,324.49,PayPal,USA,Completed
+ORD_0009,2025-06-13,CUST_8296,Customer CUST_8296,Clothing,Product_31,4,221.86,887.44,PayPal,Canada,Cancelled
+ORD_0010,2024-10-31,CUST_1777,Customer CUST_1777,Sports,Product_58,4,262.65,1050.6,Bank Transfer,UK,Shipped
+ORD_0011,2025-04-09,CUST_1081,Customer CUST_1081,Books,Product_10,4,451.58,1806.32,Credit Card,France,Completed
+ORD_0012,2025-05-12,CUST_3473,Customer CUST_3473,Electronics,Product_29,1,472.4,472.4,Bank Transfer,UK,Processing
+ORD_0013,2025-05-31,CUST_2527,Customer CUST_2527,Sports,Product_26,1,432.06,432.06,Credit Card,France,Processing
+ORD_0014,2024-10-03,CUST_9223,Customer CUST_9223,Home & Garden,Product_91,2,335.19,670.38,PayPal,USA,Cancelled
+ORD_0015,2025-02-14,CUST_1052,Customer CUST_1052,Home & Garden,Product_53,5,130.66,653.3,Bank Transfer,France,Completed
+ORD_0016,2024-08-22,CUST_5488,Customer CUST_5488,Sports,Product_47,1,181.29,181.29,Credit Card,USA,Cancelled
+ORD_0017,2025-05-30,CUST_8662,Customer CUST_8662,Sports,Product_54,5,356.42,1782.1000000000001,Bank Transfer,Germany,Cancelled
+ORD_0018,2025-04-11,CUST_2058,Customer CUST_2058,Clothing,Product_35,2,393.54,787.08,Bank Transfer,Germany,Completed
+ORD_0019,2024-10-24,CUST_2063,Customer CUST_2063,Clothing,Product_85,3,414.62,1243.8600000000001,PayPal,France,Shipped
+ORD_0020,2025-06-17,CUST_4617,Customer CUST_4617,Home & Garden,Product_33,4,483.06,1932.24,Credit Card,France,Completed
+ORD_0021,2025-07-28,CUST_5673,Customer CUST_5673,Books,Product_9,3,88.62,265.86,PayPal,Canada,Shipped
+ORD_0022,2024-09-18,CUST_7532,Customer CUST_7532,Home & Garden,Product_60,5,238.98,1194.8999999999999,PayPal,UK,Shipped
+ORD_0023,2024-12-11,CUST_3422,Customer CUST_3422,Home & Garden,Product_47,2,485.6,971.2,Credit Card,Canada,Shipped
+ORD_0024,2025-08-02,CUST_6952,Customer CUST_6952,Electronics,Product_96,1,125.02,125.02,Credit Card,UK,Completed
+ORD_0025,2024-12-24,CUST_1660,Customer CUST_1660,Books,Product_15,3,431.76,1295.28,Credit Card,Canada,Cancelled
+ORD_0026,2024-12-09,CUST_4225,Customer CUST_4225,Clothing,Product_54,1,407.98,407.98,Bank Transfer,Germany,Processing
+ORD_0027,2024-12-11,CUST_4881,Customer CUST_4881,Home & Garden,Product_94,5,30.33,151.64999999999998,Bank Transfer,France,Cancelled
+ORD_0028,2024-11-11,CUST_8612,Customer CUST_8612,Clothing,Product_47,3,263.3,789.9000000000001,PayPal,UK,Shipped
+ORD_0029,2025-07-10,CUST_9908,Customer CUST_9908,Electronics,Product_59,4,479.67,1918.68,Credit Card,France,Completed
+ORD_0030,2025-02-10,CUST_1135,Customer CUST_1135,Electronics,Product_97,2,58.11,116.22,Bank Transfer,UK,Processing
+ORD_0031,2025-05-16,CUST_5109,Customer CUST_5109,Sports,Product_47,3,368.26,1104.78,Bank Transfer,Canada,Cancelled
+ORD_0032,2024-09-19,CUST_3693,Customer CUST_3693,Home & Garden,Product_85,5,144.01,720.05,Bank Transfer,UK,Cancelled
+ORD_0033,2024-10-10,CUST_9197,Customer CUST_9197,Electronics,Product_19,3,312.81,938.4300000000001,PayPal,Canada,Completed
+ORD_0034,2025-03-14,CUST_9539,Customer CUST_9539,Home & Garden,Product_75,2,118.81,237.62,Bank Transfer,Germany,Completed
+ORD_0035,2024-09-20,CUST_5297,Customer CUST_5297,Electronics,Product_93,2,49.48,98.96,PayPal,UK,Completed
+ORD_0036,2024-08-30,CUST_5226,Customer CUST_5226,Home & Garden,Product_61,5,462.91,2314.55,Bank Transfer,France,Cancelled
+ORD_0037,2024-09-18,CUST_2537,Customer CUST_2537,Electronics,Product_36,3,464.35,1393.0500000000002,PayPal,UK,Processing
+ORD_0038,2024-10-06,CUST_2969,Customer CUST_2969,Sports,Product_71,2,124.57,249.14,PayPal,UK,Completed
+ORD_0039,2024-08-14,CUST_5619,Customer CUST_5619,Books,Product_13,1,18.28,18.28,Credit Card,Germany,Completed
+ORD_0040,2025-07-29,CUST_7437,Customer CUST_7437,Sports,Product_32,2,447.15,894.3,Credit Card,France,Completed
+ORD_0041,2024-08-30,CUST_5469,Customer CUST_5469,Books,Product_98,1,476.57,476.57,Credit Card,Canada,Processing
+ORD_0042,2025-02-05,CUST_2415,Customer CUST_2415,Home & Garden,Product_94,2,30.17,60.34,PayPal,UK,Completed
+ORD_0043,2025-05-22,CUST_8701,Customer CUST_8701,Sports,Product_73,4,423.5,1694.0,Bank Transfer,UK,Shipped
+ORD_0044,2025-05-16,CUST_6948,Customer CUST_6948,Home & Garden,Product_92,4,108.58,434.32,Bank Transfer,Canada,Shipped
+ORD_0045,2024-10-05,CUST_1423,Customer CUST_1423,Electronics,Product_13,5,473.66,2368.3,Bank Transfer,France,Processing
+ORD_0046,2024-11-02,CUST_1518,Customer CUST_1518,Clothing,Product_93,5,448.07,2240.35,Credit Card,UK,Completed
+ORD_0047,2025-01-30,CUST_8312,Customer CUST_8312,Home & Garden,Product_17,4,30.61,122.44,PayPal,Canada,Cancelled
+ORD_0048,2024-09-27,CUST_6758,Customer CUST_6758,Books,Product_94,2,454.69,909.38,PayPal,UK,Cancelled
+ORD_0049,2025-04-13,CUST_7522,Customer CUST_7522,Clothing,Product_67,2,477.79,955.58,Credit Card,Canada,Shipped
+ORD_0050,2025-05-30,CUST_5312,Customer CUST_5312,Home & Garden,Product_100,4,415.01,1660.04,Bank Transfer,France,Shipped
+ORD_0051,2025-02-18,CUST_1917,Customer CUST_1917,Books,Product_39,3,300.07,900.21,PayPal,France,Processing
+ORD_0052,2025-08-08,CUST_7045,Customer CUST_7045,Sports,Product_68,3,32.72,98.16,Bank Transfer,Germany,Cancelled
+ORD_0053,2024-11-17,CUST_9495,Customer CUST_9495,Books,Product_68,2,89.3,178.6,Bank Transfer,Canada,Completed
+ORD_0054,2024-11-25,CUST_3796,Customer CUST_3796,Electronics,Product_91,2,470.58,941.16,Credit Card,UK,Processing
+ORD_0055,2024-08-19,CUST_6747,Customer CUST_6747,Home & Garden,Product_59,4,22.02,88.08,PayPal,USA,Completed
+ORD_0056,2024-12-16,CUST_5482,Customer CUST_5482,Clothing,Product_21,5,336.75,1683.75,Credit Card,Germany,Shipped
+ORD_0057,2025-03-09,CUST_2682,Customer CUST_2682,Sports,Product_84,1,107.28,107.28,Credit Card,USA,Completed
+ORD_0058,2025-04-16,CUST_8250,Customer CUST_8250,Sports,Product_58,2,362.84,725.68,PayPal,France,Completed
+ORD_0059,2025-05-25,CUST_8118,Customer CUST_8118,Home & Garden,Product_88,5,380.93,1904.65,Credit Card,USA,Processing
+ORD_0060,2024-12-21,CUST_4988,Customer CUST_4988,Home & Garden,Product_33,1,188.02,188.02,PayPal,Canada,Completed
+ORD_0061,2025-03-18,CUST_2670,Customer CUST_2670,Electronics,Product_30,1,388.56,388.56,Bank Transfer,Germany,Completed
+ORD_0062,2024-11-28,CUST_6321,Customer CUST_6321,Electronics,Product_95,3,344.33,1032.99,Bank Transfer,UK,Shipped
+ORD_0063,2025-06-13,CUST_2036,Customer CUST_2036,Books,Product_86,4,119.84,479.36,Credit Card,USA,Cancelled
+ORD_0064,2025-03-28,CUST_3641,Customer CUST_3641,Books,Product_80,1,383.43,383.43,PayPal,UK,Shipped
+ORD_0065,2024-08-11,CUST_3214,Customer CUST_3214,Clothing,Product_16,3,403.25,1209.75,PayPal,UK,Completed
+ORD_0066,2025-04-04,CUST_8771,Customer CUST_8771,Sports,Product_51,2,226.26,452.52,PayPal,France,Cancelled
+ORD_0067,2025-07-03,CUST_4191,Customer CUST_4191,Electronics,Product_28,5,206.11,1030.5500000000002,PayPal,UK,Shipped
+ORD_0068,2024-09-04,CUST_4620,Customer CUST_4620,Books,Product_1,4,45.47,181.88,Credit Card,France,Shipped
+ORD_0069,2025-06-27,CUST_3824,Customer CUST_3824,Home & Garden,Product_19,1,288.59,288.59,Bank Transfer,Germany,Completed
+ORD_0070,2025-03-12,CUST_2791,Customer CUST_2791,Home & Garden,Product_33,2,407.0,814.0,PayPal,USA,Shipped
+ORD_0071,2025-06-19,CUST_2289,Customer CUST_2289,Sports,Product_33,3,85.95,257.85,PayPal,UK,Completed
+ORD_0072,2025-08-07,CUST_3244,Customer CUST_3244,Clothing,Product_61,2,367.9,735.8,Credit Card,UK,Processing
+ORD_0073,2024-12-20,CUST_8908,Customer CUST_8908,Sports,Product_18,3,398.22,1194.66,Bank Transfer,Canada,Shipped
+ORD_0074,2025-07-21,CUST_2059,Customer CUST_2059,Clothing,Product_4,2,170.76,341.52,Bank Transfer,Canada,Processing
+ORD_0075,2024-08-24,CUST_5522,Customer CUST_5522,Books,Product_2,2,76.94,153.88,Credit Card,Germany,Completed
+ORD_0076,2025-05-17,CUST_1511,Customer CUST_1511,Home & Garden,Product_9,3,282.25,846.75,PayPal,USA,Shipped
+ORD_0077,2025-02-01,CUST_2888,Customer CUST_2888,Home & Garden,Product_95,2,222.32,444.64,Bank Transfer,UK,Shipped
+ORD_0078,2025-01-17,CUST_6827,Customer CUST_6827,Clothing,Product_69,1,450.17,450.17,Credit Card,USA,Processing
+ORD_0079,2024-10-09,CUST_2963,Customer CUST_2963,Clothing,Product_63,3,198.78,596.34,PayPal,France,Completed
+ORD_0080,2025-01-28,CUST_3782,Customer CUST_3782,Electronics,Product_33,5,230.28,1151.4,Credit Card,USA,Cancelled
+ORD_0081,2025-06-08,CUST_4966,Customer CUST_4966,Home & Garden,Product_7,3,457.79,1373.3700000000001,Credit Card,France,Processing
+ORD_0082,2024-09-25,CUST_3116,Customer CUST_3116,Clothing,Product_76,3,237.27,711.8100000000001,Credit Card,UK,Shipped
+ORD_0083,2024-10-15,CUST_8446,Customer CUST_8446,Clothing,Product_56,2,207.47,414.94,Bank Transfer,Germany,Processing
+ORD_0084,2025-04-05,CUST_7032,Customer CUST_7032,Clothing,Product_55,2,321.84,643.68,Credit Card,France,Cancelled
+ORD_0085,2025-05-27,CUST_4080,Customer CUST_4080,Books,Product_57,1,483.73,483.73,Bank Transfer,USA,Processing
+ORD_0086,2025-01-14,CUST_3315,Customer CUST_3315,Books,Product_68,5,35.05,175.25,Bank Transfer,Germany,Completed
+ORD_0087,2025-07-31,CUST_2670,Customer CUST_2670,Clothing,Product_54,1,379.11,379.11,Bank Transfer,Germany,Processing
+ORD_0088,2024-11-21,CUST_5857,Customer CUST_5857,Electronics,Product_93,3,399.45,1198.35,PayPal,France,Cancelled
+ORD_0089,2025-06-14,CUST_6223,Customer CUST_6223,Electronics,Product_25,2,410.39,820.78,Bank Transfer,UK,Cancelled
+ORD_0090,2025-05-24,CUST_5922,Customer CUST_5922,Electronics,Product_96,4,120.85,483.4,Bank Transfer,USA,Cancelled
+ORD_0091,2024-11-10,CUST_7295,Customer CUST_7295,Home & Garden,Product_88,1,15.08,15.08,Credit Card,France,Processing
+ORD_0092,2025-05-23,CUST_6522,Customer CUST_6522,Home & Garden,Product_53,1,249.05,249.05,PayPal,USA,Cancelled
+ORD_0093,2025-02-09,CUST_8924,Customer CUST_8924,Home & Garden,Product_29,3,168.52,505.56000000000006,PayPal,USA,Processing
+ORD_0094,2025-07-19,CUST_9209,Customer CUST_9209,Sports,Product_24,2,325.91,651.82,Bank Transfer,USA,Processing
+ORD_0095,2025-05-08,CUST_5447,Customer CUST_5447,Clothing,Product_19,5,131.03,655.15,PayPal,USA,Shipped
+ORD_0096,2025-04-27,CUST_6520,Customer CUST_6520,Sports,Product_52,2,373.12,746.24,Credit Card,USA,Cancelled
+ORD_0097,2025-07-17,CUST_6643,Customer CUST_6643,Electronics,Product_62,3,488.46,1465.3799999999999,PayPal,Germany,Processing
+ORD_0098,2025-03-04,CUST_1250,Customer CUST_1250,Electronics,Product_45,3,46.13,138.39000000000001,Credit Card,Germany,Processing
+ORD_0099,2025-07-01,CUST_3920,Customer CUST_3920,Sports,Product_24,2,122.61,245.22,Credit Card,Germany,Cancelled
+ORD_0100,2024-08-22,CUST_4606,Customer CUST_4606,Sports,Product_19,2,303.03,606.06,Bank Transfer,Germany,Shipped
+ORD_0101,2025-08-04,CUST_3699,Customer CUST_3699,Home & Garden,Product_97,1,368.24,368.24,PayPal,France,Processing
+ORD_0102,2024-10-02,CUST_8695,Customer CUST_8695,Books,Product_30,4,268.65,1074.6,Bank Transfer,Germany,Cancelled
+ORD_0103,2024-11-09,CUST_4369,Customer CUST_4369,Books,Product_60,5,277.93,1389.65,PayPal,Germany,Completed
+ORD_0104,2025-04-09,CUST_9679,Customer CUST_9679,Home & Garden,Product_50,3,190.18,570.54,PayPal,USA,Completed
+ORD_0105,2024-11-12,CUST_7717,Customer CUST_7717,Clothing,Product_46,4,92.31,369.24,Bank Transfer,Germany,Processing
+ORD_0106,2024-10-30,CUST_5475,Customer CUST_5475,Books,Product_18,4,68.01,272.04,PayPal,France,Processing
+ORD_0107,2025-02-13,CUST_7835,Customer CUST_7835,Clothing,Product_29,2,50.76,101.52,PayPal,Canada,Completed
+ORD_0108,2024-10-03,CUST_2596,Customer CUST_2596,Clothing,Product_66,2,457.71,915.42,Credit Card,France,Shipped
+ORD_0109,2025-03-22,CUST_1486,Customer CUST_1486,Electronics,Product_60,1,164.2,164.2,PayPal,Canada,Processing
+ORD_0110,2025-03-27,CUST_4147,Customer CUST_4147,Clothing,Product_53,2,313.97,627.94,Bank Transfer,France,Cancelled
+ORD_0111,2025-07-03,CUST_5452,Customer CUST_5452,Books,Product_38,2,283.01,566.02,Credit Card,UK,Shipped
+ORD_0112,2025-08-03,CUST_5965,Customer CUST_5965,Electronics,Product_2,5,126.67,633.35,Bank Transfer,UK,Completed
+ORD_0113,2024-09-26,CUST_3420,Customer CUST_3420,Home & Garden,Product_18,1,382.77,382.77,PayPal,Canada,Completed
+ORD_0114,2024-10-24,CUST_2744,Customer CUST_2744,Home & Garden,Product_100,2,300.87,601.74,Credit Card,France,Completed
+ORD_0115,2024-10-21,CUST_4843,Customer CUST_4843,Books,Product_96,5,277.7,1388.5,Bank Transfer,Germany,Shipped
+ORD_0116,2024-09-15,CUST_6973,Customer CUST_6973,Home & Garden,Product_5,5,241.14,1205.6999999999998,Bank Transfer,Germany,Cancelled
+ORD_0117,2024-12-18,CUST_5064,Customer CUST_5064,Clothing,Product_42,4,482.99,1931.96,Bank Transfer,Canada,Shipped
+ORD_0118,2024-08-11,CUST_8218,Customer CUST_8218,Home & Garden,Product_100,3,428.81,1286.43,Bank Transfer,UK,Shipped
+ORD_0119,2024-10-19,CUST_7684,Customer CUST_7684,Clothing,Product_28,5,38.39,191.95,PayPal,Canada,Completed
+ORD_0120,2024-11-30,CUST_5133,Customer CUST_5133,Electronics,Product_2,1,454.42,454.42,Credit Card,USA,Completed
+ORD_0121,2024-09-30,CUST_6419,Customer CUST_6419,Electronics,Product_34,4,172.06,688.24,Credit Card,Canada,Cancelled
+ORD_0122,2025-04-16,CUST_1827,Customer CUST_1827,Books,Product_26,5,393.0,1965.0,PayPal,Germany,Cancelled
+ORD_0123,2025-07-15,CUST_4160,Customer CUST_4160,Home & Garden,Product_88,4,450.45,1801.8,Bank Transfer,USA,Shipped
+ORD_0124,2025-02-11,CUST_7481,Customer CUST_7481,Home & Garden,Product_32,2,335.11,670.22,Credit Card,Germany,Cancelled
+ORD_0125,2024-12-21,CUST_6813,Customer CUST_6813,Books,Product_62,2,110.16,220.32,PayPal,USA,Cancelled
+ORD_0126,2025-07-08,CUST_7669,Customer CUST_7669,Home & Garden,Product_35,2,119.9,239.8,Credit Card,Canada,Cancelled
+ORD_0127,2024-09-01,CUST_9219,Customer CUST_9219,Sports,Product_11,1,470.7,470.7,Bank Transfer,France,Shipped
+ORD_0128,2024-09-26,CUST_7883,Customer CUST_7883,Books,Product_82,2,237.32,474.64,Bank Transfer,Germany,Cancelled
+ORD_0129,2025-03-10,CUST_2891,Customer CUST_2891,Books,Product_45,1,144.75,144.75,PayPal,France,Completed
+ORD_0130,2025-04-26,CUST_9412,Customer CUST_9412,Electronics,Product_96,1,422.05,422.05,PayPal,Germany,Completed
+ORD_0131,2025-07-06,CUST_4566,Customer CUST_4566,Books,Product_55,4,78.08,312.32,Credit Card,UK,Shipped
+ORD_0132,2025-01-12,CUST_4919,Customer CUST_4919,Sports,Product_3,1,125.61,125.61,PayPal,Canada,Processing
+ORD_0133,2024-12-15,CUST_8319,Customer CUST_8319,Clothing,Product_16,4,297.67,1190.68,Credit Card,USA,Shipped
+ORD_0134,2024-11-17,CUST_9958,Customer CUST_9958,Home & Garden,Product_47,4,330.42,1321.68,Credit Card,USA,Completed
+ORD_0135,2024-11-22,CUST_7754,Customer CUST_7754,Electronics,Product_69,3,55.46,166.38,PayPal,USA,Completed
+ORD_0136,2024-11-05,CUST_4978,Customer CUST_4978,Electronics,Product_52,1,157.6,157.6,PayPal,Canada,Shipped
+ORD_0137,2025-05-02,CUST_8648,Customer CUST_8648,Home & Garden,Product_20,1,483.51,483.51,Credit Card,UK,Completed
+ORD_0138,2025-01-07,CUST_2943,Customer CUST_2943,Electronics,Product_38,2,19.1,38.2,Bank Transfer,USA,Completed
+ORD_0139,2025-03-25,CUST_3235,Customer CUST_3235,Sports,Product_31,3,179.55,538.6500000000001,Credit Card,UK,Cancelled
+ORD_0140,2025-03-17,CUST_8002,Customer CUST_8002,Sports,Product_64,1,311.82,311.82,Credit Card,USA,Cancelled
+ORD_0141,2025-07-30,CUST_9416,Customer CUST_9416,Electronics,Product_4,5,361.88,1809.4,Credit Card,Canada,Completed
+ORD_0142,2025-04-05,CUST_2096,Customer CUST_2096,Clothing,Product_44,5,440.77,2203.85,PayPal,France,Completed
+ORD_0143,2025-01-12,CUST_4450,Customer CUST_4450,Clothing,Product_74,5,441.8,2209.0,PayPal,USA,Completed
+ORD_0144,2025-01-14,CUST_4788,Customer CUST_4788,Sports,Product_55,3,189.29,567.87,PayPal,Canada,Cancelled
+ORD_0145,2024-11-17,CUST_1596,Customer CUST_1596,Sports,Product_50,1,282.55,282.55,Bank Transfer,Canada,Cancelled
+ORD_0146,2025-05-16,CUST_3415,Customer CUST_3415,Electronics,Product_90,5,411.99,2059.95,PayPal,UK,Completed
+ORD_0147,2025-04-26,CUST_2416,Customer CUST_2416,Clothing,Product_12,3,445.04,1335.1200000000001,PayPal,Germany,Cancelled
+ORD_0148,2025-04-13,CUST_8461,Customer CUST_8461,Sports,Product_63,4,345.88,1383.52,Bank Transfer,USA,Cancelled
+ORD_0149,2024-12-08,CUST_1476,Customer CUST_1476,Books,Product_64,5,285.93,1429.65,PayPal,France,Processing
+ORD_0150,2025-02-11,CUST_9474,Customer CUST_9474,Books,Product_37,1,308.83,308.83,Credit Card,USA,Shipped
+ORD_0151,2025-01-16,CUST_9503,Customer CUST_9503,Electronics,Product_33,3,304.34,913.02,Bank Transfer,UK,Cancelled
+ORD_0152,2024-10-04,CUST_9425,Customer CUST_9425,Clothing,Product_66,4,58.35,233.4,PayPal,France,Processing
+ORD_0153,2025-06-22,CUST_8246,Customer CUST_8246,Clothing,Product_11,2,323.98,647.96,PayPal,Canada,Cancelled
+ORD_0154,2024-10-06,CUST_3632,Customer CUST_3632,Clothing,Product_17,4,432.99,1731.96,Bank Transfer,UK,Completed
+ORD_0155,2025-05-01,CUST_5600,Customer CUST_5600,Electronics,Product_53,3,383.05,1149.15,Bank Transfer,USA,Processing
+ORD_0156,2024-10-03,CUST_8432,Customer CUST_8432,Electronics,Product_36,5,218.9,1094.5,Credit Card,Germany,Processing
+ORD_0157,2025-06-02,CUST_7224,Customer CUST_7224,Books,Product_24,5,12.05,60.25,Credit Card,USA,Completed
+ORD_0158,2025-04-30,CUST_7238,Customer CUST_7238,Clothing,Product_29,5,344.73,1723.65,PayPal,UK,Completed
+ORD_0159,2025-07-13,CUST_8466,Customer CUST_8466,Electronics,Product_22,2,48.71,97.42,Credit Card,Canada,Processing
+ORD_0160,2024-11-06,CUST_3269,Customer CUST_3269,Home & Garden,Product_50,5,12.6,63.0,PayPal,Canada,Cancelled
+ORD_0161,2025-07-24,CUST_8356,Customer CUST_8356,Home & Garden,Product_31,4,58.86,235.44,Bank Transfer,USA,Shipped
+ORD_0162,2024-10-09,CUST_9605,Customer CUST_9605,Electronics,Product_10,3,418.44,1255.32,Bank Transfer,USA,Processing
+ORD_0163,2024-12-31,CUST_6433,Customer CUST_6433,Clothing,Product_63,4,216.65,866.6,PayPal,Canada,Cancelled
+ORD_0164,2024-10-24,CUST_7670,Customer CUST_7670,Clothing,Product_13,3,307.04,921.1200000000001,Bank Transfer,UK,Completed
+ORD_0165,2025-06-14,CUST_9984,Customer CUST_9984,Electronics,Product_62,5,321.4,1607.0,Bank Transfer,Germany,Processing
+ORD_0166,2024-09-19,CUST_8419,Customer CUST_8419,Books,Product_52,2,470.06,940.12,Bank Transfer,Canada,Processing
+ORD_0167,2025-01-26,CUST_3944,Customer CUST_3944,Sports,Product_17,4,87.51,350.04,PayPal,UK,Completed
+ORD_0168,2025-05-31,CUST_2717,Customer CUST_2717,Home & Garden,Product_58,5,305.63,1528.15,Credit Card,USA,Completed
+ORD_0169,2025-05-18,CUST_7970,Customer CUST_7970,Sports,Product_64,4,230.83,923.32,Bank Transfer,USA,Shipped
+ORD_0170,2025-01-23,CUST_6589,Customer CUST_6589,Home & Garden,Product_49,3,426.19,1278.57,Credit Card,France,Completed
+ORD_0171,2025-01-24,CUST_8381,Customer CUST_8381,Sports,Product_18,2,61.64,123.28,PayPal,Canada,Completed
+ORD_0172,2025-05-24,CUST_9274,Customer CUST_9274,Books,Product_15,2,212.91,425.82,Credit Card,Germany,Completed
+ORD_0173,2025-01-10,CUST_2568,Customer CUST_2568,Electronics,Product_16,3,332.44,997.3199999999999,Credit Card,France,Cancelled
+ORD_0174,2025-01-18,CUST_9525,Customer CUST_9525,Electronics,Product_31,3,410.93,1232.79,Bank Transfer,UK,Cancelled
+ORD_0175,2025-03-13,CUST_3629,Customer CUST_3629,Books,Product_35,3,381.53,1144.59,Bank Transfer,France,Completed
+ORD_0176,2024-12-14,CUST_3827,Customer CUST_3827,Sports,Product_68,1,212.43,212.43,Bank Transfer,Canada,Processing
+ORD_0177,2024-12-01,CUST_7667,Customer CUST_7667,Sports,Product_50,4,415.11,1660.44,Credit Card,USA,Shipped
+ORD_0178,2025-06-30,CUST_7576,Customer CUST_7576,Electronics,Product_35,3,481.54,1444.6200000000001,Bank Transfer,USA,Shipped
+ORD_0179,2025-08-09,CUST_8719,Customer CUST_8719,Home & Garden,Product_34,1,400.32,400.32,Credit Card,Germany,Cancelled
+ORD_0180,2024-09-26,CUST_2677,Customer CUST_2677,Clothing,Product_53,5,345.88,1729.4,PayPal,France,Shipped
+ORD_0181,2024-08-13,CUST_2246,Customer CUST_2246,Books,Product_94,4,489.01,1956.04,Credit Card,Germany,Cancelled
+ORD_0182,2024-11-15,CUST_2559,Customer CUST_2559,Home & Garden,Product_99,2,352.08,704.16,Credit Card,USA,Shipped
+ORD_0183,2024-11-18,CUST_4050,Customer CUST_4050,Books,Product_25,4,466.71,1866.84,PayPal,Germany,Completed
+ORD_0184,2025-04-25,CUST_2015,Customer CUST_2015,Clothing,Product_87,4,184.51,738.04,PayPal,UK,Cancelled
+ORD_0185,2025-01-13,CUST_2719,Customer CUST_2719,Books,Product_63,2,269.51,539.02,Bank Transfer,UK,Shipped
+ORD_0186,2024-09-19,CUST_6943,Customer CUST_6943,Sports,Product_13,2,414.68,829.36,PayPal,Canada,Shipped
+ORD_0187,2024-09-13,CUST_4547,Customer CUST_4547,Books,Product_53,4,143.98,575.92,Bank Transfer,UK,Completed
+ORD_0188,2025-03-28,CUST_9953,Customer CUST_9953,Electronics,Product_11,3,184.32,552.96,PayPal,Canada,Processing
+ORD_0189,2025-04-08,CUST_2485,Customer CUST_2485,Sports,Product_55,5,170.66,853.3,Bank Transfer,Canada,Completed
+ORD_0190,2024-11-26,CUST_4274,Customer CUST_4274,Books,Product_26,2,283.96,567.92,Credit Card,Germany,Processing
+ORD_0191,2024-11-15,CUST_5156,Customer CUST_5156,Home & Garden,Product_82,5,150.11,750.5500000000001,Credit Card,Canada,Shipped
+ORD_0192,2025-06-01,CUST_5654,Customer CUST_5654,Books,Product_11,5,368.99,1844.95,PayPal,Canada,Completed
+ORD_0193,2025-06-05,CUST_3999,Customer CUST_3999,Electronics,Product_3,5,299.63,1498.15,Credit Card,USA,Processing
+ORD_0194,2025-01-13,CUST_7597,Customer CUST_7597,Clothing,Product_23,1,156.49,156.49,PayPal,France,Processing
+ORD_0195,2025-07-07,CUST_4936,Customer CUST_4936,Books,Product_69,4,205.52,822.08,Credit Card,Germany,Cancelled
+ORD_0196,2025-05-10,CUST_1593,Customer CUST_1593,Clothing,Product_59,2,209.43,418.86,Credit Card,France,Cancelled
+ORD_0197,2024-10-29,CUST_9342,Customer CUST_9342,Books,Product_17,5,237.69,1188.45,Bank Transfer,France,Processing
+ORD_0198,2025-07-06,CUST_9905,Customer CUST_9905,Sports,Product_90,5,60.1,300.5,Bank Transfer,UK,Cancelled
+ORD_0199,2025-05-12,CUST_5943,Customer CUST_5943,Home & Garden,Product_89,3,140.82,422.46,PayPal,Germany,Completed
+ORD_0200,2025-02-13,CUST_9470,Customer CUST_9470,Sports,Product_88,3,440.89,1322.67,Credit Card,France,Cancelled
+ORD_0201,2024-08-23,CUST_6138,Customer CUST_6138,Electronics,Product_98,4,315.09,1260.36,Credit Card,UK,Cancelled
+ORD_0202,2025-07-29,CUST_4210,Customer CUST_4210,Home & Garden,Product_33,2,137.28,274.56,Credit Card,France,Cancelled
+ORD_0203,2024-10-22,CUST_8563,Customer CUST_8563,Home & Garden,Product_30,5,390.8,1954.0,PayPal,Canada,Completed
+ORD_0204,2025-02-21,CUST_8782,Customer CUST_8782,Home & Garden,Product_1,2,182.68,365.36,Credit Card,Canada,Processing
+ORD_0205,2025-05-14,CUST_4470,Customer CUST_4470,Clothing,Product_20,1,454.08,454.08,Credit Card,France,Completed
+ORD_0206,2025-01-05,CUST_8715,Customer CUST_8715,Books,Product_37,3,26.51,79.53,Bank Transfer,USA,Cancelled
+ORD_0207,2024-09-25,CUST_7918,Customer CUST_7918,Sports,Product_94,4,218.67,874.68,PayPal,USA,Cancelled
+ORD_0208,2025-05-21,CUST_6972,Customer CUST_6972,Books,Product_79,2,258.19,516.38,Bank Transfer,USA,Processing
+ORD_0209,2024-12-21,CUST_2325,Customer CUST_2325,Home & Garden,Product_71,1,75.85,75.85,PayPal,France,Processing
+ORD_0210,2025-04-27,CUST_9357,Customer CUST_9357,Home & Garden,Product_72,4,174.5,698.0,Bank Transfer,UK,Processing
+ORD_0211,2024-11-15,CUST_7073,Customer CUST_7073,Books,Product_18,1,321.47,321.47,PayPal,USA,Processing
+ORD_0212,2025-05-27,CUST_7294,Customer CUST_7294,Home & Garden,Product_38,2,370.49,740.98,PayPal,UK,Processing
+ORD_0213,2025-03-09,CUST_7824,Customer CUST_7824,Books,Product_47,1,336.13,336.13,Bank Transfer,Germany,Cancelled
+ORD_0214,2025-03-25,CUST_1665,Customer CUST_1665,Electronics,Product_65,4,470.13,1880.52,Credit Card,Canada,Processing
+ORD_0215,2024-10-14,CUST_8859,Customer CUST_8859,Electronics,Product_8,4,345.6,1382.4,Bank Transfer,France,Shipped
+ORD_0216,2025-08-02,CUST_6077,Customer CUST_6077,Home & Garden,Product_13,3,358.93,1076.79,PayPal,USA,Cancelled
+ORD_0217,2024-11-07,CUST_6644,Customer CUST_6644,Sports,Product_27,2,457.62,915.24,Credit Card,Germany,Completed
+ORD_0218,2024-09-07,CUST_1549,Customer CUST_1549,Sports,Product_80,5,251.15,1255.75,Bank Transfer,Canada,Processing
+ORD_0219,2025-05-23,CUST_9283,Customer CUST_9283,Home & Garden,Product_26,4,250.98,1003.92,PayPal,Canada,Processing
+ORD_0220,2025-06-11,CUST_5209,Customer CUST_5209,Clothing,Product_49,3,249.51,748.53,Bank Transfer,Germany,Processing
+ORD_0221,2024-09-24,CUST_1217,Customer CUST_1217,Home & Garden,Product_9,1,175.32,175.32,Bank Transfer,UK,Shipped
+ORD_0222,2025-07-09,CUST_3853,Customer CUST_3853,Electronics,Product_82,4,128.06,512.24,Bank Transfer,USA,Cancelled
+ORD_0223,2025-08-01,CUST_6748,Customer CUST_6748,Electronics,Product_80,5,315.54,1577.7,Credit Card,USA,Processing
+ORD_0224,2024-12-22,CUST_3990,Customer CUST_3990,Home & Garden,Product_58,4,484.3,1937.2,Bank Transfer,USA,Processing
+ORD_0225,2024-08-17,CUST_3139,Customer CUST_3139,Clothing,Product_44,1,263.36,263.36,Bank Transfer,USA,Shipped
+ORD_0226,2025-01-27,CUST_3224,Customer CUST_3224,Clothing,Product_82,2,494.29,988.58,Bank Transfer,USA,Shipped
+ORD_0227,2024-12-05,CUST_1389,Customer CUST_1389,Clothing,Product_99,1,209.42,209.42,PayPal,France,Shipped
+ORD_0228,2024-09-30,CUST_2324,Customer CUST_2324,Home & Garden,Product_79,4,85.26,341.04,PayPal,Germany,Completed
+ORD_0229,2025-06-28,CUST_6327,Customer CUST_6327,Books,Product_57,3,408.23,1224.69,Credit Card,USA,Shipped
+ORD_0230,2025-03-03,CUST_9747,Customer CUST_9747,Books,Product_88,2,145.68,291.36,Bank Transfer,Canada,Cancelled
+ORD_0231,2025-02-07,CUST_2913,Customer CUST_2913,Home & Garden,Product_8,3,438.97,1316.91,Bank Transfer,UK,Cancelled
+ORD_0232,2024-12-21,CUST_4212,Customer CUST_4212,Clothing,Product_16,1,432.27,432.27,PayPal,Germany,Cancelled
+ORD_0233,2025-06-09,CUST_5567,Customer CUST_5567,Clothing,Product_18,1,295.88,295.88,Bank Transfer,USA,Shipped
+ORD_0234,2025-06-25,CUST_8759,Customer CUST_8759,Sports,Product_87,2,329.19,658.38,PayPal,USA,Processing
+ORD_0235,2024-11-16,CUST_2767,Customer CUST_2767,Sports,Product_70,3,329.69,989.0699999999999,Bank Transfer,France,Processing
+ORD_0236,2025-03-22,CUST_3798,Customer CUST_3798,Clothing,Product_27,2,42.79,85.58,Bank Transfer,France,Completed
+ORD_0237,2024-08-13,CUST_9143,Customer CUST_9143,Home & Garden,Product_99,4,461.05,1844.2,Bank Transfer,USA,Cancelled
+ORD_0238,2025-05-24,CUST_3924,Customer CUST_3924,Electronics,Product_21,2,83.33,166.66,PayPal,Germany,Processing
+ORD_0239,2025-03-08,CUST_4333,Customer CUST_4333,Home & Garden,Product_56,2,194.96,389.92,Bank Transfer,UK,Shipped
+ORD_0240,2024-12-13,CUST_9900,Customer CUST_9900,Electronics,Product_77,5,131.03,655.15,PayPal,France,Shipped
+ORD_0241,2025-04-15,CUST_5189,Customer CUST_5189,Sports,Product_74,2,49.81,99.62,PayPal,France,Shipped
+ORD_0242,2024-11-11,CUST_7515,Customer CUST_7515,Home & Garden,Product_54,4,489.78,1959.12,Credit Card,UK,Cancelled
+ORD_0243,2024-11-03,CUST_6995,Customer CUST_6995,Sports,Product_38,4,259.36,1037.44,PayPal,Canada,Shipped
+ORD_0244,2025-07-28,CUST_7363,Customer CUST_7363,Electronics,Product_5,2,397.6,795.2,PayPal,France,Processing
+ORD_0245,2025-02-15,CUST_1413,Customer CUST_1413,Electronics,Product_27,4,78.98,315.92,Bank Transfer,Canada,Cancelled
+ORD_0246,2024-11-20,CUST_2656,Customer CUST_2656,Home & Garden,Product_46,4,125.52,502.08,Credit Card,France,Cancelled
+ORD_0247,2025-07-29,CUST_4654,Customer CUST_4654,Home & Garden,Product_100,1,214.88,214.88,PayPal,Germany,Cancelled
+ORD_0248,2024-11-01,CUST_4631,Customer CUST_4631,Sports,Product_92,3,269.71,809.1299999999999,Credit Card,Germany,Processing
+ORD_0249,2025-05-10,CUST_1230,Customer CUST_1230,Clothing,Product_66,5,228.91,1144.55,PayPal,France,Completed
+ORD_0250,2024-12-09,CUST_8626,Customer CUST_8626,Sports,Product_38,2,71.27,142.54,PayPal,UK,Completed
+ORD_0251,2024-12-30,CUST_8529,Customer CUST_8529,Home & Garden,Product_69,5,288.03,1440.1499999999999,Credit Card,Canada,Processing
+ORD_0252,2024-12-09,CUST_7493,Customer CUST_7493,Books,Product_91,5,243.73,1218.6499999999999,PayPal,Germany,Cancelled
+ORD_0253,2025-02-25,CUST_7619,Customer CUST_7619,Clothing,Product_58,2,198.09,396.18,Credit Card,Canada,Cancelled
+ORD_0254,2024-11-24,CUST_9169,Customer CUST_9169,Electronics,Product_48,3,348.27,1044.81,PayPal,USA,Completed
+ORD_0255,2025-01-31,CUST_1047,Customer CUST_1047,Home & Garden,Product_89,4,228.84,915.36,PayPal,France,Completed
+ORD_0256,2025-05-26,CUST_2560,Customer CUST_2560,Clothing,Product_66,1,326.23,326.23,Credit Card,UK,Completed
+ORD_0257,2025-07-07,CUST_5191,Customer CUST_5191,Books,Product_24,3,428.79,1286.3700000000001,PayPal,Germany,Completed
+ORD_0258,2024-12-12,CUST_6809,Customer CUST_6809,Books,Product_4,2,304.98,609.96,Credit Card,Canada,Shipped
+ORD_0259,2024-09-26,CUST_7811,Customer CUST_7811,Home & Garden,Product_93,5,13.72,68.60000000000001,PayPal,Germany,Processing
+ORD_0260,2024-11-23,CUST_3196,Customer CUST_3196,Books,Product_15,2,42.9,85.8,Credit Card,Canada,Processing
+ORD_0261,2025-06-10,CUST_9854,Customer CUST_9854,Clothing,Product_18,4,292.23,1168.92,PayPal,UK,Processing
+ORD_0262,2024-09-20,CUST_1654,Customer CUST_1654,Electronics,Product_5,4,22.78,91.12,Bank Transfer,Canada,Completed
+ORD_0263,2024-11-25,CUST_1475,Customer CUST_1475,Clothing,Product_82,5,173.27,866.35,Bank Transfer,France,Completed
+ORD_0264,2025-03-14,CUST_2152,Customer CUST_2152,Clothing,Product_69,5,63.18,315.9,Credit Card,Canada,Cancelled
+ORD_0265,2024-11-07,CUST_7184,Customer CUST_7184,Electronics,Product_44,4,259.11,1036.44,Credit Card,France,Processing
+ORD_0266,2025-05-19,CUST_8490,Customer CUST_8490,Home & Garden,Product_38,2,438.49,876.98,PayPal,USA,Completed
+ORD_0267,2024-12-01,CUST_6028,Customer CUST_6028,Clothing,Product_97,2,313.64,627.28,Bank Transfer,France,Shipped
+ORD_0268,2025-06-05,CUST_2658,Customer CUST_2658,Books,Product_16,2,35.43,70.86,PayPal,France,Processing
+ORD_0269,2025-08-01,CUST_1947,Customer CUST_1947,Home & Garden,Product_73,4,99.65,398.6,Bank Transfer,UK,Processing
+ORD_0270,2025-08-04,CUST_3512,Customer CUST_3512,Home & Garden,Product_14,2,328.27,656.54,PayPal,Germany,Completed
+ORD_0271,2025-04-09,CUST_1721,Customer CUST_1721,Clothing,Product_82,4,49.78,199.12,Bank Transfer,France,Shipped
+ORD_0272,2024-09-08,CUST_8113,Customer CUST_8113,Clothing,Product_64,4,71.04,284.16,PayPal,Canada,Shipped
+ORD_0273,2025-02-27,CUST_6582,Customer CUST_6582,Electronics,Product_30,1,335.39,335.39,PayPal,France,Completed
+ORD_0274,2025-03-15,CUST_8574,Customer CUST_8574,Sports,Product_86,3,281.31,843.9300000000001,PayPal,France,Cancelled
+ORD_0275,2024-12-06,CUST_6196,Customer CUST_6196,Home & Garden,Product_61,2,499.51,999.02,Credit Card,France,Processing
+ORD_0276,2025-07-15,CUST_2761,Customer CUST_2761,Electronics,Product_75,5,267.61,1338.0500000000002,PayPal,UK,Shipped
+ORD_0277,2024-08-29,CUST_1708,Customer CUST_1708,Sports,Product_73,2,429.16,858.32,Credit Card,Canada,Completed
+ORD_0278,2024-12-16,CUST_8570,Customer CUST_8570,Electronics,Product_51,4,84.09,336.36,Credit Card,USA,Cancelled
+ORD_0279,2024-09-13,CUST_3085,Customer CUST_3085,Sports,Product_63,1,133.18,133.18,PayPal,USA,Processing
+ORD_0280,2025-01-09,CUST_3729,Customer CUST_3729,Books,Product_13,1,296.64,296.64,PayPal,Germany,Shipped
+ORD_0281,2025-02-04,CUST_1135,Customer CUST_1135,Books,Product_43,2,46.35,92.7,Bank Transfer,Canada,Processing
+ORD_0282,2024-10-05,CUST_5606,Customer CUST_5606,Electronics,Product_94,2,455.9,911.8,Credit Card,Germany,Completed
+ORD_0283,2024-10-03,CUST_9439,Customer CUST_9439,Clothing,Product_53,3,470.82,1412.46,Bank Transfer,USA,Cancelled
+ORD_0284,2025-05-01,CUST_7124,Customer CUST_7124,Electronics,Product_74,4,131.03,524.12,Credit Card,UK,Shipped
+ORD_0285,2024-12-13,CUST_5801,Customer CUST_5801,Sports,Product_66,1,380.45,380.45,PayPal,Canada,Processing
+ORD_0286,2025-08-02,CUST_7710,Customer CUST_7710,Electronics,Product_23,2,495.81,991.62,Bank Transfer,France,Processing
+ORD_0287,2025-02-09,CUST_9886,Customer CUST_9886,Home & Garden,Product_89,5,424.7,2123.5,Bank Transfer,Germany,Completed
+ORD_0288,2025-04-12,CUST_7305,Customer CUST_7305,Electronics,Product_23,1,401.96,401.96,PayPal,Canada,Cancelled
+ORD_0289,2025-05-31,CUST_6645,Customer CUST_6645,Electronics,Product_33,5,351.22,1756.1000000000001,Bank Transfer,USA,Processing
+ORD_0290,2024-12-31,CUST_6234,Customer CUST_6234,Books,Product_51,4,321.77,1287.08,Credit Card,Germany,Cancelled
+ORD_0291,2025-02-26,CUST_3452,Customer CUST_3452,Electronics,Product_7,5,65.13,325.65,PayPal,France,Cancelled
+ORD_0292,2025-03-19,CUST_1104,Customer CUST_1104,Electronics,Product_25,3,430.42,1291.26,Credit Card,France,Shipped
+ORD_0293,2024-08-20,CUST_6167,Customer CUST_6167,Books,Product_4,3,120.11,360.33,PayPal,UK,Processing
+ORD_0294,2025-08-04,CUST_3382,Customer CUST_3382,Sports,Product_74,3,125.47,376.40999999999997,Bank Transfer,UK,Completed
+ORD_0295,2025-05-26,CUST_8326,Customer CUST_8326,Electronics,Product_39,5,451.19,2255.95,PayPal,Germany,Cancelled
+ORD_0296,2025-03-24,CUST_7554,Customer CUST_7554,Clothing,Product_100,5,463.82,2319.1,PayPal,Germany,Completed
+ORD_0297,2025-07-17,CUST_7610,Customer CUST_7610,Books,Product_70,2,70.07,140.14,PayPal,Canada,Completed
+ORD_0298,2024-10-31,CUST_5675,Customer CUST_5675,Electronics,Product_34,5,393.36,1966.8000000000002,Bank Transfer,USA,Shipped
+ORD_0299,2024-10-11,CUST_5085,Customer CUST_5085,Electronics,Product_25,3,249.43,748.29,PayPal,Canada,Processing
+ORD_0300,2025-01-21,CUST_6536,Customer CUST_6536,Sports,Product_4,3,84.5,253.5,Credit Card,USA,Cancelled
+ORD_0301,2024-08-17,CUST_1967,Customer CUST_1967,Home & Garden,Product_65,1,433.6,433.6,Bank Transfer,France,Shipped
+ORD_0302,2025-05-24,CUST_1300,Customer CUST_1300,Sports,Product_43,5,11.41,57.05,Bank Transfer,USA,Cancelled
+ORD_0303,2025-04-11,CUST_4776,Customer CUST_4776,Electronics,Product_85,2,488.53,977.06,Bank Transfer,UK,Shipped
+ORD_0304,2024-09-12,CUST_5964,Customer CUST_5964,Sports,Product_86,5,389.21,1946.05,Bank Transfer,France,Shipped
+ORD_0305,2024-11-10,CUST_2646,Customer CUST_2646,Sports,Product_74,1,394.73,394.73,Credit Card,USA,Cancelled
+ORD_0306,2025-04-29,CUST_4472,Customer CUST_4472,Electronics,Product_99,5,60.95,304.75,Credit Card,France,Cancelled
+ORD_0307,2025-03-21,CUST_1935,Customer CUST_1935,Sports,Product_44,4,158.64,634.56,Bank Transfer,USA,Processing
+ORD_0308,2025-07-04,CUST_3292,Customer CUST_3292,Books,Product_28,1,422.85,422.85,Bank Transfer,USA,Shipped
+ORD_0309,2025-04-26,CUST_7023,Customer CUST_7023,Sports,Product_15,4,478.15,1912.6,Credit Card,France,Cancelled
+ORD_0310,2025-01-08,CUST_2485,Customer CUST_2485,Sports,Product_87,2,260.02,520.04,Credit Card,Canada,Cancelled
+ORD_0311,2024-10-18,CUST_8344,Customer CUST_8344,Books,Product_82,2,84.47,168.94,Bank Transfer,UK,Completed
+ORD_0312,2024-10-10,CUST_5897,Customer CUST_5897,Books,Product_15,5,118.94,594.7,Bank Transfer,France,Processing
+ORD_0313,2025-05-11,CUST_5314,Customer CUST_5314,Sports,Product_78,3,221.68,665.04,PayPal,Germany,Shipped
+ORD_0314,2024-12-15,CUST_1482,Customer CUST_1482,Sports,Product_35,5,472.99,2364.95,PayPal,Canada,Completed
+ORD_0315,2025-02-10,CUST_5627,Customer CUST_5627,Sports,Product_72,3,433.09,1299.27,Credit Card,Germany,Shipped
+ORD_0316,2024-11-29,CUST_7058,Customer CUST_7058,Clothing,Product_79,3,43.51,130.53,PayPal,USA,Processing
+ORD_0317,2025-01-06,CUST_3834,Customer CUST_3834,Sports,Product_60,3,200.13,600.39,Credit Card,Germany,Shipped
+ORD_0318,2025-03-24,CUST_9250,Customer CUST_9250,Sports,Product_5,3,247.24,741.72,Credit Card,France,Processing
+ORD_0319,2025-05-25,CUST_5408,Customer CUST_5408,Home & Garden,Product_82,5,301.59,1507.9499999999998,PayPal,USA,Cancelled
+ORD_0320,2025-01-08,CUST_8801,Customer CUST_8801,Electronics,Product_66,3,334.11,1002.33,Credit Card,France,Processing
+ORD_0321,2025-05-01,CUST_2964,Customer CUST_2964,Books,Product_18,1,255.43,255.43,Bank Transfer,USA,Completed
+ORD_0322,2025-07-02,CUST_4827,Customer CUST_4827,Clothing,Product_43,5,373.31,1866.55,PayPal,USA,Completed
+ORD_0323,2025-07-14,CUST_6381,Customer CUST_6381,Sports,Product_10,4,384.08,1536.32,PayPal,Germany,Cancelled
+ORD_0324,2025-03-01,CUST_3812,Customer CUST_3812,Home & Garden,Product_80,3,388.46,1165.3799999999999,PayPal,Germany,Shipped
+ORD_0325,2025-06-27,CUST_8677,Customer CUST_8677,Sports,Product_15,2,377.7,755.4,Bank Transfer,USA,Shipped
+ORD_0326,2025-06-23,CUST_4031,Customer CUST_4031,Electronics,Product_24,1,97.07,97.07,Credit Card,Canada,Completed
+ORD_0327,2024-09-10,CUST_8016,Customer CUST_8016,Electronics,Product_98,5,80.74,403.7,PayPal,UK,Completed
+ORD_0328,2025-01-23,CUST_2218,Customer CUST_2218,Sports,Product_52,3,186.99,560.97,PayPal,USA,Completed
+ORD_0329,2025-05-07,CUST_8578,Customer CUST_8578,Sports,Product_49,3,208.43,625.29,Credit Card,Germany,Shipped
+ORD_0330,2024-08-27,CUST_6610,Customer CUST_6610,Home & Garden,Product_69,2,491.94,983.88,Bank Transfer,UK,Shipped
+ORD_0331,2025-07-17,CUST_3658,Customer CUST_3658,Home & Garden,Product_74,4,218.25,873.0,Bank Transfer,France,Cancelled
+ORD_0332,2025-03-03,CUST_5061,Customer CUST_5061,Electronics,Product_23,4,436.02,1744.08,PayPal,UK,Processing
+ORD_0333,2025-01-24,CUST_7227,Customer CUST_7227,Electronics,Product_29,3,430.62,1291.8600000000001,PayPal,USA,Shipped
+ORD_0334,2024-11-07,CUST_1975,Customer CUST_1975,Home & Garden,Product_34,4,92.33,369.32,Bank Transfer,USA,Shipped
+ORD_0335,2024-11-29,CUST_9846,Customer CUST_9846,Books,Product_39,1,203.91,203.91,PayPal,Germany,Cancelled
+ORD_0336,2024-08-25,CUST_1881,Customer CUST_1881,Books,Product_72,1,391.79,391.79,PayPal,Germany,Cancelled
+ORD_0337,2025-04-22,CUST_8116,Customer CUST_8116,Electronics,Product_80,1,155.15,155.15,Bank Transfer,USA,Processing
+ORD_0338,2025-07-04,CUST_9230,Customer CUST_9230,Electronics,Product_19,2,396.32,792.64,PayPal,UK,Shipped
+ORD_0339,2025-02-11,CUST_5712,Customer CUST_5712,Sports,Product_5,2,57.82,115.64,Bank Transfer,UK,Shipped
+ORD_0340,2024-11-23,CUST_5611,Customer CUST_5611,Clothing,Product_64,5,293.01,1465.05,Credit Card,UK,Completed
+ORD_0341,2024-10-20,CUST_4363,Customer CUST_4363,Electronics,Product_1,3,102.34,307.02,PayPal,UK,Shipped
+ORD_0342,2025-02-22,CUST_7516,Customer CUST_7516,Books,Product_18,5,321.69,1608.45,Bank Transfer,Germany,Completed
+ORD_0343,2025-01-19,CUST_2979,Customer CUST_2979,Home & Garden,Product_54,4,305.1,1220.4,Bank Transfer,Germany,Processing
+ORD_0344,2025-02-10,CUST_8995,Customer CUST_8995,Sports,Product_50,2,167.64,335.28,Credit Card,Germany,Cancelled
+ORD_0345,2025-02-09,CUST_1833,Customer CUST_1833,Electronics,Product_46,1,462.64,462.64,PayPal,France,Completed
+ORD_0346,2025-04-17,CUST_6854,Customer CUST_6854,Home & Garden,Product_99,1,319.98,319.98,Credit Card,USA,Shipped
+ORD_0347,2025-03-12,CUST_9781,Customer CUST_9781,Electronics,Product_89,5,200.03,1000.15,PayPal,Canada,Shipped
+ORD_0348,2024-12-14,CUST_6145,Customer CUST_6145,Electronics,Product_73,3,279.57,838.71,PayPal,Germany,Cancelled
+ORD_0349,2024-11-25,CUST_4575,Customer CUST_4575,Sports,Product_85,1,70.67,70.67,Bank Transfer,UK,Processing
+ORD_0350,2024-12-23,CUST_6373,Customer CUST_6373,Electronics,Product_71,1,273.97,273.97,Bank Transfer,Canada,Completed
+ORD_0351,2025-05-15,CUST_8153,Customer CUST_8153,Books,Product_92,1,12.09,12.09,Bank Transfer,France,Cancelled
+ORD_0352,2024-10-05,CUST_6338,Customer CUST_6338,Electronics,Product_23,2,158.69,317.38,Credit Card,Germany,Cancelled
+ORD_0353,2024-09-18,CUST_7744,Customer CUST_7744,Books,Product_35,4,87.44,349.76,PayPal,France,Cancelled
+ORD_0354,2025-05-09,CUST_9110,Customer CUST_9110,Home & Garden,Product_23,4,278.89,1115.56,PayPal,France,Shipped
+ORD_0355,2025-05-03,CUST_4536,Customer CUST_4536,Home & Garden,Product_77,1,399.29,399.29,PayPal,UK,Processing
+ORD_0356,2024-09-28,CUST_7125,Customer CUST_7125,Sports,Product_19,3,434.43,1303.29,Bank Transfer,Canada,Processing
+ORD_0357,2025-05-12,CUST_8906,Customer CUST_8906,Books,Product_87,2,38.57,77.14,PayPal,USA,Cancelled
+ORD_0358,2025-07-30,CUST_7882,Customer CUST_7882,Sports,Product_8,3,463.91,1391.73,Credit Card,USA,Processing
+ORD_0359,2024-08-30,CUST_6428,Customer CUST_6428,Home & Garden,Product_29,3,319.42,958.26,Bank Transfer,USA,Completed
+ORD_0360,2025-07-21,CUST_9430,Customer CUST_9430,Home & Garden,Product_96,2,133.02,266.04,Bank Transfer,Canada,Processing
+ORD_0361,2024-08-24,CUST_4620,Customer CUST_4620,Electronics,Product_74,4,42.73,170.92,Bank Transfer,Canada,Shipped
+ORD_0362,2025-07-29,CUST_7189,Customer CUST_7189,Home & Garden,Product_70,3,171.14,513.42,Bank Transfer,UK,Processing
+ORD_0363,2025-07-09,CUST_7799,Customer CUST_7799,Clothing,Product_16,2,158.12,316.24,Bank Transfer,France,Processing
+ORD_0364,2024-08-13,CUST_1465,Customer CUST_1465,Home & Garden,Product_71,5,282.95,1414.75,Credit Card,UK,Completed
+ORD_0365,2024-12-22,CUST_1384,Customer CUST_1384,Home & Garden,Product_77,5,293.29,1466.45,Credit Card,UK,Cancelled
+ORD_0366,2025-07-03,CUST_8379,Customer CUST_8379,Home & Garden,Product_12,4,245.7,982.8,PayPal,USA,Completed
+ORD_0367,2025-05-16,CUST_3723,Customer CUST_3723,Electronics,Product_73,5,399.26,1996.3,Credit Card,USA,Shipped
+ORD_0368,2025-07-10,CUST_9418,Customer CUST_9418,Sports,Product_31,2,311.41,622.82,PayPal,USA,Shipped
+ORD_0369,2025-03-09,CUST_6036,Customer CUST_6036,Home & Garden,Product_14,4,354.88,1419.52,PayPal,USA,Processing
+ORD_0370,2024-11-04,CUST_3275,Customer CUST_3275,Books,Product_31,4,180.74,722.96,Bank Transfer,France,Processing
+ORD_0371,2025-06-13,CUST_8314,Customer CUST_8314,Electronics,Product_21,1,337.45,337.45,Bank Transfer,Germany,Processing
+ORD_0372,2025-08-09,CUST_6235,Customer CUST_6235,Books,Product_38,4,195.6,782.4,Credit Card,Germany,Shipped
+ORD_0373,2025-07-01,CUST_8033,Customer CUST_8033,Electronics,Product_15,1,237.48,237.48,PayPal,Canada,Completed
+ORD_0374,2024-12-03,CUST_9781,Customer CUST_9781,Electronics,Product_75,1,488.3,488.3,Credit Card,UK,Processing
+ORD_0375,2025-02-15,CUST_5198,Customer CUST_5198,Home & Garden,Product_59,2,101.91,203.82,Bank Transfer,USA,Shipped
+ORD_0376,2025-06-18,CUST_5993,Customer CUST_5993,Books,Product_80,4,444.54,1778.16,PayPal,Germany,Cancelled
+ORD_0377,2024-08-26,CUST_6468,Customer CUST_6468,Clothing,Product_77,3,312.79,938.3700000000001,PayPal,USA,Completed
+ORD_0378,2025-04-23,CUST_7523,Customer CUST_7523,Clothing,Product_1,1,166.56,166.56,Bank Transfer,Canada,Shipped
+ORD_0379,2025-03-15,CUST_6085,Customer CUST_6085,Sports,Product_100,3,306.95,920.8499999999999,Credit Card,France,Cancelled
+ORD_0380,2025-06-24,CUST_8278,Customer CUST_8278,Sports,Product_63,5,250.13,1250.65,Bank Transfer,USA,Processing
+ORD_0381,2025-06-24,CUST_1557,Customer CUST_1557,Books,Product_4,2,379.59,759.18,Credit Card,UK,Completed
+ORD_0382,2024-11-30,CUST_2901,Customer CUST_2901,Clothing,Product_88,4,132.13,528.52,PayPal,Canada,Cancelled
+ORD_0383,2025-07-30,CUST_3586,Customer CUST_3586,Electronics,Product_4,3,498.63,1495.8899999999999,Bank Transfer,UK,Shipped
+ORD_0384,2025-02-10,CUST_4916,Customer CUST_4916,Clothing,Product_16,3,358.17,1074.51,Credit Card,Canada,Processing
+ORD_0385,2025-01-04,CUST_5641,Customer CUST_5641,Books,Product_11,4,237.5,950.0,Bank Transfer,USA,Cancelled
+ORD_0386,2025-08-09,CUST_4210,Customer CUST_4210,Books,Product_68,5,149.65,748.25,PayPal,USA,Processing
+ORD_0387,2025-07-12,CUST_7215,Customer CUST_7215,Sports,Product_44,4,314.05,1256.2,Credit Card,France,Cancelled
+ORD_0388,2025-04-06,CUST_5350,Customer CUST_5350,Electronics,Product_15,3,143.52,430.56000000000006,Bank Transfer,Canada,Shipped
+ORD_0389,2024-09-24,CUST_5497,Customer CUST_5497,Electronics,Product_31,3,357.28,1071.84,PayPal,UK,Cancelled
+ORD_0390,2024-08-24,CUST_1824,Customer CUST_1824,Electronics,Product_3,4,28.98,115.92,Credit Card,USA,Completed
+ORD_0391,2025-04-03,CUST_8641,Customer CUST_8641,Books,Product_95,4,385.6,1542.4,Bank Transfer,France,Cancelled
+ORD_0392,2025-02-22,CUST_5514,Customer CUST_5514,Sports,Product_90,1,134.89,134.89,Bank Transfer,Germany,Shipped
+ORD_0393,2024-09-12,CUST_7814,Customer CUST_7814,Books,Product_68,2,454.4,908.8,Credit Card,Germany,Cancelled
+ORD_0394,2025-07-16,CUST_6981,Customer CUST_6981,Home & Garden,Product_29,3,211.03,633.09,PayPal,France,Processing
+ORD_0395,2024-09-12,CUST_8998,Customer CUST_8998,Clothing,Product_51,2,420.45,840.9,PayPal,USA,Processing
+ORD_0396,2024-12-06,CUST_9986,Customer CUST_9986,Home & Garden,Product_51,5,78.61,393.05,Credit Card,Canada,Shipped
+ORD_0397,2024-12-17,CUST_8497,Customer CUST_8497,Clothing,Product_72,5,440.91,2204.55,PayPal,Germany,Processing
+ORD_0398,2024-11-14,CUST_1535,Customer CUST_1535,Clothing,Product_48,2,224.49,448.98,PayPal,Germany,Shipped
+ORD_0399,2024-09-30,CUST_8867,Customer CUST_8867,Clothing,Product_30,2,96.69,193.38,PayPal,Germany,Cancelled
+ORD_0400,2025-01-10,CUST_1282,Customer CUST_1282,Sports,Product_76,3,158.08,474.24,PayPal,UK,Completed
+ORD_0401,2024-12-09,CUST_9565,Customer CUST_9565,Home & Garden,Product_28,5,465.97,2329.8500000000004,Credit Card,UK,Cancelled
+ORD_0402,2025-07-15,CUST_6626,Customer CUST_6626,Books,Product_85,4,91.95,367.8,PayPal,France,Cancelled
+ORD_0403,2025-05-15,CUST_1943,Customer CUST_1943,Books,Product_36,5,49.78,248.9,PayPal,UK,Shipped
+ORD_0404,2024-09-08,CUST_6364,Customer CUST_6364,Home & Garden,Product_29,2,353.18,706.36,Credit Card,Germany,Completed
+ORD_0405,2025-07-22,CUST_7256,Customer CUST_7256,Sports,Product_82,4,433.34,1733.36,PayPal,UK,Shipped
+ORD_0406,2025-05-14,CUST_8374,Customer CUST_8374,Books,Product_86,4,346.73,1386.92,Bank Transfer,Germany,Processing
+ORD_0407,2025-08-02,CUST_4886,Customer CUST_4886,Electronics,Product_86,4,51.8,207.2,PayPal,Germany,Completed
+ORD_0408,2025-07-06,CUST_4546,Customer CUST_4546,Sports,Product_86,5,453.74,2268.7,Credit Card,France,Completed
+ORD_0409,2025-05-20,CUST_6423,Customer CUST_6423,Electronics,Product_99,5,456.1,2280.5,Bank Transfer,Canada,Cancelled
+ORD_0410,2025-03-13,CUST_5030,Customer CUST_5030,Sports,Product_47,3,301.07,903.21,PayPal,Germany,Completed
+ORD_0411,2025-05-14,CUST_3747,Customer CUST_3747,Sports,Product_12,3,451.98,1355.94,Bank Transfer,USA,Completed
+ORD_0412,2025-07-07,CUST_8159,Customer CUST_8159,Clothing,Product_84,5,140.6,703.0,Credit Card,Germany,Cancelled
+ORD_0413,2025-08-07,CUST_4843,Customer CUST_4843,Home & Garden,Product_35,3,401.82,1205.46,PayPal,France,Processing
+ORD_0414,2025-01-23,CUST_6342,Customer CUST_6342,Home & Garden,Product_80,5,50.95,254.75,Bank Transfer,France,Processing
+ORD_0415,2025-06-19,CUST_4509,Customer CUST_4509,Electronics,Product_78,3,181.33,543.99,Credit Card,USA,Processing
+ORD_0416,2025-03-10,CUST_1332,Customer CUST_1332,Electronics,Product_13,4,467.45,1869.8,Bank Transfer,Germany,Cancelled
+ORD_0417,2025-05-25,CUST_3433,Customer CUST_3433,Electronics,Product_16,4,350.67,1402.68,PayPal,Canada,Processing
+ORD_0418,2024-12-06,CUST_9001,Customer CUST_9001,Sports,Product_35,3,445.42,1336.26,Credit Card,Canada,Cancelled
+ORD_0419,2025-03-14,CUST_1239,Customer CUST_1239,Electronics,Product_53,1,299.7,299.7,Bank Transfer,UK,Shipped
+ORD_0420,2025-07-09,CUST_3666,Customer CUST_3666,Books,Product_15,4,117.24,468.96,Bank Transfer,France,Shipped
+ORD_0421,2025-07-31,CUST_5450,Customer CUST_5450,Home & Garden,Product_95,2,182.8,365.6,Bank Transfer,USA,Cancelled
+ORD_0422,2025-05-29,CUST_7671,Customer CUST_7671,Home & Garden,Product_34,1,292.3,292.3,Credit Card,Germany,Shipped
+ORD_0423,2024-09-15,CUST_8809,Customer CUST_8809,Clothing,Product_20,5,73.76,368.8,PayPal,France,Processing
+ORD_0424,2024-09-16,CUST_2521,Customer CUST_2521,Sports,Product_12,4,11.66,46.64,Credit Card,USA,Cancelled
+ORD_0425,2024-10-27,CUST_6393,Customer CUST_6393,Books,Product_62,5,56.45,282.25,PayPal,Germany,Cancelled
+ORD_0426,2025-04-15,CUST_5427,Customer CUST_5427,Electronics,Product_87,5,251.3,1256.5,PayPal,Germany,Processing
+ORD_0427,2025-03-10,CUST_6686,Customer CUST_6686,Electronics,Product_97,3,176.5,529.5,Bank Transfer,France,Processing
+ORD_0428,2024-10-30,CUST_9945,Customer CUST_9945,Sports,Product_61,2,368.75,737.5,PayPal,UK,Cancelled
+ORD_0429,2025-03-12,CUST_6361,Customer CUST_6361,Books,Product_22,2,483.38,966.76,Bank Transfer,UK,Completed
+ORD_0430,2025-05-26,CUST_3432,Customer CUST_3432,Home & Garden,Product_74,3,83.31,249.93,Bank Transfer,Germany,Completed
+ORD_0431,2024-10-22,CUST_8891,Customer CUST_8891,Home & Garden,Product_56,1,171.03,171.03,Credit Card,Canada,Shipped
+ORD_0432,2025-07-06,CUST_1490,Customer CUST_1490,Books,Product_45,2,322.6,645.2,Bank Transfer,Germany,Processing
+ORD_0433,2025-03-27,CUST_8270,Customer CUST_8270,Home & Garden,Product_21,3,140.85,422.54999999999995,PayPal,UK,Shipped
+ORD_0434,2025-03-16,CUST_7550,Customer CUST_7550,Sports,Product_3,3,460.6,1381.8000000000002,Bank Transfer,France,Processing
+ORD_0435,2024-12-27,CUST_2873,Customer CUST_2873,Books,Product_18,4,465.73,1862.92,PayPal,Canada,Cancelled
+ORD_0436,2025-01-29,CUST_1299,Customer CUST_1299,Clothing,Product_36,3,130.81,392.43,Credit Card,USA,Completed
+ORD_0437,2024-09-05,CUST_4312,Customer CUST_4312,Home & Garden,Product_97,3,137.24,411.72,Bank Transfer,USA,Completed
+ORD_0438,2024-09-18,CUST_9004,Customer CUST_9004,Clothing,Product_61,5,409.47,2047.3500000000001,Bank Transfer,France,Completed
+ORD_0439,2024-12-26,CUST_2179,Customer CUST_2179,Electronics,Product_8,4,32.57,130.28,PayPal,UK,Shipped
+ORD_0440,2024-10-11,CUST_8953,Customer CUST_8953,Home & Garden,Product_94,1,484.12,484.12,PayPal,USA,Cancelled
+ORD_0441,2025-06-23,CUST_1912,Customer CUST_1912,Clothing,Product_85,5,44.87,224.35,PayPal,Germany,Processing
+ORD_0442,2025-02-11,CUST_6471,Customer CUST_6471,Sports,Product_94,3,50.8,152.39999999999998,PayPal,USA,Cancelled
+ORD_0443,2024-11-24,CUST_5921,Customer CUST_5921,Home & Garden,Product_88,3,386.75,1160.25,Bank Transfer,France,Completed
+ORD_0444,2025-04-20,CUST_6529,Customer CUST_6529,Home & Garden,Product_44,1,14.33,14.33,Credit Card,Canada,Processing
+ORD_0445,2025-06-10,CUST_9465,Customer CUST_9465,Home & Garden,Product_15,5,311.1,1555.5,Bank Transfer,USA,Shipped
+ORD_0446,2024-12-17,CUST_3487,Customer CUST_3487,Home & Garden,Product_30,4,176.98,707.92,Bank Transfer,USA,Completed
+ORD_0447,2025-02-06,CUST_6616,Customer CUST_6616,Books,Product_69,5,412.94,2064.7,Bank Transfer,Germany,Shipped
+ORD_0448,2025-06-11,CUST_2118,Customer CUST_2118,Clothing,Product_25,2,291.09,582.18,Bank Transfer,USA,Shipped
+ORD_0449,2025-04-08,CUST_2305,Customer CUST_2305,Clothing,Product_55,4,246.26,985.04,Credit Card,France,Cancelled
+ORD_0450,2024-08-29,CUST_6148,Customer CUST_6148,Clothing,Product_8,3,493.26,1479.78,Bank Transfer,UK,Processing
+ORD_0451,2025-05-04,CUST_3444,Customer CUST_3444,Clothing,Product_1,4,112.48,449.92,Bank Transfer,USA,Shipped
+ORD_0452,2025-03-15,CUST_7703,Customer CUST_7703,Electronics,Product_74,5,456.7,2283.5,Credit Card,USA,Cancelled
+ORD_0453,2024-09-10,CUST_9902,Customer CUST_9902,Electronics,Product_72,5,18.44,92.2,Credit Card,France,Completed
+ORD_0454,2025-04-05,CUST_5041,Customer CUST_5041,Electronics,Product_61,2,72.88,145.76,Credit Card,Germany,Processing
+ORD_0455,2025-01-24,CUST_1598,Customer CUST_1598,Home & Garden,Product_90,5,370.56,1852.8,Credit Card,Germany,Completed
+ORD_0456,2025-04-02,CUST_7544,Customer CUST_7544,Home & Garden,Product_38,1,411.92,411.92,PayPal,UK,Processing
+ORD_0457,2025-08-03,CUST_5918,Customer CUST_5918,Books,Product_67,1,301.44,301.44,Credit Card,USA,Cancelled
+ORD_0458,2025-05-17,CUST_1624,Customer CUST_1624,Electronics,Product_81,3,188.99,566.97,Bank Transfer,Germany,Shipped
+ORD_0459,2025-03-25,CUST_4791,Customer CUST_4791,Sports,Product_74,5,239.21,1196.05,PayPal,Germany,Cancelled
+ORD_0460,2025-06-25,CUST_3941,Customer CUST_3941,Sports,Product_69,2,93.72,187.44,Bank Transfer,UK,Shipped
+ORD_0461,2025-04-01,CUST_5738,Customer CUST_5738,Books,Product_91,2,499.15,998.3,Credit Card,UK,Cancelled
+ORD_0462,2024-12-03,CUST_2017,Customer CUST_2017,Books,Product_92,2,86.85,173.7,PayPal,UK,Completed
+ORD_0463,2025-05-07,CUST_4725,Customer CUST_4725,Clothing,Product_1,3,377.38,1132.1399999999999,Bank Transfer,UK,Shipped
+ORD_0464,2025-06-18,CUST_3021,Customer CUST_3021,Sports,Product_10,3,160.56,481.68,PayPal,Germany,Completed
+ORD_0465,2024-09-06,CUST_9492,Customer CUST_9492,Sports,Product_52,5,457.18,2285.9,PayPal,Canada,Shipped
+ORD_0466,2025-04-23,CUST_5472,Customer CUST_5472,Electronics,Product_16,4,424.73,1698.92,PayPal,Germany,Processing
+ORD_0467,2025-04-23,CUST_2569,Customer CUST_2569,Sports,Product_83,1,382.59,382.59,Credit Card,Germany,Shipped
+ORD_0468,2025-08-06,CUST_4549,Customer CUST_4549,Home & Garden,Product_4,4,221.45,885.8,PayPal,USA,Shipped
+ORD_0469,2024-10-25,CUST_5057,Customer CUST_5057,Clothing,Product_13,4,420.54,1682.16,Bank Transfer,UK,Completed
+ORD_0470,2024-12-04,CUST_4506,Customer CUST_4506,Electronics,Product_66,2,392.09,784.18,Bank Transfer,USA,Cancelled
+ORD_0471,2025-07-03,CUST_1577,Customer CUST_1577,Books,Product_63,2,27.21,54.42,Bank Transfer,UK,Cancelled
+ORD_0472,2024-11-07,CUST_1698,Customer CUST_1698,Sports,Product_3,3,421.77,1265.31,Credit Card,Canada,Cancelled
+ORD_0473,2024-10-08,CUST_7933,Customer CUST_7933,Electronics,Product_38,2,154.24,308.48,Bank Transfer,Canada,Cancelled
+ORD_0474,2024-08-16,CUST_5138,Customer CUST_5138,Electronics,Product_1,1,35.77,35.77,PayPal,France,Cancelled
+ORD_0475,2025-03-14,CUST_7626,Customer CUST_7626,Books,Product_99,5,43.86,219.3,Credit Card,Germany,Processing
+ORD_0476,2024-10-23,CUST_4678,Customer CUST_4678,Electronics,Product_40,2,140.3,280.6,Credit Card,Germany,Cancelled
+ORD_0477,2025-08-01,CUST_1217,Customer CUST_1217,Sports,Product_53,2,218.96,437.92,Credit Card,France,Shipped
+ORD_0478,2025-06-27,CUST_7413,Customer CUST_7413,Books,Product_21,2,34.67,69.34,Bank Transfer,UK,Shipped
+ORD_0479,2025-01-02,CUST_5547,Customer CUST_5547,Sports,Product_63,2,61.87,123.74,PayPal,France,Shipped
+ORD_0480,2025-01-05,CUST_4549,Customer CUST_4549,Clothing,Product_79,4,78.17,312.68,PayPal,Germany,Cancelled
+ORD_0481,2024-11-25,CUST_1104,Customer CUST_1104,Electronics,Product_59,5,488.4,2442.0,PayPal,Canada,Processing
+ORD_0482,2025-07-27,CUST_4288,Customer CUST_4288,Home & Garden,Product_28,3,165.06,495.18,Credit Card,USA,Cancelled
+ORD_0483,2025-07-08,CUST_9643,Customer CUST_9643,Books,Product_11,4,122.06,488.24,Bank Transfer,Germany,Processing
+ORD_0484,2025-03-06,CUST_8920,Customer CUST_8920,Electronics,Product_10,4,226.52,906.08,Bank Transfer,Canada,Cancelled
+ORD_0485,2025-07-13,CUST_4013,Customer CUST_4013,Sports,Product_63,3,115.78,347.34000000000003,PayPal,UK,Processing
+ORD_0486,2024-11-22,CUST_1601,Customer CUST_1601,Electronics,Product_52,3,250.79,752.37,Credit Card,USA,Completed
+ORD_0487,2025-05-17,CUST_6375,Customer CUST_6375,Books,Product_58,5,63.98,319.9,PayPal,Germany,Shipped
+ORD_0488,2024-11-13,CUST_9847,Customer CUST_9847,Electronics,Product_72,2,237.86,475.72,PayPal,Canada,Processing
+ORD_0489,2025-01-30,CUST_3059,Customer CUST_3059,Home & Garden,Product_52,1,169.77,169.77,Bank Transfer,USA,Processing
+ORD_0490,2025-07-21,CUST_4339,Customer CUST_4339,Electronics,Product_80,1,471.27,471.27,Credit Card,USA,Completed
+ORD_0491,2024-11-21,CUST_6937,Customer CUST_6937,Books,Product_80,3,239.39,718.17,Bank Transfer,Canada,Completed
+ORD_0492,2024-08-27,CUST_1043,Customer CUST_1043,Home & Garden,Product_97,1,41.33,41.33,Credit Card,Canada,Cancelled
+ORD_0493,2025-01-07,CUST_7422,Customer CUST_7422,Clothing,Product_11,4,96.16,384.64,Bank Transfer,Germany,Shipped
+ORD_0494,2025-03-26,CUST_6902,Customer CUST_6902,Clothing,Product_31,4,375.21,1500.84,Bank Transfer,USA,Completed
+ORD_0495,2025-02-13,CUST_1656,Customer CUST_1656,Sports,Product_1,3,488.17,1464.51,PayPal,USA,Completed
+ORD_0496,2025-03-25,CUST_7439,Customer CUST_7439,Books,Product_9,5,310.48,1552.4,Credit Card,France,Cancelled
+ORD_0497,2025-05-23,CUST_7454,Customer CUST_7454,Home & Garden,Product_26,5,50.18,250.9,Credit Card,Germany,Shipped
+ORD_0498,2025-01-18,CUST_1817,Customer CUST_1817,Electronics,Product_67,3,266.73,800.19,PayPal,Canada,Cancelled
+ORD_0499,2024-09-05,CUST_5453,Customer CUST_5453,Books,Product_98,2,322.89,645.78,Credit Card,Germany,Processing
+ORD_0500,2025-06-29,CUST_8476,Customer CUST_8476,Electronics,Product_12,5,366.57,1832.85,PayPal,Canada,Processing
+ORD_0501,2025-07-29,CUST_3301,Customer CUST_3301,Home & Garden,Product_93,4,18.6,74.4,PayPal,Germany,Shipped
+ORD_0502,2025-05-28,CUST_6817,Customer CUST_6817,Sports,Product_94,1,435.9,435.9,Credit Card,Canada,Cancelled
+ORD_0503,2025-06-27,CUST_4913,Customer CUST_4913,Electronics,Product_35,5,176.46,882.3000000000001,Credit Card,UK,Shipped
+ORD_0504,2024-09-30,CUST_2228,Customer CUST_2228,Sports,Product_86,2,400.55,801.1,PayPal,USA,Cancelled
+ORD_0505,2025-02-11,CUST_3061,Customer CUST_3061,Electronics,Product_86,1,117.64,117.64,PayPal,Germany,Completed
+ORD_0506,2024-10-06,CUST_3902,Customer CUST_3902,Sports,Product_42,4,238.04,952.16,Bank Transfer,France,Cancelled
+ORD_0507,2024-09-06,CUST_4982,Customer CUST_4982,Books,Product_50,3,425.9,1277.6999999999998,Bank Transfer,USA,Shipped
+ORD_0508,2025-07-05,CUST_5558,Customer CUST_5558,Clothing,Product_35,5,259.68,1298.4,Bank Transfer,USA,Completed
+ORD_0509,2024-09-11,CUST_5353,Customer CUST_5353,Sports,Product_37,5,308.41,1542.0500000000002,PayPal,USA,Shipped
+ORD_0510,2025-03-12,CUST_3029,Customer CUST_3029,Clothing,Product_37,1,362.4,362.4,PayPal,France,Cancelled
+ORD_0511,2025-07-12,CUST_7530,Customer CUST_7530,Home & Garden,Product_84,2,312.41,624.82,Credit Card,France,Completed
+ORD_0512,2025-05-17,CUST_8229,Customer CUST_8229,Electronics,Product_27,2,53.07,106.14,Bank Transfer,Canada,Cancelled
+ORD_0513,2025-02-23,CUST_8383,Customer CUST_8383,Books,Product_74,1,204.25,204.25,Bank Transfer,Germany,Shipped
+ORD_0514,2025-06-08,CUST_6692,Customer CUST_6692,Sports,Product_63,1,271.46,271.46,Credit Card,Canada,Cancelled
+ORD_0515,2024-10-08,CUST_4607,Customer CUST_4607,Clothing,Product_13,2,87.8,175.6,PayPal,UK,Shipped
+ORD_0516,2024-11-17,CUST_4811,Customer CUST_4811,Books,Product_4,2,356.02,712.04,PayPal,UK,Shipped
+ORD_0517,2025-07-11,CUST_1124,Customer CUST_1124,Home & Garden,Product_64,3,339.84,1019.52,Credit Card,France,Shipped
+ORD_0518,2025-03-09,CUST_3493,Customer CUST_3493,Clothing,Product_71,2,109.31,218.62,Credit Card,Germany,Cancelled
+ORD_0519,2025-04-30,CUST_6430,Customer CUST_6430,Sports,Product_44,1,491.47,491.47,Credit Card,UK,Completed
+ORD_0520,2024-11-19,CUST_8657,Customer CUST_8657,Electronics,Product_22,1,11.55,11.55,PayPal,Germany,Processing
+ORD_0521,2024-09-29,CUST_5562,Customer CUST_5562,Clothing,Product_39,1,234.79,234.79,Credit Card,UK,Completed
+ORD_0522,2025-04-28,CUST_6433,Customer CUST_6433,Books,Product_26,2,328.04,656.08,Credit Card,UK,Shipped
+ORD_0523,2025-02-17,CUST_3946,Customer CUST_3946,Home & Garden,Product_66,1,62.23,62.23,Credit Card,USA,Shipped
+ORD_0524,2024-09-09,CUST_5151,Customer CUST_5151,Home & Garden,Product_41,1,309.81,309.81,Credit Card,Germany,Cancelled
+ORD_0525,2025-01-01,CUST_9659,Customer CUST_9659,Books,Product_99,4,30.79,123.16,Credit Card,UK,Processing
+ORD_0526,2024-09-14,CUST_9750,Customer CUST_9750,Clothing,Product_50,3,476.73,1430.19,Bank Transfer,USA,Shipped
+ORD_0527,2025-02-03,CUST_8795,Customer CUST_8795,Clothing,Product_97,5,193.49,967.45,PayPal,USA,Processing
+ORD_0528,2025-01-24,CUST_4843,Customer CUST_4843,Books,Product_34,5,63.12,315.59999999999997,Bank Transfer,USA,Shipped
+ORD_0529,2024-10-22,CUST_6636,Customer CUST_6636,Clothing,Product_57,2,222.07,444.14,PayPal,USA,Shipped
+ORD_0530,2025-02-18,CUST_2545,Customer CUST_2545,Electronics,Product_73,2,216.25,432.5,PayPal,Germany,Completed
+ORD_0531,2025-03-18,CUST_7608,Customer CUST_7608,Home & Garden,Product_78,5,309.88,1549.4,Bank Transfer,USA,Shipped
+ORD_0532,2024-12-13,CUST_9837,Customer CUST_9837,Sports,Product_12,1,81.3,81.3,PayPal,Canada,Processing
+ORD_0533,2025-08-04,CUST_2769,Customer CUST_2769,Clothing,Product_42,1,220.21,220.21,Bank Transfer,Canada,Shipped
+ORD_0534,2025-01-24,CUST_5860,Customer CUST_5860,Sports,Product_70,1,402.57,402.57,PayPal,Canada,Processing
+ORD_0535,2024-12-24,CUST_1299,Customer CUST_1299,Clothing,Product_3,5,149.8,749.0,Bank Transfer,USA,Completed
+ORD_0536,2024-11-15,CUST_9821,Customer CUST_9821,Sports,Product_18,4,200.97,803.88,Bank Transfer,Canada,Cancelled
+ORD_0537,2024-10-13,CUST_3133,Customer CUST_3133,Home & Garden,Product_44,1,119.09,119.09,PayPal,UK,Processing
+ORD_0538,2024-10-04,CUST_6537,Customer CUST_6537,Books,Product_65,1,267.25,267.25,Credit Card,UK,Shipped
+ORD_0539,2025-04-25,CUST_3625,Customer CUST_3625,Electronics,Product_68,5,430.44,2152.2,Credit Card,UK,Cancelled
+ORD_0540,2024-12-22,CUST_5462,Customer CUST_5462,Electronics,Product_96,4,111.42,445.68,PayPal,France,Shipped
+ORD_0541,2025-08-03,CUST_8158,Customer CUST_8158,Clothing,Product_10,4,458.73,1834.92,Bank Transfer,UK,Processing
+ORD_0542,2025-08-09,CUST_4775,Customer CUST_4775,Sports,Product_70,2,485.53,971.06,Bank Transfer,UK,Shipped
+ORD_0543,2025-03-22,CUST_6392,Customer CUST_6392,Home & Garden,Product_3,2,465.21,930.42,Bank Transfer,USA,Shipped
+ORD_0544,2024-11-15,CUST_8267,Customer CUST_8267,Books,Product_13,5,180.74,903.7,Credit Card,Canada,Processing
+ORD_0545,2025-03-01,CUST_6322,Customer CUST_6322,Sports,Product_65,1,116.1,116.1,PayPal,Germany,Shipped
+ORD_0546,2025-02-06,CUST_8545,Customer CUST_8545,Electronics,Product_29,5,470.94,2354.7,PayPal,France,Cancelled
+ORD_0547,2025-05-03,CUST_9854,Customer CUST_9854,Sports,Product_40,2,290.65,581.3,Credit Card,USA,Cancelled
+ORD_0548,2024-10-10,CUST_3448,Customer CUST_3448,Home & Garden,Product_41,2,269.38,538.76,Bank Transfer,USA,Cancelled
+ORD_0549,2024-10-06,CUST_8630,Customer CUST_8630,Clothing,Product_55,3,189.72,569.16,Bank Transfer,UK,Cancelled
+ORD_0550,2024-12-14,CUST_5327,Customer CUST_5327,Electronics,Product_49,5,232.25,1161.25,Credit Card,USA,Shipped
+ORD_0551,2025-06-23,CUST_9561,Customer CUST_9561,Electronics,Product_72,1,142.7,142.7,Credit Card,USA,Shipped
+ORD_0552,2025-03-25,CUST_1181,Customer CUST_1181,Books,Product_48,3,261.47,784.4100000000001,Bank Transfer,Germany,Cancelled
+ORD_0553,2025-07-19,CUST_8555,Customer CUST_8555,Electronics,Product_9,3,194.14,582.42,Bank Transfer,Germany,Processing
+ORD_0554,2025-08-05,CUST_8168,Customer CUST_8168,Books,Product_52,5,251.29,1256.45,PayPal,Canada,Shipped
+ORD_0555,2025-04-04,CUST_6569,Customer CUST_6569,Books,Product_16,5,77.06,385.3,Credit Card,USA,Processing
+ORD_0556,2024-10-08,CUST_8758,Customer CUST_8758,Clothing,Product_22,4,404.45,1617.8,Bank Transfer,USA,Shipped
+ORD_0557,2025-02-17,CUST_9488,Customer CUST_9488,Home & Garden,Product_3,2,325.94,651.88,Credit Card,France,Processing
+ORD_0558,2024-08-28,CUST_9966,Customer CUST_9966,Sports,Product_93,4,289.09,1156.36,Credit Card,Germany,Cancelled
+ORD_0559,2024-12-18,CUST_7475,Customer CUST_7475,Home & Garden,Product_89,5,46.17,230.85000000000002,Bank Transfer,Germany,Shipped
+ORD_0560,2024-09-07,CUST_7532,Customer CUST_7532,Sports,Product_68,1,89.63,89.63,Credit Card,Canada,Cancelled
+ORD_0561,2025-07-21,CUST_5395,Customer CUST_5395,Home & Garden,Product_16,2,321.79,643.58,PayPal,UK,Cancelled
+ORD_0562,2025-01-03,CUST_1392,Customer CUST_1392,Sports,Product_36,5,55.47,277.35,PayPal,USA,Shipped
+ORD_0563,2024-12-29,CUST_6059,Customer CUST_6059,Books,Product_59,3,273.36,820.08,Bank Transfer,Germany,Shipped
+ORD_0564,2024-09-10,CUST_3372,Customer CUST_3372,Home & Garden,Product_15,4,48.06,192.24,PayPal,UK,Shipped
+ORD_0565,2024-08-21,CUST_7458,Customer CUST_7458,Books,Product_52,5,214.66,1073.3,Credit Card,UK,Completed
+ORD_0566,2024-10-20,CUST_8081,Customer CUST_8081,Sports,Product_41,5,183.61,918.0500000000001,PayPal,France,Completed
+ORD_0567,2025-03-18,CUST_2556,Customer CUST_2556,Home & Garden,Product_70,5,243.96,1219.8,Bank Transfer,UK,Completed
+ORD_0568,2024-12-23,CUST_8445,Customer CUST_8445,Clothing,Product_77,5,353.85,1769.25,Bank Transfer,Germany,Completed
+ORD_0569,2024-10-27,CUST_3920,Customer CUST_3920,Home & Garden,Product_97,3,412.64,1237.92,PayPal,France,Shipped
+ORD_0570,2025-03-28,CUST_6354,Customer CUST_6354,Sports,Product_88,1,244.62,244.62,Credit Card,Germany,Shipped
+ORD_0571,2025-06-15,CUST_5988,Customer CUST_5988,Electronics,Product_62,5,448.33,2241.65,Credit Card,Canada,Processing
+ORD_0572,2025-03-25,CUST_5123,Customer CUST_5123,Electronics,Product_68,5,323.89,1619.4499999999998,Bank Transfer,UK,Completed
+ORD_0573,2025-01-31,CUST_5625,Customer CUST_5625,Sports,Product_91,3,211.28,633.84,Credit Card,France,Shipped
+ORD_0574,2025-02-16,CUST_3137,Customer CUST_3137,Electronics,Product_7,1,294.75,294.75,PayPal,Germany,Shipped
+ORD_0575,2024-11-26,CUST_8887,Customer CUST_8887,Sports,Product_94,4,285.86,1143.44,Credit Card,USA,Completed
+ORD_0576,2025-05-21,CUST_3773,Customer CUST_3773,Electronics,Product_99,1,135.91,135.91,Credit Card,Canada,Completed
+ORD_0577,2025-08-06,CUST_9047,Customer CUST_9047,Clothing,Product_70,2,248.0,496.0,Credit Card,France,Processing
+ORD_0578,2025-06-11,CUST_4471,Customer CUST_4471,Home & Garden,Product_51,2,53.24,106.48,PayPal,USA,Cancelled
+ORD_0579,2024-08-16,CUST_9363,Customer CUST_9363,Books,Product_74,2,353.29,706.58,Bank Transfer,Canada,Cancelled
+ORD_0580,2024-09-08,CUST_1345,Customer CUST_1345,Clothing,Product_59,5,328.54,1642.7,Credit Card,UK,Completed
+ORD_0581,2025-02-18,CUST_8452,Customer CUST_8452,Books,Product_29,4,50.48,201.92,Bank Transfer,Germany,Cancelled
+ORD_0582,2025-04-10,CUST_3989,Customer CUST_3989,Books,Product_71,5,379.43,1897.15,Credit Card,UK,Cancelled
+ORD_0583,2024-10-16,CUST_2908,Customer CUST_2908,Electronics,Product_67,1,59.08,59.08,PayPal,USA,Processing
+ORD_0584,2025-05-10,CUST_9311,Customer CUST_9311,Home & Garden,Product_35,1,346.1,346.1,Credit Card,Canada,Processing
+ORD_0585,2024-12-17,CUST_1790,Customer CUST_1790,Sports,Product_23,1,173.56,173.56,PayPal,Germany,Shipped
+ORD_0586,2025-01-06,CUST_1135,Customer CUST_1135,Electronics,Product_61,3,260.26,780.78,PayPal,USA,Processing
+ORD_0587,2025-08-09,CUST_3765,Customer CUST_3765,Books,Product_19,1,250.36,250.36,Credit Card,USA,Cancelled
+ORD_0588,2025-05-21,CUST_3400,Customer CUST_3400,Clothing,Product_6,3,212.46,637.38,Bank Transfer,France,Cancelled
+ORD_0589,2024-10-23,CUST_1041,Customer CUST_1041,Books,Product_97,2,302.08,604.16,Bank Transfer,France,Processing
+ORD_0590,2025-05-06,CUST_3985,Customer CUST_3985,Home & Garden,Product_27,2,154.93,309.86,Bank Transfer,Germany,Processing
+ORD_0591,2025-05-08,CUST_1282,Customer CUST_1282,Home & Garden,Product_7,4,487.94,1951.76,PayPal,Germany,Cancelled
+ORD_0592,2025-04-03,CUST_2507,Customer CUST_2507,Books,Product_49,2,400.33,800.66,PayPal,Canada,Cancelled
+ORD_0593,2024-08-15,CUST_6759,Customer CUST_6759,Sports,Product_91,2,251.17,502.34,Bank Transfer,Canada,Processing
+ORD_0594,2025-04-10,CUST_4228,Customer CUST_4228,Books,Product_25,2,499.94,999.88,Credit Card,Canada,Shipped
+ORD_0595,2024-12-29,CUST_9950,Customer CUST_9950,Sports,Product_43,2,281.65,563.3,Credit Card,France,Completed
+ORD_0596,2025-01-17,CUST_2909,Customer CUST_2909,Sports,Product_7,1,210.93,210.93,PayPal,USA,Processing
+ORD_0597,2024-11-20,CUST_7925,Customer CUST_7925,Electronics,Product_29,3,173.3,519.9000000000001,Bank Transfer,France,Cancelled
+ORD_0598,2024-12-27,CUST_6997,Customer CUST_6997,Sports,Product_29,1,321.76,321.76,Credit Card,Canada,Shipped
+ORD_0599,2024-08-13,CUST_1815,Customer CUST_1815,Books,Product_98,2,126.77,253.54,Bank Transfer,Germany,Completed
+ORD_0600,2024-09-17,CUST_2532,Customer CUST_2532,Clothing,Product_78,1,199.05,199.05,PayPal,Canada,Completed
+ORD_0601,2025-03-19,CUST_7500,Customer CUST_7500,Books,Product_35,1,283.27,283.27,Bank Transfer,Germany,Completed
+ORD_0602,2024-08-30,CUST_1052,Customer CUST_1052,Electronics,Product_70,4,478.09,1912.36,PayPal,Germany,Completed
+ORD_0603,2025-04-17,CUST_9314,Customer CUST_9314,Home & Garden,Product_81,2,228.22,456.44,PayPal,UK,Shipped
+ORD_0604,2025-02-28,CUST_6864,Customer CUST_6864,Clothing,Product_96,1,443.23,443.23,PayPal,Canada,Cancelled
+ORD_0605,2025-05-30,CUST_4428,Customer CUST_4428,Sports,Product_97,3,197.07,591.21,Bank Transfer,Canada,Cancelled
+ORD_0606,2025-08-03,CUST_3998,Customer CUST_3998,Sports,Product_87,3,177.03,531.09,Bank Transfer,France,Shipped
+ORD_0607,2024-11-11,CUST_6461,Customer CUST_6461,Home & Garden,Product_13,5,193.33,966.6500000000001,Credit Card,Canada,Processing
+ORD_0608,2024-10-01,CUST_3041,Customer CUST_3041,Clothing,Product_26,5,291.12,1455.6,Credit Card,USA,Shipped
+ORD_0609,2025-07-28,CUST_9118,Customer CUST_9118,Clothing,Product_34,3,487.42,1462.26,PayPal,UK,Processing
+ORD_0610,2025-06-03,CUST_7780,Customer CUST_7780,Home & Garden,Product_87,2,303.47,606.94,PayPal,USA,Cancelled
+ORD_0611,2025-05-31,CUST_9317,Customer CUST_9317,Sports,Product_7,5,295.17,1475.8500000000001,PayPal,Canada,Cancelled
+ORD_0612,2025-01-13,CUST_3844,Customer CUST_3844,Clothing,Product_12,2,402.49,804.98,Credit Card,Canada,Cancelled
+ORD_0613,2025-05-15,CUST_7189,Customer CUST_7189,Home & Garden,Product_57,4,209.94,839.76,PayPal,Canada,Completed
+ORD_0614,2025-02-08,CUST_5967,Customer CUST_5967,Clothing,Product_31,3,278.69,836.0699999999999,PayPal,USA,Processing
+ORD_0615,2024-12-01,CUST_2651,Customer CUST_2651,Books,Product_95,4,492.49,1969.96,Bank Transfer,Germany,Completed
+ORD_0616,2025-01-09,CUST_5036,Customer CUST_5036,Books,Product_48,2,140.11,280.22,Bank Transfer,Germany,Cancelled
+ORD_0617,2024-09-15,CUST_4704,Customer CUST_4704,Sports,Product_25,2,450.94,901.88,PayPal,Germany,Processing
+ORD_0618,2025-07-15,CUST_2307,Customer CUST_2307,Home & Garden,Product_25,5,23.83,119.14999999999999,Bank Transfer,Canada,Cancelled
+ORD_0619,2025-04-11,CUST_6788,Customer CUST_6788,Books,Product_14,3,399.9,1199.6999999999998,Bank Transfer,UK,Processing
+ORD_0620,2024-12-22,CUST_1623,Customer CUST_1623,Books,Product_16,4,265.02,1060.08,Credit Card,UK,Completed
+ORD_0621,2025-02-11,CUST_8070,Customer CUST_8070,Clothing,Product_56,5,455.2,2276.0,Bank Transfer,UK,Processing
+ORD_0622,2025-03-29,CUST_4732,Customer CUST_4732,Sports,Product_77,2,130.16,260.32,Credit Card,UK,Cancelled
+ORD_0623,2024-12-03,CUST_1587,Customer CUST_1587,Clothing,Product_60,1,359.45,359.45,Credit Card,Germany,Shipped
+ORD_0624,2024-10-30,CUST_5800,Customer CUST_5800,Clothing,Product_62,5,311.07,1555.35,PayPal,USA,Processing
+ORD_0625,2025-06-09,CUST_5012,Customer CUST_5012,Electronics,Product_69,3,84.15,252.45000000000002,Bank Transfer,USA,Cancelled
+ORD_0626,2024-08-12,CUST_1303,Customer CUST_1303,Sports,Product_24,4,439.66,1758.64,Bank Transfer,Canada,Completed
+ORD_0627,2024-12-26,CUST_4643,Customer CUST_4643,Clothing,Product_42,5,35.39,176.95,PayPal,UK,Processing
+ORD_0628,2024-11-03,CUST_1106,Customer CUST_1106,Sports,Product_66,4,232.46,929.84,PayPal,France,Processing
+ORD_0629,2025-07-02,CUST_5242,Customer CUST_5242,Clothing,Product_88,3,423.95,1271.85,Credit Card,UK,Shipped
+ORD_0630,2025-02-12,CUST_2155,Customer CUST_2155,Sports,Product_100,4,12.59,50.36,Bank Transfer,France,Processing
+ORD_0631,2025-08-08,CUST_2886,Customer CUST_2886,Electronics,Product_23,5,356.86,1784.3000000000002,Credit Card,Germany,Cancelled
+ORD_0632,2024-09-06,CUST_3115,Customer CUST_3115,Electronics,Product_27,4,35.84,143.36,Bank Transfer,UK,Processing
+ORD_0633,2025-06-19,CUST_7536,Customer CUST_7536,Clothing,Product_68,2,287.64,575.28,Credit Card,UK,Processing
+ORD_0634,2024-12-23,CUST_1886,Customer CUST_1886,Clothing,Product_17,1,160.18,160.18,PayPal,UK,Completed
+ORD_0635,2025-04-15,CUST_7405,Customer CUST_7405,Home & Garden,Product_33,5,424.76,2123.8,Credit Card,USA,Processing
+ORD_0636,2025-03-29,CUST_7789,Customer CUST_7789,Sports,Product_41,3,496.23,1488.69,PayPal,Canada,Shipped
+ORD_0637,2025-04-07,CUST_2189,Customer CUST_2189,Home & Garden,Product_87,3,431.01,1293.03,Credit Card,USA,Completed
+ORD_0638,2024-11-03,CUST_2633,Customer CUST_2633,Home & Garden,Product_9,3,353.77,1061.31,PayPal,France,Cancelled
+ORD_0639,2024-09-04,CUST_1344,Customer CUST_1344,Sports,Product_61,1,454.09,454.09,Bank Transfer,UK,Completed
+ORD_0640,2024-10-03,CUST_5137,Customer CUST_5137,Books,Product_84,5,334.02,1670.1,PayPal,Canada,Cancelled
+ORD_0641,2025-03-22,CUST_1552,Customer CUST_1552,Electronics,Product_8,3,392.2,1176.6,Credit Card,Germany,Processing
+ORD_0642,2025-05-14,CUST_9168,Customer CUST_9168,Clothing,Product_67,1,467.08,467.08,Bank Transfer,Canada,Cancelled
+ORD_0643,2024-09-24,CUST_2962,Customer CUST_2962,Books,Product_57,3,364.58,1093.74,Bank Transfer,USA,Processing
+ORD_0644,2025-03-08,CUST_1675,Customer CUST_1675,Clothing,Product_44,1,178.94,178.94,PayPal,Canada,Processing
+ORD_0645,2025-01-16,CUST_6237,Customer CUST_6237,Sports,Product_8,2,312.27,624.54,PayPal,France,Cancelled
+ORD_0646,2024-10-17,CUST_3299,Customer CUST_3299,Books,Product_8,5,305.63,1528.15,Bank Transfer,Germany,Processing
+ORD_0647,2024-09-06,CUST_9569,Customer CUST_9569,Books,Product_92,4,243.66,974.64,Bank Transfer,USA,Cancelled
+ORD_0648,2025-06-16,CUST_6319,Customer CUST_6319,Clothing,Product_1,2,427.15,854.3,PayPal,France,Cancelled
+ORD_0649,2025-04-24,CUST_4024,Customer CUST_4024,Home & Garden,Product_66,2,21.98,43.96,PayPal,France,Cancelled
+ORD_0650,2024-12-18,CUST_8342,Customer CUST_8342,Clothing,Product_55,4,171.98,687.92,PayPal,Canada,Completed
+ORD_0651,2025-04-02,CUST_7510,Customer CUST_7510,Clothing,Product_41,4,373.25,1493.0,PayPal,UK,Processing
+ORD_0652,2024-12-19,CUST_3296,Customer CUST_3296,Sports,Product_46,1,82.26,82.26,Bank Transfer,Germany,Completed
+ORD_0653,2024-09-11,CUST_3070,Customer CUST_3070,Electronics,Product_7,1,197.88,197.88,Credit Card,Germany,Completed
+ORD_0654,2024-11-23,CUST_1355,Customer CUST_1355,Electronics,Product_85,2,41.57,83.14,Bank Transfer,Canada,Processing
+ORD_0655,2025-02-17,CUST_7365,Customer CUST_7365,Home & Garden,Product_78,1,438.41,438.41,Credit Card,Canada,Cancelled
+ORD_0656,2024-09-13,CUST_7343,Customer CUST_7343,Clothing,Product_25,2,200.16,400.32,Bank Transfer,UK,Completed
+ORD_0657,2024-10-20,CUST_6998,Customer CUST_6998,Electronics,Product_30,4,253.1,1012.4,Credit Card,France,Processing
+ORD_0658,2024-11-29,CUST_4797,Customer CUST_4797,Home & Garden,Product_45,2,225.61,451.22,Bank Transfer,Germany,Processing
+ORD_0659,2025-04-29,CUST_5037,Customer CUST_5037,Books,Product_100,3,79.03,237.09,Bank Transfer,USA,Shipped
+ORD_0660,2025-01-30,CUST_7556,Customer CUST_7556,Books,Product_26,1,466.37,466.37,Bank Transfer,UK,Cancelled
+ORD_0661,2025-01-23,CUST_7445,Customer CUST_7445,Sports,Product_49,2,437.02,874.04,Credit Card,France,Processing
+ORD_0662,2024-09-08,CUST_3532,Customer CUST_3532,Books,Product_62,4,51.62,206.48,PayPal,Germany,Completed
+ORD_0663,2025-03-01,CUST_2335,Customer CUST_2335,Clothing,Product_55,5,49.75,248.75,PayPal,Germany,Completed
+ORD_0664,2024-09-18,CUST_9818,Customer CUST_9818,Books,Product_2,3,158.12,474.36,PayPal,France,Completed
+ORD_0665,2025-04-10,CUST_8086,Customer CUST_8086,Home & Garden,Product_31,1,445.98,445.98,Credit Card,Canada,Cancelled
+ORD_0666,2025-01-05,CUST_2337,Customer CUST_2337,Electronics,Product_86,4,275.82,1103.28,PayPal,UK,Completed
+ORD_0667,2025-03-25,CUST_9222,Customer CUST_9222,Home & Garden,Product_98,4,373.25,1493.0,PayPal,UK,Completed
+ORD_0668,2024-11-28,CUST_9016,Customer CUST_9016,Home & Garden,Product_56,3,362.08,1086.24,Credit Card,Germany,Completed
+ORD_0669,2024-10-09,CUST_8080,Customer CUST_8080,Books,Product_69,5,434.35,2171.75,Bank Transfer,Canada,Cancelled
+ORD_0670,2024-11-15,CUST_8501,Customer CUST_8501,Clothing,Product_60,3,463.12,1389.3600000000001,PayPal,UK,Cancelled
+ORD_0671,2025-06-01,CUST_6604,Customer CUST_6604,Books,Product_26,4,333.05,1332.2,PayPal,USA,Completed
+ORD_0672,2025-08-01,CUST_2952,Customer CUST_2952,Clothing,Product_11,4,200.57,802.28,PayPal,UK,Shipped
+ORD_0673,2025-06-12,CUST_1370,Customer CUST_1370,Clothing,Product_98,3,362.06,1086.18,Credit Card,Germany,Processing
+ORD_0674,2024-09-21,CUST_4154,Customer CUST_4154,Home & Garden,Product_79,5,97.55,487.75,PayPal,Germany,Cancelled
+ORD_0675,2024-10-11,CUST_2159,Customer CUST_2159,Clothing,Product_5,5,113.5,567.5,Bank Transfer,Canada,Shipped
+ORD_0676,2025-04-23,CUST_6658,Customer CUST_6658,Clothing,Product_13,4,102.51,410.04,PayPal,France,Cancelled
+ORD_0677,2024-11-10,CUST_7229,Customer CUST_7229,Books,Product_28,1,338.17,338.17,Credit Card,USA,Cancelled
+ORD_0678,2025-03-12,CUST_1645,Customer CUST_1645,Clothing,Product_38,5,129.65,648.25,Credit Card,USA,Shipped
+ORD_0679,2025-02-08,CUST_9630,Customer CUST_9630,Electronics,Product_61,3,307.27,921.81,Bank Transfer,Germany,Cancelled
+ORD_0680,2024-12-16,CUST_6157,Customer CUST_6157,Electronics,Product_30,3,221.16,663.48,PayPal,France,Cancelled
+ORD_0681,2025-05-29,CUST_9211,Customer CUST_9211,Books,Product_63,5,231.5,1157.5,Bank Transfer,UK,Processing
+ORD_0682,2025-02-11,CUST_5580,Customer CUST_5580,Home & Garden,Product_53,5,245.13,1225.65,Credit Card,Germany,Completed
+ORD_0683,2025-08-09,CUST_1684,Customer CUST_1684,Home & Garden,Product_15,2,393.04,786.08,PayPal,Canada,Processing
+ORD_0684,2025-02-19,CUST_5628,Customer CUST_5628,Electronics,Product_47,2,99.33,198.66,Credit Card,UK,Completed
+ORD_0685,2025-05-17,CUST_9553,Customer CUST_9553,Clothing,Product_41,3,430.45,1291.35,Credit Card,USA,Completed
+ORD_0686,2024-08-13,CUST_9930,Customer CUST_9930,Sports,Product_62,1,83.94,83.94,Bank Transfer,USA,Shipped
+ORD_0687,2025-04-26,CUST_3413,Customer CUST_3413,Sports,Product_40,5,483.23,2416.15,Bank Transfer,Germany,Processing
+ORD_0688,2024-11-30,CUST_7453,Customer CUST_7453,Electronics,Product_8,1,443.1,443.1,PayPal,Germany,Cancelled
+ORD_0689,2024-10-09,CUST_7823,Customer CUST_7823,Clothing,Product_60,3,427.98,1283.94,PayPal,Canada,Shipped
+ORD_0690,2025-04-27,CUST_4054,Customer CUST_4054,Electronics,Product_29,1,86.82,86.82,Credit Card,Germany,Cancelled
+ORD_0691,2025-06-28,CUST_5416,Customer CUST_5416,Books,Product_17,3,442.01,1326.03,Bank Transfer,Germany,Completed
+ORD_0692,2025-06-17,CUST_5515,Customer CUST_5515,Electronics,Product_63,2,224.23,448.46,PayPal,USA,Completed
+ORD_0693,2024-11-06,CUST_4536,Customer CUST_4536,Clothing,Product_41,4,467.72,1870.88,PayPal,UK,Processing
+ORD_0694,2024-10-25,CUST_6248,Customer CUST_6248,Electronics,Product_15,4,66.03,264.12,Bank Transfer,Germany,Processing
+ORD_0695,2024-09-27,CUST_7295,Customer CUST_7295,Sports,Product_85,4,146.17,584.68,Credit Card,France,Processing
+ORD_0696,2025-04-18,CUST_4060,Customer CUST_4060,Electronics,Product_68,3,236.29,708.87,PayPal,France,Cancelled
+ORD_0697,2024-11-03,CUST_1706,Customer CUST_1706,Electronics,Product_26,3,91.86,275.58,Bank Transfer,Canada,Processing
+ORD_0698,2025-05-15,CUST_7500,Customer CUST_7500,Books,Product_4,1,449.94,449.94,Credit Card,USA,Processing
+ORD_0699,2025-06-02,CUST_4995,Customer CUST_4995,Books,Product_26,2,389.74,779.48,PayPal,Germany,Completed
+ORD_0700,2025-04-21,CUST_7352,Customer CUST_7352,Sports,Product_17,1,32.49,32.49,PayPal,Canada,Processing
+ORD_0701,2024-11-05,CUST_5100,Customer CUST_5100,Sports,Product_100,5,50.74,253.70000000000002,PayPal,Canada,Completed
+ORD_0702,2025-04-29,CUST_9044,Customer CUST_9044,Books,Product_17,4,379.45,1517.8,PayPal,Canada,Shipped
+ORD_0703,2025-06-10,CUST_6511,Customer CUST_6511,Clothing,Product_4,4,397.19,1588.76,Credit Card,Germany,Processing
+ORD_0704,2024-12-23,CUST_5701,Customer CUST_5701,Sports,Product_92,3,191.43,574.29,Credit Card,Germany,Completed
+ORD_0705,2025-03-22,CUST_8945,Customer CUST_8945,Sports,Product_80,3,276.96,830.8799999999999,Bank Transfer,France,Completed
+ORD_0706,2025-08-03,CUST_4071,Customer CUST_4071,Books,Product_99,3,451.18,1353.54,Credit Card,Canada,Shipped
+ORD_0707,2025-01-03,CUST_8699,Customer CUST_8699,Home & Garden,Product_62,5,32.07,160.35,Bank Transfer,Germany,Processing
+ORD_0708,2024-12-01,CUST_8495,Customer CUST_8495,Home & Garden,Product_47,1,79.48,79.48,PayPal,UK,Shipped
+ORD_0709,2024-11-18,CUST_1329,Customer CUST_1329,Home & Garden,Product_48,4,81.21,324.84,Credit Card,UK,Completed
+ORD_0710,2024-09-05,CUST_2040,Customer CUST_2040,Electronics,Product_2,1,40.26,40.26,Bank Transfer,Canada,Processing
+ORD_0711,2025-06-11,CUST_9898,Customer CUST_9898,Clothing,Product_31,4,225.77,903.08,Bank Transfer,USA,Cancelled
+ORD_0712,2024-11-20,CUST_1668,Customer CUST_1668,Sports,Product_36,3,51.62,154.85999999999999,Bank Transfer,Germany,Processing
+ORD_0713,2025-04-02,CUST_5926,Customer CUST_5926,Home & Garden,Product_33,3,91.45,274.35,Bank Transfer,UK,Cancelled
+ORD_0714,2025-02-23,CUST_2284,Customer CUST_2284,Home & Garden,Product_62,2,352.13,704.26,PayPal,USA,Processing
+ORD_0715,2025-05-22,CUST_4023,Customer CUST_4023,Sports,Product_31,2,195.53,391.06,Bank Transfer,Canada,Processing
+ORD_0716,2025-05-24,CUST_3595,Customer CUST_3595,Electronics,Product_89,4,383.59,1534.36,Credit Card,France,Cancelled
+ORD_0717,2024-12-16,CUST_2321,Customer CUST_2321,Books,Product_8,4,260.32,1041.28,Bank Transfer,Canada,Cancelled
+ORD_0718,2025-06-06,CUST_1410,Customer CUST_1410,Books,Product_39,5,177.14,885.6999999999999,Bank Transfer,USA,Cancelled
+ORD_0719,2024-10-02,CUST_8470,Customer CUST_8470,Clothing,Product_79,1,213.32,213.32,Bank Transfer,UK,Cancelled
+ORD_0720,2025-07-25,CUST_1507,Customer CUST_1507,Home & Garden,Product_50,1,219.73,219.73,Bank Transfer,UK,Completed
+ORD_0721,2025-06-10,CUST_1516,Customer CUST_1516,Electronics,Product_33,2,30.1,60.2,Credit Card,France,Cancelled
+ORD_0722,2025-06-08,CUST_4911,Customer CUST_4911,Books,Product_69,5,232.85,1164.25,Bank Transfer,Germany,Completed
+ORD_0723,2025-07-26,CUST_9182,Customer CUST_9182,Home & Garden,Product_59,1,25.61,25.61,PayPal,USA,Completed
+ORD_0724,2025-08-10,CUST_9996,Customer CUST_9996,Books,Product_73,1,345.79,345.79,Credit Card,Germany,Shipped
+ORD_0725,2025-07-15,CUST_9673,Customer CUST_9673,Books,Product_76,5,310.63,1553.15,PayPal,USA,Completed
+ORD_0726,2025-06-10,CUST_9353,Customer CUST_9353,Electronics,Product_73,3,94.27,282.81,Bank Transfer,Canada,Completed
+ORD_0727,2025-04-16,CUST_5094,Customer CUST_5094,Electronics,Product_34,5,120.87,604.35,Bank Transfer,Germany,Completed
+ORD_0728,2024-08-28,CUST_5608,Customer CUST_5608,Home & Garden,Product_12,3,389.06,1167.18,Bank Transfer,Germany,Processing
+ORD_0729,2025-03-25,CUST_4548,Customer CUST_4548,Electronics,Product_47,5,313.29,1566.45,Bank Transfer,UK,Cancelled
+ORD_0730,2025-05-04,CUST_5303,Customer CUST_5303,Home & Garden,Product_13,2,188.42,376.84,Credit Card,France,Completed
+ORD_0731,2025-07-16,CUST_1557,Customer CUST_1557,Books,Product_99,4,367.72,1470.88,Bank Transfer,Canada,Completed
+ORD_0732,2025-07-16,CUST_2047,Customer CUST_2047,Books,Product_15,2,214.91,429.82,Credit Card,Canada,Processing
+ORD_0733,2025-01-02,CUST_2072,Customer CUST_2072,Home & Garden,Product_8,1,242.29,242.29,Bank Transfer,France,Shipped
+ORD_0734,2025-03-02,CUST_7463,Customer CUST_7463,Clothing,Product_39,4,456.36,1825.44,Bank Transfer,France,Processing
+ORD_0735,2024-11-16,CUST_5120,Customer CUST_5120,Books,Product_93,1,390.36,390.36,Bank Transfer,Canada,Completed
+ORD_0736,2024-09-30,CUST_2429,Customer CUST_2429,Clothing,Product_85,4,74.96,299.84,PayPal,UK,Shipped
+ORD_0737,2025-05-15,CUST_5847,Customer CUST_5847,Sports,Product_99,4,369.8,1479.2,Bank Transfer,UK,Processing
+ORD_0738,2025-03-18,CUST_2674,Customer CUST_2674,Clothing,Product_52,1,38.26,38.26,Bank Transfer,Germany,Cancelled
+ORD_0739,2025-05-01,CUST_1096,Customer CUST_1096,Home & Garden,Product_46,4,93.48,373.92,Bank Transfer,USA,Completed
+ORD_0740,2024-12-01,CUST_1243,Customer CUST_1243,Books,Product_78,5,411.76,2058.8,Bank Transfer,Canada,Cancelled
+ORD_0741,2025-04-18,CUST_3641,Customer CUST_3641,Clothing,Product_63,4,160.1,640.4,Bank Transfer,USA,Shipped
+ORD_0742,2025-07-14,CUST_8878,Customer CUST_8878,Books,Product_48,1,398.43,398.43,Bank Transfer,USA,Processing
+ORD_0743,2025-07-05,CUST_2015,Customer CUST_2015,Books,Product_62,1,400.83,400.83,Bank Transfer,USA,Processing
+ORD_0744,2025-04-28,CUST_6058,Customer CUST_6058,Home & Garden,Product_57,2,228.92,457.84,PayPal,USA,Processing
+ORD_0745,2025-08-09,CUST_2553,Customer CUST_2553,Electronics,Product_79,2,329.29,658.58,Bank Transfer,France,Completed
+ORD_0746,2025-06-29,CUST_5319,Customer CUST_5319,Books,Product_75,4,349.89,1399.56,Credit Card,France,Cancelled
+ORD_0747,2025-04-24,CUST_9535,Customer CUST_9535,Clothing,Product_58,2,459.17,918.34,Credit Card,France,Shipped
+ORD_0748,2024-11-16,CUST_8511,Customer CUST_8511,Electronics,Product_71,1,228.07,228.07,Credit Card,Germany,Shipped
+ORD_0749,2024-11-15,CUST_6899,Customer CUST_6899,Home & Garden,Product_21,5,115.74,578.6999999999999,PayPal,Germany,Shipped
+ORD_0750,2025-04-12,CUST_5261,Customer CUST_5261,Books,Product_61,3,452.82,1358.46,PayPal,USA,Shipped
+ORD_0751,2024-11-24,CUST_5703,Customer CUST_5703,Books,Product_23,1,38.81,38.81,Credit Card,Germany,Completed
+ORD_0752,2025-07-25,CUST_6279,Customer CUST_6279,Books,Product_14,2,68.08,136.16,Credit Card,USA,Shipped
+ORD_0753,2024-10-22,CUST_8745,Customer CUST_8745,Sports,Product_84,4,190.15,760.6,Credit Card,Canada,Processing
+ORD_0754,2025-01-06,CUST_1043,Customer CUST_1043,Electronics,Product_34,3,118.17,354.51,Bank Transfer,Germany,Completed
+ORD_0755,2024-10-20,CUST_2969,Customer CUST_2969,Sports,Product_39,5,371.74,1858.7,Credit Card,Germany,Processing
+ORD_0756,2024-10-20,CUST_8629,Customer CUST_8629,Sports,Product_94,2,75.76,151.52,PayPal,USA,Processing
+ORD_0757,2024-10-12,CUST_4253,Customer CUST_4253,Sports,Product_89,2,388.01,776.02,Credit Card,Canada,Processing
+ORD_0758,2025-03-30,CUST_7126,Customer CUST_7126,Books,Product_60,4,446.99,1787.96,Credit Card,Germany,Shipped
+ORD_0759,2025-08-08,CUST_6752,Customer CUST_6752,Electronics,Product_24,1,490.74,490.74,PayPal,France,Processing
+ORD_0760,2025-04-26,CUST_7566,Customer CUST_7566,Clothing,Product_72,5,262.91,1314.5500000000002,Credit Card,Canada,Processing
+ORD_0761,2025-05-15,CUST_8999,Customer CUST_8999,Clothing,Product_19,3,439.53,1318.59,Bank Transfer,UK,Processing
+ORD_0762,2024-11-13,CUST_4417,Customer CUST_4417,Clothing,Product_41,1,483.97,483.97,Bank Transfer,France,Processing
+ORD_0763,2024-09-18,CUST_3933,Customer CUST_3933,Clothing,Product_12,1,31.59,31.59,Bank Transfer,Germany,Processing
+ORD_0764,2025-08-07,CUST_9532,Customer CUST_9532,Home & Garden,Product_57,2,239.15,478.3,Bank Transfer,Canada,Shipped
+ORD_0765,2024-09-14,CUST_3932,Customer CUST_3932,Books,Product_97,3,351.89,1055.67,Credit Card,Germany,Processing
+ORD_0766,2025-07-02,CUST_1283,Customer CUST_1283,Sports,Product_62,5,422.94,2114.7,Credit Card,France,Processing
+ORD_0767,2024-11-04,CUST_9337,Customer CUST_9337,Clothing,Product_2,1,203.21,203.21,Bank Transfer,UK,Processing
+ORD_0768,2024-09-06,CUST_8196,Customer CUST_8196,Books,Product_87,4,346.34,1385.36,Credit Card,USA,Cancelled
+ORD_0769,2025-07-10,CUST_9841,Customer CUST_9841,Home & Garden,Product_5,1,71.12,71.12,Bank Transfer,France,Processing
+ORD_0770,2025-07-16,CUST_1279,Customer CUST_1279,Electronics,Product_24,1,206.28,206.28,Bank Transfer,UK,Processing
+ORD_0771,2024-09-05,CUST_5578,Customer CUST_5578,Clothing,Product_35,5,98.8,494.0,Credit Card,Germany,Processing
+ORD_0772,2025-01-12,CUST_9952,Customer CUST_9952,Sports,Product_81,4,169.35,677.4,PayPal,Germany,Processing
+ORD_0773,2025-05-17,CUST_2488,Customer CUST_2488,Home & Garden,Product_79,5,71.77,358.84999999999997,Bank Transfer,USA,Cancelled
+ORD_0774,2024-09-02,CUST_4414,Customer CUST_4414,Clothing,Product_89,1,333.16,333.16,Credit Card,France,Cancelled
+ORD_0775,2024-09-21,CUST_5595,Customer CUST_5595,Books,Product_26,2,87.14,174.28,Credit Card,UK,Cancelled
+ORD_0776,2025-03-23,CUST_8796,Customer CUST_8796,Electronics,Product_62,2,325.46,650.92,Credit Card,UK,Completed
+ORD_0777,2025-01-19,CUST_2588,Customer CUST_2588,Sports,Product_91,3,487.14,1461.42,Credit Card,Germany,Processing
+ORD_0778,2025-02-28,CUST_8727,Customer CUST_8727,Books,Product_60,1,68.88,68.88,PayPal,Canada,Cancelled
+ORD_0779,2024-12-25,CUST_2228,Customer CUST_2228,Home & Garden,Product_13,2,472.73,945.46,PayPal,Canada,Completed
+ORD_0780,2025-06-26,CUST_1752,Customer CUST_1752,Electronics,Product_24,4,405.29,1621.16,PayPal,USA,Processing
+ORD_0781,2025-02-27,CUST_9605,Customer CUST_9605,Sports,Product_98,4,359.41,1437.64,PayPal,Germany,Completed
+ORD_0782,2025-04-01,CUST_4639,Customer CUST_4639,Home & Garden,Product_22,4,232.18,928.72,Credit Card,Canada,Processing
+ORD_0783,2025-07-09,CUST_5344,Customer CUST_5344,Sports,Product_31,1,455.59,455.59,PayPal,USA,Shipped
+ORD_0784,2024-10-12,CUST_3371,Customer CUST_3371,Clothing,Product_35,1,217.04,217.04,Credit Card,Germany,Processing
+ORD_0785,2025-07-29,CUST_7990,Customer CUST_7990,Electronics,Product_62,5,327.75,1638.75,Bank Transfer,Germany,Completed
+ORD_0786,2024-10-20,CUST_1101,Customer CUST_1101,Electronics,Product_3,3,39.95,119.85000000000001,Credit Card,Germany,Completed
+ORD_0787,2024-12-14,CUST_3745,Customer CUST_3745,Books,Product_52,4,76.14,304.56,PayPal,Canada,Cancelled
+ORD_0788,2024-09-28,CUST_3950,Customer CUST_3950,Clothing,Product_58,4,220.53,882.12,Credit Card,Germany,Processing
+ORD_0789,2024-08-30,CUST_1198,Customer CUST_1198,Sports,Product_16,5,66.21,331.04999999999995,PayPal,Germany,Cancelled
+ORD_0790,2025-05-23,CUST_1845,Customer CUST_1845,Electronics,Product_81,5,218.24,1091.2,PayPal,UK,Cancelled
+ORD_0791,2025-05-15,CUST_6927,Customer CUST_6927,Sports,Product_2,5,190.29,951.4499999999999,Bank Transfer,UK,Completed
+ORD_0792,2025-01-30,CUST_2966,Customer CUST_2966,Electronics,Product_3,3,379.08,1137.24,Bank Transfer,France,Cancelled
+ORD_0793,2024-10-15,CUST_4107,Customer CUST_4107,Home & Garden,Product_54,2,15.98,31.96,Credit Card,France,Completed
+ORD_0794,2025-03-25,CUST_1222,Customer CUST_1222,Home & Garden,Product_25,2,232.02,464.04,PayPal,Canada,Completed
+ORD_0795,2025-01-15,CUST_5336,Customer CUST_5336,Books,Product_40,2,134.03,268.06,Credit Card,Canada,Completed
+ORD_0796,2025-08-06,CUST_1652,Customer CUST_1652,Home & Garden,Product_69,4,116.75,467.0,PayPal,USA,Completed
+ORD_0797,2025-04-22,CUST_7459,Customer CUST_7459,Books,Product_80,4,290.33,1161.32,PayPal,France,Completed
+ORD_0798,2025-05-13,CUST_6139,Customer CUST_6139,Books,Product_64,2,121.12,242.24,Bank Transfer,France,Processing
+ORD_0799,2025-04-17,CUST_1082,Customer CUST_1082,Clothing,Product_10,1,211.98,211.98,Bank Transfer,Canada,Cancelled
+ORD_0800,2025-05-06,CUST_2453,Customer CUST_2453,Home & Garden,Product_58,2,260.97,521.94,PayPal,UK,Cancelled
+ORD_0801,2024-12-19,CUST_5366,Customer CUST_5366,Books,Product_86,2,310.46,620.92,Credit Card,UK,Shipped
+ORD_0802,2024-09-28,CUST_4640,Customer CUST_4640,Clothing,Product_7,2,368.77,737.54,PayPal,UK,Shipped
+ORD_0803,2024-09-19,CUST_4771,Customer CUST_4771,Clothing,Product_73,2,239.29,478.58,PayPal,Canada,Cancelled
+ORD_0804,2024-12-14,CUST_4340,Customer CUST_4340,Home & Garden,Product_96,3,355.63,1066.8899999999999,PayPal,Canada,Cancelled
+ORD_0805,2025-06-28,CUST_3741,Customer CUST_3741,Electronics,Product_88,1,112.4,112.4,Credit Card,Germany,Cancelled
+ORD_0806,2024-10-20,CUST_4542,Customer CUST_4542,Home & Garden,Product_67,4,49.87,199.48,Bank Transfer,UK,Completed
+ORD_0807,2025-05-14,CUST_9973,Customer CUST_9973,Home & Garden,Product_4,4,77.74,310.96,Credit Card,Canada,Processing
+ORD_0808,2025-07-13,CUST_5979,Customer CUST_5979,Home & Garden,Product_33,5,294.27,1471.35,Credit Card,UK,Processing
+ORD_0809,2024-10-20,CUST_5625,Customer CUST_5625,Sports,Product_59,4,354.0,1416.0,Bank Transfer,USA,Cancelled
+ORD_0810,2024-09-17,CUST_7707,Customer CUST_7707,Sports,Product_20,5,307.64,1538.1999999999998,Bank Transfer,Germany,Completed
+ORD_0811,2025-02-08,CUST_6418,Customer CUST_6418,Sports,Product_69,5,473.51,2367.55,Credit Card,France,Completed
+ORD_0812,2024-08-21,CUST_6758,Customer CUST_6758,Electronics,Product_26,2,446.09,892.18,PayPal,Germany,Processing
+ORD_0813,2025-05-13,CUST_9945,Customer CUST_9945,Books,Product_24,5,369.67,1848.3500000000001,Bank Transfer,Germany,Completed
+ORD_0814,2025-05-18,CUST_3697,Customer CUST_3697,Books,Product_69,2,266.68,533.36,PayPal,Canada,Shipped
+ORD_0815,2025-03-30,CUST_5384,Customer CUST_5384,Home & Garden,Product_32,3,206.1,618.3,PayPal,Germany,Shipped
+ORD_0816,2024-10-21,CUST_1901,Customer CUST_1901,Sports,Product_93,5,58.34,291.70000000000005,Credit Card,UK,Shipped
+ORD_0817,2024-08-19,CUST_3605,Customer CUST_3605,Electronics,Product_15,4,117.24,468.96,Credit Card,UK,Cancelled
+ORD_0818,2025-06-04,CUST_6139,Customer CUST_6139,Books,Product_47,4,409.47,1637.88,Credit Card,USA,Processing
+ORD_0819,2025-07-01,CUST_7653,Customer CUST_7653,Clothing,Product_97,3,248.0,744.0,Credit Card,UK,Shipped
+ORD_0820,2025-04-11,CUST_7698,Customer CUST_7698,Sports,Product_87,3,444.71,1334.1299999999999,Bank Transfer,Germany,Cancelled
+ORD_0821,2025-08-04,CUST_5181,Customer CUST_5181,Sports,Product_74,3,347.81,1043.43,Bank Transfer,Germany,Completed
+ORD_0822,2025-03-21,CUST_5425,Customer CUST_5425,Clothing,Product_82,4,20.78,83.12,Credit Card,Canada,Shipped
+ORD_0823,2025-07-27,CUST_6348,Customer CUST_6348,Sports,Product_84,1,179.11,179.11,Bank Transfer,Canada,Shipped
+ORD_0824,2025-02-17,CUST_7295,Customer CUST_7295,Sports,Product_42,3,41.14,123.42,PayPal,Canada,Processing
+ORD_0825,2024-11-17,CUST_1503,Customer CUST_1503,Clothing,Product_8,1,463.37,463.37,Bank Transfer,France,Shipped
+ORD_0826,2025-02-22,CUST_9386,Customer CUST_9386,Electronics,Product_97,1,446.92,446.92,PayPal,France,Processing
+ORD_0827,2024-09-25,CUST_1100,Customer CUST_1100,Clothing,Product_69,3,196.28,588.84,PayPal,USA,Cancelled
+ORD_0828,2025-02-21,CUST_7934,Customer CUST_7934,Clothing,Product_11,2,337.62,675.24,Bank Transfer,USA,Completed
+ORD_0829,2025-01-16,CUST_5086,Customer CUST_5086,Sports,Product_3,3,247.37,742.11,Credit Card,UK,Shipped
+ORD_0830,2025-06-11,CUST_4172,Customer CUST_4172,Home & Garden,Product_29,5,439.13,2195.65,PayPal,USA,Cancelled
+ORD_0831,2025-04-16,CUST_1443,Customer CUST_1443,Electronics,Product_37,2,126.28,252.56,Bank Transfer,UK,Shipped
+ORD_0832,2025-02-27,CUST_8342,Customer CUST_8342,Sports,Product_72,2,409.22,818.44,Credit Card,Canada,Completed
+ORD_0833,2025-01-09,CUST_2119,Customer CUST_2119,Home & Garden,Product_62,2,499.06,998.12,Bank Transfer,USA,Cancelled
+ORD_0834,2024-11-10,CUST_5035,Customer CUST_5035,Sports,Product_62,5,33.75,168.75,Bank Transfer,USA,Completed
+ORD_0835,2025-06-07,CUST_1906,Customer CUST_1906,Sports,Product_80,5,449.46,2247.2999999999997,PayPal,France,Cancelled
+ORD_0836,2025-06-17,CUST_1649,Customer CUST_1649,Home & Garden,Product_20,1,251.28,251.28,Credit Card,UK,Cancelled
+ORD_0837,2025-04-15,CUST_7755,Customer CUST_7755,Electronics,Product_64,1,270.24,270.24,PayPal,UK,Processing
+ORD_0838,2025-02-08,CUST_1121,Customer CUST_1121,Clothing,Product_67,1,265.9,265.9,Bank Transfer,Canada,Cancelled
+ORD_0839,2025-04-22,CUST_9390,Customer CUST_9390,Clothing,Product_78,1,295.73,295.73,Credit Card,Canada,Shipped
+ORD_0840,2024-12-18,CUST_1498,Customer CUST_1498,Clothing,Product_33,5,325.99,1629.95,PayPal,USA,Cancelled
+ORD_0841,2025-07-05,CUST_8286,Customer CUST_8286,Electronics,Product_85,4,353.88,1415.52,Credit Card,Germany,Processing
+ORD_0842,2025-02-12,CUST_1992,Customer CUST_1992,Clothing,Product_63,5,262.25,1311.25,Bank Transfer,UK,Completed
+ORD_0843,2025-02-23,CUST_5965,Customer CUST_5965,Clothing,Product_75,1,358.13,358.13,Bank Transfer,Canada,Completed
+ORD_0844,2025-01-20,CUST_1298,Customer CUST_1298,Electronics,Product_12,4,238.65,954.6,Credit Card,USA,Shipped
+ORD_0845,2025-02-01,CUST_7457,Customer CUST_7457,Sports,Product_74,1,96.56,96.56,Credit Card,USA,Processing
+ORD_0846,2024-11-08,CUST_8373,Customer CUST_8373,Clothing,Product_75,3,174.19,522.5699999999999,Bank Transfer,France,Cancelled
+ORD_0847,2024-09-10,CUST_5565,Customer CUST_5565,Electronics,Product_70,4,359.04,1436.16,Bank Transfer,Germany,Completed
+ORD_0848,2024-10-16,CUST_8905,Customer CUST_8905,Sports,Product_62,2,348.94,697.88,Bank Transfer,USA,Processing
+ORD_0849,2024-11-12,CUST_7468,Customer CUST_7468,Sports,Product_69,2,39.86,79.72,Bank Transfer,UK,Shipped
+ORD_0850,2024-11-07,CUST_7478,Customer CUST_7478,Books,Product_20,4,118.55,474.2,Bank Transfer,USA,Cancelled
+ORD_0851,2024-09-26,CUST_9886,Customer CUST_9886,Sports,Product_21,4,291.59,1166.36,Bank Transfer,Germany,Shipped
+ORD_0852,2025-08-02,CUST_5892,Customer CUST_5892,Clothing,Product_50,2,231.27,462.54,Credit Card,Germany,Cancelled
+ORD_0853,2025-03-25,CUST_7119,Customer CUST_7119,Home & Garden,Product_5,5,412.56,2062.8,PayPal,France,Processing
+ORD_0854,2025-07-01,CUST_8660,Customer CUST_8660,Sports,Product_68,3,413.8,1241.4,PayPal,Canada,Completed
+ORD_0855,2025-03-12,CUST_9937,Customer CUST_9937,Sports,Product_70,3,358.86,1076.58,PayPal,Canada,Processing
+ORD_0856,2025-06-23,CUST_3158,Customer CUST_3158,Sports,Product_5,1,46.98,46.98,PayPal,Canada,Completed
+ORD_0857,2025-01-24,CUST_8727,Customer CUST_8727,Electronics,Product_9,3,370.31,1110.93,Credit Card,UK,Shipped
+ORD_0858,2024-12-23,CUST_1576,Customer CUST_1576,Sports,Product_50,3,172.99,518.97,Credit Card,USA,Processing
+ORD_0859,2025-01-05,CUST_7669,Customer CUST_7669,Home & Garden,Product_40,5,390.46,1952.3,Credit Card,USA,Shipped
+ORD_0860,2025-06-11,CUST_3996,Customer CUST_3996,Home & Garden,Product_16,3,76.06,228.18,PayPal,Germany,Cancelled
+ORD_0861,2024-08-12,CUST_1294,Customer CUST_1294,Books,Product_83,4,302.3,1209.2,PayPal,USA,Cancelled
+ORD_0862,2025-01-28,CUST_4338,Customer CUST_4338,Books,Product_95,3,113.86,341.58,Credit Card,France,Processing
+ORD_0863,2024-12-07,CUST_4667,Customer CUST_4667,Electronics,Product_31,3,441.29,1323.8700000000001,PayPal,Canada,Shipped
+ORD_0864,2025-04-11,CUST_2134,Customer CUST_2134,Clothing,Product_27,4,17.41,69.64,PayPal,Canada,Cancelled
+ORD_0865,2025-03-19,CUST_9736,Customer CUST_9736,Home & Garden,Product_69,5,230.59,1152.95,Credit Card,Germany,Shipped
+ORD_0866,2025-06-07,CUST_4434,Customer CUST_4434,Clothing,Product_85,5,306.8,1534.0,Credit Card,Germany,Cancelled
+ORD_0867,2024-08-24,CUST_3209,Customer CUST_3209,Books,Product_60,1,174.86,174.86,PayPal,UK,Processing
+ORD_0868,2025-02-21,CUST_2588,Customer CUST_2588,Sports,Product_51,2,127.94,255.88,Bank Transfer,Germany,Cancelled
+ORD_0869,2025-05-18,CUST_6036,Customer CUST_6036,Clothing,Product_17,1,282.57,282.57,Credit Card,France,Completed
+ORD_0870,2024-09-16,CUST_5359,Customer CUST_5359,Clothing,Product_82,3,490.26,1470.78,PayPal,France,Shipped
+ORD_0871,2024-09-19,CUST_1443,Customer CUST_1443,Sports,Product_69,5,139.3,696.5,Credit Card,USA,Cancelled
+ORD_0872,2025-06-10,CUST_1191,Customer CUST_1191,Sports,Product_65,3,110.64,331.92,Credit Card,Germany,Completed
+ORD_0873,2025-03-31,CUST_4755,Customer CUST_4755,Clothing,Product_38,5,65.89,329.45,Credit Card,UK,Completed
+ORD_0874,2024-11-07,CUST_6209,Customer CUST_6209,Books,Product_94,1,463.92,463.92,PayPal,Germany,Cancelled
+ORD_0875,2024-08-25,CUST_6043,Customer CUST_6043,Books,Product_26,2,342.11,684.22,Credit Card,France,Completed
+ORD_0876,2025-02-28,CUST_7089,Customer CUST_7089,Books,Product_24,1,252.51,252.51,PayPal,UK,Cancelled
+ORD_0877,2024-12-22,CUST_4314,Customer CUST_4314,Books,Product_29,3,318.91,956.73,Bank Transfer,France,Cancelled
+ORD_0878,2024-11-15,CUST_9847,Customer CUST_9847,Books,Product_80,5,133.34,666.7,PayPal,UK,Cancelled
+ORD_0879,2025-04-13,CUST_5420,Customer CUST_5420,Home & Garden,Product_31,3,148.27,444.81000000000006,Credit Card,USA,Processing
+ORD_0880,2025-05-28,CUST_2544,Customer CUST_2544,Sports,Product_43,3,304.87,914.61,Credit Card,Germany,Processing
+ORD_0881,2024-09-26,CUST_3510,Customer CUST_3510,Clothing,Product_35,4,84.13,336.52,Credit Card,UK,Processing
+ORD_0882,2025-05-16,CUST_5085,Customer CUST_5085,Sports,Product_59,2,386.5,773.0,Bank Transfer,USA,Shipped
+ORD_0883,2024-09-02,CUST_6305,Customer CUST_6305,Clothing,Product_16,2,60.51,121.02,Bank Transfer,USA,Shipped
+ORD_0884,2024-11-22,CUST_5797,Customer CUST_5797,Electronics,Product_26,4,52.37,209.48,PayPal,France,Processing
+ORD_0885,2025-07-19,CUST_3308,Customer CUST_3308,Clothing,Product_46,2,381.87,763.74,Bank Transfer,France,Shipped
+ORD_0886,2025-05-11,CUST_3312,Customer CUST_3312,Books,Product_70,5,284.41,1422.0500000000002,PayPal,Canada,Processing
+ORD_0887,2025-03-02,CUST_2624,Customer CUST_2624,Sports,Product_5,2,310.27,620.54,Bank Transfer,UK,Cancelled
+ORD_0888,2024-11-07,CUST_1071,Customer CUST_1071,Electronics,Product_91,1,353.5,353.5,PayPal,Germany,Cancelled
+ORD_0889,2025-04-08,CUST_5301,Customer CUST_5301,Sports,Product_85,4,461.05,1844.2,Credit Card,Germany,Processing
+ORD_0890,2025-02-18,CUST_2194,Customer CUST_2194,Electronics,Product_24,1,251.79,251.79,PayPal,Canada,Cancelled
+ORD_0891,2025-08-06,CUST_7807,Customer CUST_7807,Clothing,Product_19,3,439.66,1318.98,Bank Transfer,Canada,Shipped
+ORD_0892,2025-03-01,CUST_9789,Customer CUST_9789,Clothing,Product_30,4,350.96,1403.84,PayPal,France,Shipped
+ORD_0893,2025-04-12,CUST_6715,Customer CUST_6715,Electronics,Product_10,5,245.29,1226.45,Credit Card,UK,Processing
+ORD_0894,2025-01-26,CUST_4953,Customer CUST_4953,Clothing,Product_60,3,73.61,220.82999999999998,Credit Card,Germany,Processing
+ORD_0895,2024-12-11,CUST_3579,Customer CUST_3579,Sports,Product_8,2,204.29,408.58,Bank Transfer,USA,Cancelled
+ORD_0896,2024-08-15,CUST_1979,Customer CUST_1979,Electronics,Product_22,1,254.22,254.22,PayPal,Canada,Processing
+ORD_0897,2024-10-18,CUST_7198,Customer CUST_7198,Home & Garden,Product_97,2,159.41,318.82,Credit Card,Germany,Completed
+ORD_0898,2025-01-22,CUST_2865,Customer CUST_2865,Sports,Product_27,2,495.78,991.56,PayPal,UK,Processing
+ORD_0899,2024-12-18,CUST_1273,Customer CUST_1273,Home & Garden,Product_73,2,460.27,920.54,PayPal,Germany,Completed
+ORD_0900,2024-11-04,CUST_9774,Customer CUST_9774,Books,Product_23,4,223.5,894.0,Credit Card,Germany,Cancelled
+ORD_0901,2024-10-18,CUST_7621,Customer CUST_7621,Sports,Product_2,2,431.68,863.36,Bank Transfer,Germany,Cancelled
+ORD_0902,2024-09-08,CUST_8702,Customer CUST_8702,Books,Product_90,3,63.62,190.85999999999999,PayPal,France,Processing
+ORD_0903,2025-01-29,CUST_2913,Customer CUST_2913,Clothing,Product_97,2,285.37,570.74,Bank Transfer,France,Completed
+ORD_0904,2025-04-17,CUST_5465,Customer CUST_5465,Electronics,Product_50,2,27.8,55.6,PayPal,Canada,Cancelled
+ORD_0905,2025-01-01,CUST_8895,Customer CUST_8895,Sports,Product_77,3,444.78,1334.34,Bank Transfer,Canada,Cancelled
+ORD_0906,2025-04-03,CUST_6119,Customer CUST_6119,Electronics,Product_54,2,437.68,875.36,Bank Transfer,USA,Processing
+ORD_0907,2024-09-22,CUST_9271,Customer CUST_9271,Home & Garden,Product_49,1,472.59,472.59,Bank Transfer,Canada,Completed
+ORD_0908,2024-08-14,CUST_8998,Customer CUST_8998,Clothing,Product_49,2,317.66,635.32,Bank Transfer,UK,Shipped
+ORD_0909,2025-01-03,CUST_6717,Customer CUST_6717,Books,Product_35,4,385.33,1541.32,Credit Card,France,Shipped
+ORD_0910,2024-09-15,CUST_7185,Customer CUST_7185,Electronics,Product_27,2,33.08,66.16,Bank Transfer,Canada,Cancelled
+ORD_0911,2025-06-13,CUST_8592,Customer CUST_8592,Home & Garden,Product_69,3,76.28,228.84,PayPal,USA,Shipped
+ORD_0912,2025-06-06,CUST_1982,Customer CUST_1982,Electronics,Product_59,3,222.73,668.1899999999999,Bank Transfer,Canada,Completed
+ORD_0913,2024-09-25,CUST_5804,Customer CUST_5804,Clothing,Product_45,2,408.85,817.7,Bank Transfer,France,Shipped
+ORD_0914,2024-10-02,CUST_6665,Customer CUST_6665,Sports,Product_28,2,152.0,304.0,PayPal,USA,Completed
+ORD_0915,2025-01-23,CUST_3530,Customer CUST_3530,Books,Product_21,5,431.41,2157.05,Bank Transfer,Germany,Processing
+ORD_0916,2025-04-01,CUST_4421,Customer CUST_4421,Home & Garden,Product_92,1,351.6,351.6,PayPal,Germany,Processing
+ORD_0917,2025-04-13,CUST_6955,Customer CUST_6955,Sports,Product_24,1,52.57,52.57,Credit Card,USA,Shipped
+ORD_0918,2025-05-09,CUST_3551,Customer CUST_3551,Sports,Product_32,5,394.45,1972.25,Bank Transfer,UK,Processing
+ORD_0919,2024-12-31,CUST_6749,Customer CUST_6749,Clothing,Product_72,5,272.37,1361.85,PayPal,USA,Shipped
+ORD_0920,2024-09-24,CUST_3316,Customer CUST_3316,Sports,Product_64,2,181.17,362.34,Credit Card,Germany,Completed
+ORD_0921,2025-02-01,CUST_9061,Customer CUST_9061,Clothing,Product_27,3,467.55,1402.65,PayPal,USA,Completed
+ORD_0922,2025-08-01,CUST_9645,Customer CUST_9645,Electronics,Product_15,1,277.91,277.91,Bank Transfer,Germany,Processing
+ORD_0923,2025-07-22,CUST_1346,Customer CUST_1346,Books,Product_87,1,406.24,406.24,Bank Transfer,Germany,Cancelled
+ORD_0924,2024-10-08,CUST_3450,Customer CUST_3450,Clothing,Product_75,5,356.92,1784.6000000000001,Bank Transfer,Germany,Completed
+ORD_0925,2025-05-01,CUST_2085,Customer CUST_2085,Electronics,Product_86,2,81.66,163.32,Credit Card,France,Completed
+ORD_0926,2024-08-10,CUST_7307,Customer CUST_7307,Sports,Product_86,1,306.27,306.27,Credit Card,France,Cancelled
+ORD_0927,2025-07-01,CUST_1093,Customer CUST_1093,Clothing,Product_88,5,370.99,1854.95,Bank Transfer,Germany,Processing
+ORD_0928,2025-01-24,CUST_6061,Customer CUST_6061,Electronics,Product_43,5,39.05,195.25,Credit Card,Germany,Processing
+ORD_0929,2025-01-21,CUST_2085,Customer CUST_2085,Sports,Product_86,5,190.01,950.05,Bank Transfer,Canada,Completed
+ORD_0930,2024-12-05,CUST_5887,Customer CUST_5887,Clothing,Product_78,4,397.74,1590.96,PayPal,France,Shipped
+ORD_0931,2025-04-09,CUST_6403,Customer CUST_6403,Electronics,Product_74,3,352.3,1056.9,Credit Card,UK,Shipped
+ORD_0932,2025-06-24,CUST_6472,Customer CUST_6472,Sports,Product_13,2,385.25,770.5,Credit Card,Canada,Processing
+ORD_0933,2025-03-03,CUST_6502,Customer CUST_6502,Electronics,Product_62,2,70.14,140.28,PayPal,USA,Cancelled
+ORD_0934,2024-10-22,CUST_2865,Customer CUST_2865,Books,Product_7,3,379.07,1137.21,Credit Card,France,Shipped
+ORD_0935,2025-02-17,CUST_6088,Customer CUST_6088,Home & Garden,Product_21,2,189.69,379.38,PayPal,Canada,Processing
+ORD_0936,2025-01-13,CUST_9639,Customer CUST_9639,Books,Product_6,1,142.28,142.28,Bank Transfer,UK,Cancelled
+ORD_0937,2025-08-02,CUST_8263,Customer CUST_8263,Electronics,Product_28,3,230.05,690.1500000000001,PayPal,USA,Cancelled
+ORD_0938,2025-08-03,CUST_9297,Customer CUST_9297,Books,Product_8,3,291.76,875.28,PayPal,Germany,Completed
+ORD_0939,2024-12-27,CUST_9561,Customer CUST_9561,Electronics,Product_20,1,79.85,79.85,Bank Transfer,UK,Processing
+ORD_0940,2025-06-10,CUST_9861,Customer CUST_9861,Clothing,Product_83,1,162.46,162.46,Bank Transfer,Canada,Completed
+ORD_0941,2024-09-30,CUST_6539,Customer CUST_6539,Electronics,Product_78,2,211.51,423.02,PayPal,Germany,Cancelled
+ORD_0942,2025-05-08,CUST_8640,Customer CUST_8640,Sports,Product_28,1,119.81,119.81,Bank Transfer,Canada,Processing
+ORD_0943,2025-07-27,CUST_3301,Customer CUST_3301,Clothing,Product_31,4,89.97,359.88,Credit Card,Canada,Completed
+ORD_0944,2024-12-16,CUST_3257,Customer CUST_3257,Home & Garden,Product_55,2,76.24,152.48,PayPal,France,Completed
+ORD_0945,2024-11-25,CUST_6341,Customer CUST_6341,Clothing,Product_68,1,118.42,118.42,PayPal,Canada,Shipped
+ORD_0946,2025-05-24,CUST_4090,Customer CUST_4090,Books,Product_9,1,396.99,396.99,Credit Card,USA,Cancelled
+ORD_0947,2024-08-14,CUST_3913,Customer CUST_3913,Books,Product_64,3,291.29,873.8700000000001,PayPal,USA,Processing
+ORD_0948,2025-05-28,CUST_1676,Customer CUST_1676,Clothing,Product_1,5,209.1,1045.5,PayPal,Canada,Shipped
+ORD_0949,2024-08-18,CUST_9511,Customer CUST_9511,Clothing,Product_28,5,192.22,961.1,PayPal,Germany,Cancelled
+ORD_0950,2025-06-12,CUST_9439,Customer CUST_9439,Books,Product_61,5,201.63,1008.15,PayPal,UK,Processing
+ORD_0951,2024-08-15,CUST_7138,Customer CUST_7138,Books,Product_3,4,334.51,1338.04,Credit Card,Canada,Cancelled
+ORD_0952,2024-12-05,CUST_9477,Customer CUST_9477,Home & Garden,Product_71,2,190.75,381.5,Bank Transfer,Canada,Completed
+ORD_0953,2024-11-23,CUST_8759,Customer CUST_8759,Books,Product_74,4,195.14,780.56,Credit Card,Germany,Completed
+ORD_0954,2025-04-18,CUST_2544,Customer CUST_2544,Books,Product_47,4,113.32,453.28,PayPal,France,Shipped
+ORD_0955,2025-05-30,CUST_6216,Customer CUST_6216,Books,Product_25,5,357.42,1787.1000000000001,Bank Transfer,USA,Processing
+ORD_0956,2025-02-27,CUST_7851,Customer CUST_7851,Clothing,Product_39,5,457.13,2285.65,Bank Transfer,USA,Completed
+ORD_0957,2024-12-30,CUST_1571,Customer CUST_1571,Clothing,Product_5,3,309.19,927.5699999999999,Credit Card,Canada,Cancelled
+ORD_0958,2024-12-29,CUST_3763,Customer CUST_3763,Home & Garden,Product_56,1,49.16,49.16,Credit Card,UK,Processing
+ORD_0959,2025-01-29,CUST_3222,Customer CUST_3222,Books,Product_66,1,251.62,251.62,Bank Transfer,UK,Completed
+ORD_0960,2025-03-17,CUST_4245,Customer CUST_4245,Sports,Product_76,3,315.01,945.03,Bank Transfer,Canada,Cancelled
+ORD_0961,2024-11-05,CUST_2776,Customer CUST_2776,Home & Garden,Product_42,3,315.81,947.4300000000001,Bank Transfer,Canada,Shipped
+ORD_0962,2024-08-30,CUST_1846,Customer CUST_1846,Clothing,Product_5,1,274.56,274.56,PayPal,Canada,Cancelled
+ORD_0963,2024-12-03,CUST_4804,Customer CUST_4804,Books,Product_13,2,19.69,39.38,Bank Transfer,UK,Completed
+ORD_0964,2024-10-18,CUST_2869,Customer CUST_2869,Electronics,Product_82,3,359.99,1079.97,PayPal,Canada,Cancelled
+ORD_0965,2025-03-18,CUST_5021,Customer CUST_5021,Electronics,Product_85,5,224.14,1120.6999999999998,PayPal,Germany,Shipped
+ORD_0966,2024-09-25,CUST_6393,Customer CUST_6393,Sports,Product_21,4,255.16,1020.64,PayPal,UK,Shipped
+ORD_0967,2025-03-16,CUST_6127,Customer CUST_6127,Books,Product_23,2,256.48,512.96,Credit Card,USA,Processing
+ORD_0968,2025-02-19,CUST_3206,Customer CUST_3206,Home & Garden,Product_14,5,488.44,2442.2,PayPal,France,Completed
+ORD_0969,2025-07-05,CUST_7729,Customer CUST_7729,Home & Garden,Product_36,5,131.31,656.55,Bank Transfer,USA,Shipped
+ORD_0970,2025-02-01,CUST_2908,Customer CUST_2908,Clothing,Product_88,3,158.98,476.93999999999994,Bank Transfer,France,Cancelled
+ORD_0971,2024-10-04,CUST_6877,Customer CUST_6877,Clothing,Product_47,3,446.49,1339.47,Credit Card,France,Cancelled
+ORD_0972,2025-06-03,CUST_5977,Customer CUST_5977,Home & Garden,Product_90,5,102.23,511.15000000000003,Credit Card,USA,Completed
+ORD_0973,2025-07-29,CUST_9283,Customer CUST_9283,Sports,Product_56,3,438.06,1314.18,Bank Transfer,Germany,Completed
+ORD_0974,2024-12-25,CUST_9499,Customer CUST_9499,Sports,Product_37,2,370.96,741.92,Credit Card,UK,Cancelled
+ORD_0975,2025-02-26,CUST_6109,Customer CUST_6109,Books,Product_48,5,188.08,940.4000000000001,Credit Card,Canada,Completed
+ORD_0976,2025-06-07,CUST_4044,Customer CUST_4044,Clothing,Product_76,5,318.52,1592.6,Credit Card,Germany,Cancelled
+ORD_0977,2025-03-21,CUST_3775,Customer CUST_3775,Electronics,Product_37,3,273.48,820.44,Bank Transfer,UK,Processing
+ORD_0978,2025-01-11,CUST_2126,Customer CUST_2126,Books,Product_40,2,392.82,785.64,PayPal,USA,Completed
+ORD_0979,2024-10-23,CUST_4031,Customer CUST_4031,Clothing,Product_31,3,292.77,878.31,Credit Card,France,Cancelled
+ORD_0980,2025-01-28,CUST_8022,Customer CUST_8022,Home & Garden,Product_62,3,240.07,720.21,PayPal,France,Cancelled
+ORD_0981,2025-08-01,CUST_1689,Customer CUST_1689,Home & Garden,Product_54,3,473.5,1420.5,Bank Transfer,France,Processing
+ORD_0982,2024-09-11,CUST_6441,Customer CUST_6441,Books,Product_98,4,445.56,1782.24,Credit Card,USA,Completed
+ORD_0983,2025-07-14,CUST_5499,Customer CUST_5499,Sports,Product_2,4,54.32,217.28,Credit Card,UK,Completed
+ORD_0984,2024-08-15,CUST_5898,Customer CUST_5898,Sports,Product_92,1,288.33,288.33,Bank Transfer,France,Cancelled
+ORD_0985,2024-10-08,CUST_4947,Customer CUST_4947,Home & Garden,Product_56,3,66.82,200.45999999999998,Bank Transfer,UK,Shipped
+ORD_0986,2025-01-12,CUST_9001,Customer CUST_9001,Electronics,Product_44,5,263.79,1318.95,Bank Transfer,France,Processing
+ORD_0987,2024-10-14,CUST_9751,Customer CUST_9751,Books,Product_68,5,13.2,66.0,Credit Card,USA,Processing
+ORD_0988,2025-03-24,CUST_6797,Customer CUST_6797,Clothing,Product_16,3,209.2,627.5999999999999,PayPal,France,Processing
+ORD_0989,2025-01-25,CUST_1084,Customer CUST_1084,Books,Product_92,1,40.21,40.21,Credit Card,Canada,Processing
+ORD_0990,2024-11-27,CUST_1935,Customer CUST_1935,Electronics,Product_27,2,68.76,137.52,PayPal,UK,Processing
+ORD_0991,2025-05-06,CUST_5025,Customer CUST_5025,Sports,Product_41,4,401.28,1605.12,PayPal,France,Completed
+ORD_0992,2025-01-15,CUST_8719,Customer CUST_8719,Sports,Product_75,1,368.03,368.03,PayPal,USA,Processing
+ORD_0993,2024-12-29,CUST_6457,Customer CUST_6457,Clothing,Product_52,2,493.53,987.06,PayPal,USA,Processing
+ORD_0994,2025-03-05,CUST_6802,Customer CUST_6802,Books,Product_84,3,345.96,1037.8799999999999,Bank Transfer,UK,Cancelled
+ORD_0995,2025-03-25,CUST_9087,Customer CUST_9087,Books,Product_36,4,387.94,1551.76,PayPal,UK,Shipped
+ORD_0996,2024-08-27,CUST_6392,Customer CUST_6392,Clothing,Product_6,3,276.33,828.99,Bank Transfer,USA,Processing
+ORD_0997,2025-05-03,CUST_9077,Customer CUST_9077,Home & Garden,Product_21,3,22.46,67.38,Bank Transfer,Canada,Shipped
+ORD_0998,2024-10-21,CUST_3138,Customer CUST_3138,Clothing,Product_36,5,50.15,250.75,Credit Card,UK,Completed
+ORD_0999,2025-02-18,CUST_6186,Customer CUST_6186,Home & Garden,Product_55,1,112.58,112.58,PayPal,France,Processing
+ORD_1000,2024-10-20,CUST_4199,Customer CUST_4199,Books,Product_42,4,395.75,1583.0,Credit Card,France,Cancelled

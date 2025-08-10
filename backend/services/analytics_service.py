@@ -13,8 +13,9 @@ from pathlib import Path
 from backend.config import get_settings
 from backend.schemas.upload import ProcessingStatus, ProcessingStatusResponse
 from backend.core.profiler.data_profiler import DataProfiler
-from backend.core.domain.detector import DomainDetector
+from backend.core.domain.detector import DomainDetector, DomainClassification, DomainType
 from backend.core.curator.dashboard_curator import DashboardCurator
+from backend.core.analyzer.csv_analyzer import csv_analyzer
 from backend.services.cache_service import cache_service
 
 logger = logging.getLogger(__name__)
@@ -69,19 +70,60 @@ class AnalyticsService:
                 0.3
             )
             
-            # Profile the data
-            profile = await self.data_profiler.profile_dataset(df, dataset_id)
+            # Use enhanced CSV analyzer
+            filename = Path(file_path).name
+            enhanced_analysis = await csv_analyzer.analyze_csv(df, filename)
             
             # Update status
             await self.update_processing_status(
                 dataset_id,
                 ProcessingStatus.PROCESSING,
-                "Detecting domain and business context...",
+                "Generating insights and visualizations...",
                 0.5
             )
             
-            # Detect domain
-            domain_info = await self.domain_detector.detect_domain(profile)
+            # Fallback to original profiler if needed
+            try:
+                profile = await self.data_profiler.profile_dataset(df, dataset_id)
+            except Exception as e:
+                logger.warning(f"Original profiler failed, using enhanced analysis: {e}")
+                # Create a simplified profile from enhanced analysis
+                profile = {
+                    "columns": {col.name: {
+                        "type": col.data_type.value,
+                        "description": col.description,
+                        "null_count": col.null_count,
+                        "unique_count": col.unique_count
+                    } for col in enhanced_analysis.columns},
+                    "shape": df.shape,
+                    "summary": enhanced_analysis.description
+                }
+            
+            # Convert enhanced analysis to DomainClassification object
+            domain_mapping = {
+                "ecommerce": DomainType.ECOMMERCE,
+                "finance": DomainType.FINANCE,
+                "manufacturing": DomainType.MANUFACTURING,
+                "saas": DomainType.SAAS,
+                "healthcare": DomainType.GENERIC,  # Map to generic for now
+                "marketing": DomainType.GENERIC,   # Map to generic for now
+                "hr": DomainType.GENERIC,          # Map to generic for now
+                "logistics": DomainType.GENERIC,   # Map to generic for now
+                "generic": DomainType.GENERIC
+            }
+            
+            domain_type = domain_mapping.get(enhanced_analysis.domain.value, DomainType.GENERIC)
+            
+            domain_info = DomainClassification(
+                domain=domain_type,
+                confidence=enhanced_analysis.confidence,
+                reasoning=enhanced_analysis.description,
+                rule_based_score=0.5,  # Default value
+                llm_score=enhanced_analysis.confidence,
+                detected_patterns=enhanced_analysis.key_insights,
+                suggested_kpis=enhanced_analysis.suggested_kpis,
+                classified_at=datetime.now()
+            )
             
             # Update status
             await self.update_processing_status(
@@ -154,26 +196,69 @@ class AnalyticsService:
         Returns:
             DataFrame with loaded data
         """
+        import chardet
+        
+        # First, detect encoding
+        encoding = 'utf-8'
         try:
-            # Use polars for efficient loading, then convert to pandas
-            df_pl = pl.read_csv(file_path, n_rows=sample_size)
-            
-            # Convert to pandas for compatibility with existing code
-            df = df_pl.to_pandas()
-            
-            logger.info(f"Loaded {len(df)} rows and {len(df.columns)} columns from {file_path}")
-            return df
-            
+            with open(file_path, 'rb') as f:
+                raw_data = f.read(10000)  # Read first 10KB to detect encoding
+                result = chardet.detect(raw_data)
+                if result['encoding']:
+                    encoding = result['encoding']
+                    logger.info(f"Detected encoding: {encoding}")
         except Exception as e:
-            logger.error(f"Failed to load CSV data: {e}")
-            # Fallback to pandas
+            logger.warning(f"Could not detect encoding, using utf-8: {e}")
+        
+        # Try multiple approaches to load the CSV
+        approaches = [
+            # Approach 1: Polars with detected encoding
+            lambda: pl.read_csv(file_path, n_rows=sample_size, encoding=encoding),
+            # Approach 2: Polars with utf-8
+            lambda: pl.read_csv(file_path, n_rows=sample_size, encoding='utf-8'),
+            # Approach 3: Polars with auto-detection
+            lambda: pl.read_csv(file_path, n_rows=sample_size),
+        ]
+        
+        for i, approach in enumerate(approaches):
             try:
-                df = pd.read_csv(file_path, nrows=sample_size)
+                logger.info(f"Trying approach {i+1} to load CSV...")
+                df_pl = approach()
+                df = df_pl.to_pandas()
+                logger.info(f"Successfully loaded {len(df)} rows and {len(df.columns)} columns")
+                return df
+            except Exception as e:
+                logger.warning(f"Approach {i+1} failed: {e}")
+                continue
+        
+        # Fallback to pandas with various options
+        pandas_approaches = [
+            # Standard pandas
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding),
+            # Try different separators
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding, sep=';'),
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding, sep='\t'),
+            # Try with different quote chars
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding, quotechar='"'),
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding, quotechar="'"),
+            # Try with error handling
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding=encoding, on_bad_lines='skip'),
+            # Last resort - latin-1 encoding (handles most files)
+            lambda: pd.read_csv(file_path, nrows=sample_size, encoding='latin-1'),
+        ]
+        
+        for i, approach in enumerate(pandas_approaches):
+            try:
+                logger.info(f"Trying pandas approach {i+1}...")
+                df = approach()
                 logger.info(f"Fallback: Loaded {len(df)} rows and {len(df.columns)} columns")
                 return df
-            except Exception as fallback_error:
-                logger.error(f"Fallback loading also failed: {fallback_error}")
-                raise
+            except Exception as e:
+                logger.warning(f"Pandas approach {i+1} failed: {e}")
+                continue
+        
+        # If all approaches fail, raise an error
+        raise Exception("Unable to load CSV file with any approach")
     
     async def get_processing_status(self, dataset_id: str) -> Optional[ProcessingStatusResponse]:
         """

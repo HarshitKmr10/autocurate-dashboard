@@ -23,6 +23,8 @@ tiktoken==0.5.2
 # File Processing
 aiofiles==23.2.1
 python-magic==0.4.27
+chardet==5.2.0
+pyarrow==14.0.2
 
 # Validation and Serialization
 pydantic==2.5.2

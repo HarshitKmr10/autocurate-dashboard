@@ -12,6 +12,7 @@ from backend.config import get_settings
 from backend.schemas.upload import (
     UploadResponse,
     ProcessingStatus,
+    ProcessingStatusResponse,
     FileValidationResponse
 )
 from backend.services.file_service import file_service
@@ -88,7 +89,7 @@ async def upload_csv(
         )
 
 
-@router.get("/{dataset_id}/status", response_model=ProcessingStatus)
+@router.get("/{dataset_id}/status", response_model=ProcessingStatusResponse)
 async def get_processing_status(dataset_id: str):
     """
     Get the processing status of an uploaded dataset.

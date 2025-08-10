@@ -11,6 +11,7 @@ from contextlib import asynccontextmanager
 from backend.config import get_settings
 from backend.api.v1 import upload, dashboard, analytics, natural_language
 from backend.services.cache_service import cache_service
+from backend.core.db import db_client
 from backend.utils.exceptions import AutocurateException
 
 # Configure logging
@@ -36,6 +37,12 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"Failed to initialize cache service: {e}")
     
+    try:
+        await db_client.connect()
+        logger.info("Database service initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize database service: {e}")
+    
     yield
     
     # Cleanup
@@ -45,6 +52,12 @@ async def lifespan(app: FastAPI):
         logger.info("Cache service closed successfully")
     except Exception as e:
         logger.error(f"Error closing cache service: {e}")
+    
+    try:
+        await db_client.disconnect()
+        logger.info("Database service closed successfully")
+    except Exception as e:
+        logger.error(f"Error closing database service: {e}")
 
 
 # Create FastAPI application
@@ -60,7 +73,7 @@ app = FastAPI(
 # Add middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins,
+    allow_origins=settings.allowed_origins_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

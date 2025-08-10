@@ -2,13 +2,16 @@
 
 import json
 import openai
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, TypeVar, Type
 import logging
 import asyncio
 from datetime import datetime
+from pydantic import BaseModel
 
 from backend.config import get_settings
 from backend.utils.exceptions import LLMException
+
+T = TypeVar('T', bound=BaseModel)
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
@@ -381,3 +384,65 @@ Respond in JSON format:
         output_cost = (completion_tokens / 1000) * output_cost_per_1k
         
         return input_cost + output_cost
+    
+    async def generate_structured_response(
+        self, 
+        prompt: str, 
+        response_model: Type[T],
+        temperature: float = 0.3,
+        system_prompt: Optional[str] = None
+    ) -> T:
+        """
+        Generate structured response using OpenAI with response format.
+        
+        Args:
+            prompt: User prompt
+            response_model: Pydantic model for structured response
+            temperature: Sampling temperature
+            system_prompt: Optional system prompt
+            
+        Returns:
+            Structured response matching the response_model
+        """
+        if system_prompt is None:
+            system_prompt = "You are a helpful AI assistant that provides accurate, structured responses."
+        
+        try:
+            # Get the JSON schema from the Pydantic model
+            schema = response_model.model_json_schema()
+            
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=temperature,
+                response_format={
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": response_model.__name__,
+                        "schema": schema,
+                        "strict": True
+                    }
+                }
+            )
+            
+            content = response.choices[0].message.content
+            if not content:
+                raise LLMException("Empty response from OpenAI")
+            
+            # Parse and validate the response
+            data = json.loads(content)
+            return response_model.model_validate(data)
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse JSON response: {e}")
+            raise LLMException(f"Invalid JSON response: {e}")
+        except Exception as e:
+            logger.error(f"Error generating structured response: {e}")
+            raise LLMException(f"Failed to generate structured response: {e}")
+
+
+# Global client instance
+llm_client = LLMClient()

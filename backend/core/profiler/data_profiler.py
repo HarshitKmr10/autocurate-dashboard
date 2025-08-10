@@ -271,14 +271,14 @@ class DataProfiler:
     def _is_boolean_column(self, series: pd.Series) -> bool:
         """Check if column contains boolean-like data."""
         unique_values = set(str(val).lower() for val in series.unique())
-        boolean_patterns = {
+        boolean_patterns = [
             {'true', 'false'},
             {'yes', 'no'},
             {'y', 'n'},
             {'1', '0'},
             {'t', 'f'},
             {'on', 'off'}
-        }
+        ]
         
         return any(unique_values.issubset(pattern) for pattern in boolean_patterns)
     
