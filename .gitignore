@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# FastAPI
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database
+*.db
+*.sqlite3
+migrations/
+
+# Logs
+*.log
+logs/
+
+# Data files
+data/uploads/*
+data/processed/*
+data/cache/*
+!data/uploads/.gitkeep
+!data/processed/.gitkeep
+!data/cache/.gitkeep
+
+# Node.js (Frontend)
+node_modules/
+.next/
+out/
+.cache/
+.vercel
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Redis dump
+dump.rdb
+
+# Prisma
+prisma/migrations/
+.env.db
+
+# Docker
+.dockerignore
+docker-compose.override.yml
