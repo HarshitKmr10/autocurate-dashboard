@@ -100,14 +100,16 @@ export function BaseChart({
     );
   }
 
+  // Use deduplicated data for chart rendering
+  const chartDataToRender = chartData;
+
   const renderRechartsChart = () => {
     try {
-      const commonProps = {
-        data: chartData,
-        margin: { top: 20, right: 30, left: 20, bottom: 20 },
-      };
-
-      // If no data, render empty state
+  // Common props for all chart types
+  const commonProps = {
+    data: chartDataToRender,
+    margin: { top: 20, right: 30, left: 20, bottom: 5 },
+  };      // If no data, render empty state
       if (!chartData || chartData.length === 0) {
         return (
           <div className="flex items-center justify-center h-full text-gray-500">
@@ -143,11 +145,11 @@ export function BaseChart({
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey={config.y_axis || "count"} // Fallback to 'count'
-                  nameKey={config.x_axis || Object.keys(chartData[0] || {})[0]} // Fallback to first column
+                  nameKey={config.x_axis || Object.keys(chartDataToRender[0] || {})[0]} // Fallback to first column
                 >
-                  {chartData.map((entry, index) => (
+                  {chartDataToRender.map((entry, index) => (
                     <Cell
-                      key={`cell-${index}`}
+                      key={`cell-${index}-${entry[config.x_axis || 'category']}`}
                       fill={colors[index % colors.length]}
                     />
                   ))}
@@ -192,6 +194,7 @@ export function BaseChart({
                 />
                 <Legend />
                 <Bar
+                  key={`bar-${config.id || 'default'}`}
                   dataKey={config.y_axis || "count"} // Fallback to 'count'
                   fill={colors[0]}
                   name={config.y_axis || "Count"}
@@ -206,7 +209,7 @@ export function BaseChart({
               <LineChart {...commonProps}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
-                  dataKey={config.x_axis || Object.keys(chartData[0] || {})[0]}
+                  dataKey={config.x_axis || Object.keys(chartDataToRender[0] || {})[0]}
                   tick={{ fontSize: 12 }}
                 />
                 <YAxis tick={{ fontSize: 12 }} />
@@ -225,6 +228,7 @@ export function BaseChart({
                 />
                 <Legend />
                 <Line
+                  key={`line-${config.id || 'default'}`}
                   type="monotone"
                   dataKey={config.y_axis || "count"} // Fallback to 'count'
                   stroke={colors[0]}
@@ -244,13 +248,13 @@ export function BaseChart({
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
                   type="number"
-                  dataKey={config.x_axis || Object.keys(chartData[0] || {})[0]}
+                  dataKey={config.x_axis || Object.keys(chartDataToRender[0] || {})[0]}
                   tick={{ fontSize: 12 }}
                   name={config.x_axis}
                 />
                 <YAxis
                   type="number"
-                  dataKey={config.y_axis || Object.keys(chartData[0] || {})[1]}
+                  dataKey={config.y_axis || Object.keys(chartDataToRender[0] || {})[1]}
                   tick={{ fontSize: 12 }}
                   name={config.y_axis}
                 />
@@ -313,7 +317,7 @@ export function BaseChart({
       switch (config.type) {
         case ChartType.HISTOGRAM:
           plotData.push({
-            x: chartData.map((d) => d[config.x_axis!]),
+            x: chartDataToRender.map((d) => d[config.x_axis!]),
             type: "histogram",
             marker: { color: colors[0] },
             name: config.x_axis,
@@ -323,7 +327,7 @@ export function BaseChart({
         case ChartType.HEATMAP:
           // This would need more complex data transformation for heatmaps
           plotData.push({
-            z: chartData.map((d) => [d[config.x_axis!], d[config.y_axis!]]),
+            z: chartDataToRender.map((d) => [d[config.x_axis!], d[config.y_axis!]]),
             type: "heatmap",
             colorscale: "Viridis",
           });
@@ -503,7 +507,8 @@ function cleanChartData(data: any[], config: ChartConfig): any[] {
     return data; // Return all data if no x_axis configured
   }
 
-  return data
+  // First, filter for valid data
+  const filteredData = data
     .filter((row) => {
       // Very lenient filtering - only remove truly empty/problematic rows
       const xValue = row[config.x_axis!];
@@ -542,6 +547,28 @@ function cleanChartData(data: any[], config: ChartConfig): any[] {
 
       return processedRow;
     });
+
+  // Deduplicate based on x_axis value to prevent React key conflicts
+  const deduplicatedData = filteredData.reduce((acc: any[], current: any) => {
+    const xAxisValue = current[config.x_axis!];
+    const existingItem = acc.find(item => item[config.x_axis!] === xAxisValue);
+    
+    if (!existingItem) {
+      acc.push(current);
+    } else {
+      // If duplicate x-axis value, keep the one with higher y-axis value (if applicable)
+      if (config.y_axis && current[config.y_axis] > existingItem[config.y_axis]) {
+        const index = acc.indexOf(existingItem);
+        acc[index] = current;
+      }
+    }
+    
+    return acc;
+  }, []);
+
+  console.log(`Data cleaning: ${data.length} -> ${filteredData.length} -> ${deduplicatedData.length} items`);
+  
+  return deduplicatedData;
 }
 
 function validateChartSpecificLenient(

@@ -170,6 +170,56 @@ async def validate_file(file: UploadFile = File(...)):
         )
 
 
+@router.post("/{dataset_id}/reprocess")
+async def reprocess_dataset(
+    dataset_id: str,
+    background_tasks: BackgroundTasks,
+    sample_size: Optional[int] = None
+):
+    """
+    Reprocess an existing dataset.
+    
+    Args:
+        dataset_id: The unique identifier for the dataset
+        sample_size: Optional sample size for analysis
+        
+    Returns:
+        Processing status
+    """
+    try:
+        # Check if dataset file exists
+        file_path = settings.upload_dir / f"{dataset_id}.csv"
+        if not file_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail="Dataset file not found"
+            )
+        
+        # Start background reprocessing
+        sample_size = sample_size or settings.default_sample_size
+        background_tasks.add_task(
+            process_csv_async,
+            dataset_id,
+            str(file_path),
+            sample_size
+        )
+        
+        return {
+            "dataset_id": dataset_id,
+            "status": "PROCESSING",
+            "message": "Reprocessing started"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error reprocessing dataset: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to reprocess dataset"
+        )
+
+
 async def process_csv_async(dataset_id: str, file_path: str, sample_size: int):
     """
     Background task to process uploaded CSV file.

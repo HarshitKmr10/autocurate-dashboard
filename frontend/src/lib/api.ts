@@ -87,6 +87,33 @@ export const parseNaturalLanguageQuery = async (datasetId: string, query: string
   return response.data;
 };
 
+export const executeNaturalLanguageQuery = async (datasetId: string, parsedQuery: any) => {
+  const response = await api.post(`/api/v1/nl/${datasetId}/execute`, { parsed_query: parsedQuery });
+  return response.data;
+};
+
+export const modifyChart = async (datasetId: string, query: string, existingChart: any) => {
+  const response = await api.post(`/api/v1/nl/${datasetId}/modify_chart`, { 
+    query, 
+    existing_chart: existingChart 
+  });
+  return response.data;
+};
+
+export const applyChartModification = async (datasetId: string, modificationPlan: any) => {
+  const response = await api.post(`/api/v1/nl/${datasetId}/apply_modification`, { 
+    modification_plan: modificationPlan 
+  });
+  return response.data;
+};
+
+export const addChartToDashboard = async (datasetId: string, chartConfig: any) => {
+  const response = await api.post(`/api/v1/nl/${datasetId}/add_to_dashboard`, { 
+    chart_config: chartConfig 
+  });
+  return response.data;
+};
+
 export const deleteDataset = async (datasetId: string) => {
   const response = await api.delete(`/api/v1/upload/${datasetId}`);
   return response.data;

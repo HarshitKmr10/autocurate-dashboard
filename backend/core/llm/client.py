@@ -68,8 +68,213 @@ Always respond with valid JSON in the exact format requested."""
             logger.error(f"Failed to parse LLM JSON response: {e}")
             raise LLMException("LLM returned invalid JSON response")
         except Exception as e:
-            logger.error(f"Domain classification failed: {e}")
-            raise LLMException(f"Domain classification failed: {str(e)}")
+            logger.error(f"Error in natural language parsing: {e}")
+            raise LLMException(f"Failed to parse natural language query: {str(e)}")
+
+    async def parse_natural_language_query_enhanced(
+        self, 
+        query: str, 
+        available_columns: List[str], 
+        domain: str,
+        profile_summary: Dict[str, Any],
+        sample_data_context: str
+    ) -> Dict[str, Any]:
+        """
+        Enhanced natural language query parsing with same context as dashboard generation.
+        
+        Args:
+            query: Natural language query from user
+            available_columns: List of available column names
+            domain: Business domain context
+            profile_summary: Rich data profile summary
+            sample_data_context: Sample data for LLM context
+            
+        Returns:
+            Parsed query with execution plan
+        """
+        system_prompt = f"""You are a data visualization expert specializing in {domain} dashboards.
+Your task is to interpret natural language queries and convert them into specific, EXECUTABLE chart configurations.
+
+⚠️ CRITICAL RULE: You can ONLY use these exact column names (copy exactly as written):
+{chr(10).join([f"  - {col}" for col in available_columns])}
+
+DO NOT use any other column names! If you use a column name not in the list above, the chart will fail.
+
+DOMAIN CONTEXT: {domain}
+TOTAL ROWS: {profile_summary.get('total_rows', 0):,}
+TOTAL COLUMNS: {profile_summary.get('total_columns', 0)}
+
+COLUMN TYPES AVAILABLE:
+- Numeric Columns: {', '.join(profile_summary.get('numeric_columns', []))}
+- Categorical Columns: {', '.join(profile_summary.get('categorical_columns', []))}
+- DateTime Columns: {', '.join(profile_summary.get('datetime_columns', []))}
+
+SAMPLE DATA CONTEXT:
+{sample_data_context}
+
+STRICT COLUMN MAPPING RULES:
+- For "revenue"/"sales"/"amount" queries → Use: {[col for col in available_columns if any(word in col.lower() for word in ['amount', 'price', 'revenue', 'total'])]}
+- For "time"/"date" queries → Use: {[col for col in available_columns if 'date' in col.lower() or 'time' in col.lower()]}
+- For "category"/"type" queries → Use: {[col for col in available_columns if 'category' in col.lower() or 'type' in col.lower()]}
+- For "method"/"channel" queries → Use: {[col for col in available_columns if 'method' in col.lower() or 'channel' in col.lower()]}
+
+⚠️ VALIDATION REQUIREMENT: Before responding, double-check that x_axis, y_axis, and color_by values are EXACTLY from this list:
+{available_columns}"""
+
+        user_prompt = f"""
+USER QUERY: "{query}"
+
+ANALYSIS INSTRUCTIONS:
+1. Understand the user's intent and desired visualization
+2. Map user terms to ACTUAL column names from the available list
+3. Choose appropriate chart type based on data types and relationships
+4. Design a chart that will definitely work with the available data
+5. For large datasets ({profile_summary.get('total_rows', 0):,} rows), consider aggregation
+
+RESPOND WITH VALID JSON:
+{{
+    "intent": "visualization|analysis|filter|summary",
+    "chart_type": "line|bar|pie|scatter|histogram|heatmap|table",
+    "chart_config": {{
+        "title": "Clear, descriptive chart title",
+        "x_axis": "exact_column_name_from_available_list_or_null",
+        "y_axis": "exact_column_name_from_available_list_or_null", 
+        "color_by": "exact_column_name_from_available_list_or_null",
+        "aggregation": "sum|avg|count|max|min|none",
+        "filters": {{}}
+    }},
+    "execution_steps": [
+        "Step 1: Load the {domain} dataset with columns: [list key columns]",
+        "Step 2: Apply aggregation/filtering as needed",
+        "Step 3: Create {{chart_type}} visualization"
+    ],
+    "column_mapping": {{
+        "user_mentioned": "what user said",
+        "mapped_to": "actual_column_name_used",
+        "reason": "why this mapping was chosen"
+    }},
+    "confidence": 0.0-1.0,
+    "reasoning": "Why this chart type and configuration will provide valuable insights",
+    "data_feasibility": {{
+        "estimated_result_rows": "number",
+        "aggregation_needed": true/false,
+        "chart_complexity": "simple|moderate|complex"
+    }}
+}}
+
+VALIDATION: Ensure ALL column names in chart_config exist in: {available_columns}"""
+
+        try:
+            response = await self.client.chat.completions.create(
+                model=self.reasoning_model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.1,
+                max_tokens=2000
+            )
+
+            result = json.loads(response.choices[0].message.content)
+            
+            # STRICT VALIDATION: Reject any non-existent columns
+            chart_config = result.get("chart_config", {})
+            referenced_columns = [
+                chart_config.get("x_axis"),
+                chart_config.get("y_axis"), 
+                chart_config.get("color_by")
+            ]
+            
+            # Check for any invalid columns and auto-correct them
+            corrections_made = False
+            for col in referenced_columns:
+                if col and col not in available_columns:
+                    logger.warning(f"LLM referenced non-existent column: {col}")
+                    corrections_made = True
+                    # Try to find closest match
+                    closest_match = self._find_closest_column_match(col, available_columns)
+                    if closest_match:
+                        logger.info(f"Auto-correcting {col} to {closest_match}")
+                        if chart_config.get("x_axis") == col:
+                            chart_config["x_axis"] = closest_match
+                        if chart_config.get("y_axis") == col:
+                            chart_config["y_axis"] = closest_match
+                        if chart_config.get("color_by") == col:
+                            chart_config["color_by"] = closest_match
+                    else:
+                        # Remove invalid column references
+                        logger.warning(f"No close match found for {col}, removing reference")
+                        if chart_config.get("x_axis") == col:
+                            chart_config["x_axis"] = None
+                        if chart_config.get("y_axis") == col:
+                            chart_config["y_axis"] = None
+                        if chart_config.get("color_by") == col:
+                            chart_config["color_by"] = None
+            
+            # Update reasoning if corrections were made
+            if corrections_made:
+                original_reasoning = result.get("reasoning", "")
+                result["reasoning"] = f"CORRECTED: {original_reasoning} [Auto-corrected invalid column references to match available data]"
+                result["confidence"] = max(0.6, result.get("confidence", 0.8) - 0.2)  # Reduce confidence for corrected queries
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Error in enhanced natural language parsing: {e}")
+            raise LLMException(f"Failed to parse enhanced query: {str(e)}")
+
+    def _find_closest_column_match(self, target_col: str, available_columns: List[str]) -> Optional[str]:
+        """Find the closest matching column name using smart matching logic."""
+        target_lower = target_col.lower()
+        
+        # Exact match first
+        for col in available_columns:
+            if target_lower == col.lower():
+                return col
+        
+        # Direct substring matches
+        for col in available_columns:
+            if target_lower in col.lower() or col.lower() in target_lower:
+                return col
+        
+        # Smart semantic matches for common patterns
+        semantic_mappings = {
+            # Time/Date patterns
+            ("timestamp", "time", "date", "when"): ["order_date", "created_at", "updated_at", "date"],
+            # Revenue/Money patterns  
+            ("revenue", "sales", "money", "amount", "price", "cost", "value", "usd", "total"): 
+                ["total_amount", "amount", "price", "cost", "revenue", "sales"],
+            # Category patterns
+            ("category", "type", "kind", "group", "segment"): 
+                ["product_category", "category", "type", "segment"],
+            # ID patterns
+            ("id", "identifier", "key"): ["order_id", "customer_id", "product_id", "id"],
+            # Method/Channel patterns
+            ("method", "channel", "way", "mode"): ["payment_method", "shipping_method", "method"],
+            # Status patterns
+            ("status", "state", "condition"): ["order_status", "status", "state"]
+        }
+        
+        for keywords, target_patterns in semantic_mappings.items():
+            if any(keyword in target_lower for keyword in keywords):
+                for pattern in target_patterns:
+                    for col in available_columns:
+                        if pattern.lower() in col.lower():
+                            return col
+                            
+        # Fallback: fuzzy matching by similarity
+        best_match = None
+        best_score = 0
+        for col in available_columns:
+            # Simple similarity score based on common characters
+            common_chars = set(target_lower) & set(col.lower())
+            similarity = len(common_chars) / max(len(target_lower), len(col.lower()))
+            if similarity > best_score and similarity > 0.3:  # At least 30% similarity
+                best_score = similarity
+                best_match = col
+                
+        return best_match
 
     async def select_kpis(
         self, domain: str, profile_summary: Dict[str, Any]
@@ -240,13 +445,24 @@ Respond in JSON format:
         system_prompt = f"""You are a data analysis assistant for {domain} data.
 Your task is to interpret natural language queries and convert them into specific data analysis instructions.
 
+CRITICAL: You must ONLY use columns that exist in the available columns list. Never invent or assume column names.
+
 Available columns: {', '.join(available_columns)}
 
 Guidelines:
 1. Understand the user's intent and desired visualization
-2. Map user requests to available columns
-3. Suggest appropriate chart types and configurations
-4. Provide clear execution steps"""
+2. Map user requests ONLY to available columns (never make up column names)
+3. If the user asks for a column that doesn't exist, find the closest match from available columns
+4. Suggest appropriate chart types and configurations
+5. Provide clear execution steps
+6. For count aggregations, use the appropriate column for counting
+
+IMPORTANT COLUMN MAPPING RULES:
+- For "sales channel" or "channel", look for columns like: payment_method, order_status, shipping_country
+- For "timestamp" or "time", look for columns with "date" in the name
+- For "count" aggregations, specify the column to count (usually an ID column)
+- For time-series data with dates, consider suggesting monthly aggregation to avoid crowded charts
+- Never use column names not in the available list"""
 
         user_prompt = f"""
 User Query: "{query}"
@@ -254,7 +470,16 @@ User Query: "{query}"
 Domain Context: {domain}
 Available Columns: {available_columns}
 
+CRITICAL INSTRUCTIONS:
+1. ONLY use column names from the available columns list above
+2. If the user mentions "sales channel" or "channel", map it to "payment_method" (the closest available column)
+3. If the user mentions "timestamp" or time-related data, use "order_date" 
+4. For counting orders, use "order_id" as the column to count
+5. Validate that ALL column names in your response exist in the available columns list
+
 Please analyze this query and provide an execution plan.
+
+Important: Use only single column names for x_axis and y_axis, not arrays or complex expressions.
 
 Respond in JSON format:
 {{
@@ -262,10 +487,10 @@ Respond in JSON format:
     "chart_type": "line|bar|pie|scatter|histogram|heatmap|table",
     "chart_config": {{
         "title": "Generated chart title",
-        "x_axis": "column_name or null",
-        "y_axis": "column_name or null",
-        "color_by": "column_name or null",
-        "aggregation": "sum|avg|count|max|min or null",
+        "x_axis": "single_column_name_from_available_list or null",
+        "y_axis": "single_column_name_from_available_list or null",
+        "color_by": "single_column_name_from_available_list or null",
+        "aggregation": "sum|avg|count|max|min|none",
         "filters": {{}}
     }},
     "execution_steps": [
@@ -273,8 +498,13 @@ Respond in JSON format:
         "Step 2: Apply filters", 
         "Step 3: Create visualization"
     ],
+    "column_mapping": {{
+        "user_mentioned": "what user said",
+        "mapped_to": "actual_column_name_used",
+        "reason": "why this mapping was chosen"
+    }},
     "confidence": 0.85,
-    "reasoning": "Explanation of interpretation"
+    "reasoning": "Explanation of interpretation and column choices"
 }}
 """
 
@@ -289,6 +519,291 @@ Respond in JSON format:
         except Exception as e:
             logger.error(f"NL query parsing failed: {e}")
             raise LLMException(f"Natural language parsing failed: {str(e)}")
+
+    async def parse_chart_modification(
+        self, 
+        modification_query: str, 
+        existing_chart: Dict[str, Any], 
+        available_columns: List[str], 
+        domain: str
+    ) -> Dict[str, Any]:
+        """
+        Parse a natural language request to modify an existing chart.
+
+        Args:
+            modification_query: Natural language modification request
+            existing_chart: Current chart configuration
+            available_columns: List of available column names
+            domain: Business domain context
+
+        Returns:
+            Modification plan with updated chart configuration
+        """
+        system_prompt = f"""You are a data visualization expert specializing in {domain} analytics.
+Your task is to interpret natural language requests to modify existing charts.
+
+Available columns: {', '.join(available_columns)}
+
+Guidelines:
+1. Understand what modifications the user wants to make
+2. Preserve existing chart properties that aren't being changed
+3. Map new requirements to available columns
+4. Ensure the modified chart makes sense for the data
+5. Provide clear explanations of what changes will be applied
+
+Common modification types:
+- Add/remove/change data series
+- Change chart type
+- Add/remove filters
+- Change aggregation methods
+- Modify grouping or color coding
+- Adjust axes or scaling"""
+
+        user_prompt = f"""
+Modification Request: "{modification_query}"
+
+Current Chart Configuration:
+{json.dumps(existing_chart, indent=2)}
+
+Domain Context: {domain}
+Available Columns: {available_columns}
+
+IMPORTANT: Only use column names that exist in the available columns list above. Do not make up column names.
+
+Please analyze this modification request and provide a detailed plan.
+
+Guidelines for column mapping:
+- If the user asks for "category" but it doesn't exist, look for similar columns like "product_category", "type", etc.
+- For count operations, you don't need a specific y_axis column - use aggregation: "count"
+- Always validate that column names exist in the available columns list
+
+Respond in JSON format:
+{{
+    "modification_type": "add_series|remove_series|change_chart_type|change_aggregation|add_filter|change_axes|other",
+    "intent": "Clear description of what user wants to do",
+    "feasible": true,
+    "original_chart": {{
+        "type": "current chart type",
+        "title": "current title",
+        "x_axis": "current x axis",
+        "y_axis": "current y axis",
+        "other_properties": "..."
+    }},
+    "new_chart_config": {{
+        "id": "preserve_existing_id",
+        "type": "updated chart type",
+        "title": "updated title",
+        "description": "updated description",
+        "x_axis": "column_name_from_available_list_or_null",
+        "y_axis": "column_name_from_available_list_or_null_for_count", 
+        "color_by": "column_name_from_available_list_or_null",
+        "aggregation": "sum|avg|count|max|min|none",
+        "filters": ["updated filter list"],
+        "sort_order": "asc|desc",
+        "width": 6,
+        "height": 4,
+        "importance": "high|medium|low",
+        "explanation": "Explanation of the modified chart"
+    }},
+    "changes_applied": [
+        "List of specific changes made",
+        "e.g., Changed chart type from bar to line",
+        "e.g., Mapped category to closest available column"
+    ],
+    "sql_impact": "Description of how this affects the underlying query",
+    "warnings": ["Any potential issues with the modification"],
+    "confidence": 0.85,
+    "reasoning": "Detailed explanation of the modification plan"
+}}
+"""
+
+        try:
+            response = await self._make_llm_request(
+                system_prompt=system_prompt, user_prompt=user_prompt, temperature=0.3
+            )
+
+            result = json.loads(response)
+            
+            # Ensure the new chart config preserves the original ID
+            if "new_chart_config" in result and "id" in existing_chart:
+                result["new_chart_config"]["id"] = existing_chart["id"]
+            
+            return result
+
+        except Exception as e:
+            logger.error(f"Chart modification parsing failed: {e}")
+            raise LLMException(f"Chart modification parsing failed: {str(e)}")
+
+    async def generate_chart_from_description(
+        self, 
+        description: str, 
+        available_columns: List[str], 
+        domain: str,
+        existing_charts: List[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Generate a new chart configuration from a natural language description.
+
+        Args:
+            description: Natural language description of desired chart
+            available_columns: List of available column names
+            domain: Business domain context
+            existing_charts: List of existing charts to avoid duplication
+
+        Returns:
+            Complete chart configuration
+        """
+        system_prompt = f"""You are a data visualization expert for {domain} analytics.
+Your task is to create new chart configurations from natural language descriptions.
+
+Available columns: {', '.join(available_columns)}
+
+Guidelines:
+1. Choose the most appropriate chart type for the data and request
+2. Map description requirements to available columns intelligently
+3. Create meaningful titles and descriptions
+4. Consider business context for {domain} domain
+5. Ensure the chart configuration is complete and valid
+6. Avoid duplicating existing charts if provided"""
+
+        existing_charts_info = ""
+        if existing_charts:
+            existing_charts_info = f"""
+Existing Charts (avoid duplication):
+{json.dumps([{
+    'title': chart.get('title', ''),
+    'type': chart.get('type', ''),
+    'x_axis': chart.get('x_axis', ''),
+    'y_axis': chart.get('y_axis', '')
+} for chart in existing_charts], indent=2)}
+"""
+
+        user_prompt = f"""
+Chart Description: "{description}"
+
+Domain Context: {domain}
+Available Columns: {available_columns}
+{existing_charts_info}
+
+Please create a complete chart configuration.
+
+Respond in JSON format:
+{{
+    "feasible": true,
+    "chart_config": {{
+        "type": "line|bar|pie|scatter|histogram|heatmap|funnel|gauge|table",
+        "title": "Descriptive chart title",
+        "description": "What this chart shows and why it's useful",
+        "x_axis": "column_name or null",
+        "y_axis": "column_name or null",
+        "color_by": "column_name or null",
+        "size_by": "column_name or null",
+        "aggregation": "sum|avg|count|max|min or null",
+        "filters": [],
+        "sort_by": "column_name or null",
+        "sort_order": "asc|desc",
+        "limit": 100,
+        "width": 6,
+        "height": 4,
+        "importance": "high|medium|low",
+        "explanation": "Business value and insights this chart provides"
+    }},
+    "sql_requirements": "Description of data requirements",
+    "business_value": "Why this chart is valuable for {domain}",
+    "confidence": 0.85,
+    "reasoning": "Explanation of design choices"
+}}
+"""
+
+        try:
+            response = await self._make_llm_request(
+                system_prompt=system_prompt, user_prompt=user_prompt, temperature=0.3
+            )
+
+            result = json.loads(response)
+            return result
+
+        except Exception as e:
+            logger.error(f"Chart generation failed: {e}")
+            raise LLMException(f"Chart generation failed: {str(e)}")
+
+    async def suggest_chart_improvements(
+        self, 
+        chart_config: Dict[str, Any], 
+        data_sample: Dict[str, Any],
+        available_columns: List[str], 
+        domain: str
+    ) -> Dict[str, Any]:
+        """
+        Suggest improvements to an existing chart based on data analysis.
+
+        Args:
+            chart_config: Current chart configuration
+            data_sample: Sample of the actual data
+            available_columns: List of available column names
+            domain: Business domain context
+
+        Returns:
+            Improvement suggestions
+        """
+        system_prompt = f"""You are a data visualization consultant for {domain} analytics.
+Your task is to analyze existing charts and suggest improvements for better insights.
+
+Guidelines:
+1. Consider data distribution and patterns
+2. Suggest better chart types if appropriate
+3. Recommend additional dimensions or filters
+4. Identify potential data quality issues
+5. Focus on business value for {domain} context"""
+
+        user_prompt = f"""
+Current Chart Configuration:
+{json.dumps(chart_config, indent=2)}
+
+Data Sample (first few rows):
+{json.dumps(data_sample, indent=2)}
+
+Domain Context: {domain}
+Available Columns: {available_columns}
+
+Please analyze this chart and suggest improvements.
+
+Respond in JSON format:
+{{
+    "overall_assessment": "Brief assessment of current chart effectiveness",
+    "improvements": [
+        {{
+            "type": "chart_type|data_dimension|filtering|aggregation|formatting",
+            "current": "What it currently does",
+            "suggested": "What it should do instead", 
+            "reasoning": "Why this improvement helps",
+            "impact": "high|medium|low"
+        }}
+    ],
+    "alternative_charts": [
+        {{
+            "type": "different chart type",
+            "description": "What this alternative would show",
+            "use_case": "When this would be better"
+        }}
+    ],
+    "data_quality_notes": ["Any data quality observations"],
+    "business_insights": ["Key business insights this chart could reveal"],
+    "confidence": 0.85
+}}
+"""
+
+        try:
+            response = await self._make_llm_request(
+                system_prompt=system_prompt, user_prompt=user_prompt, temperature=0.3
+            )
+
+            result = json.loads(response)
+            return result
+
+        except Exception as e:
+            logger.error(f"Chart improvement analysis failed: {e}")
+            raise LLMException(f"Chart improvement analysis failed: {str(e)}")
 
     async def _make_llm_request_with_reasoning(
         self,

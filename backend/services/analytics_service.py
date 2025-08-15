@@ -465,8 +465,38 @@ class AnalyticsService:
             Analytics results or None if not found
         """
         try:
+            # First try the standard cache lookup
             results = await cache_service.get(f"analytics:{dataset_id}")
-            return results
+            if results:
+                return results
+            
+            # Fallback: try the legacy cache key format
+            results = await cache_service.get(f"{dataset_id}_analytics")
+            if results:
+                return results
+                
+            # Fallback: try to read direct JSON file (for datasets that were cached directly)
+            import json
+            import aiofiles
+            from pathlib import Path
+            
+            json_file_path = Path(f"./data/cache/{dataset_id}_analytics.json")
+            if json_file_path.exists():
+                try:
+                    async with aiofiles.open(json_file_path, "r", encoding="utf-8") as f:
+                        content = await f.read()
+                        results = json.loads(content)
+                        logger.info(f"Loaded analytics results from direct JSON file for {dataset_id}")
+                        
+                        # Optionally re-cache it in the proper format for future use
+                        await cache_service.set(f"analytics:{dataset_id}", results, ttl=settings.cache_ttl_seconds)
+                        
+                        return results
+                except Exception as e:
+                    logger.error(f"Failed to read JSON cache file for {dataset_id}: {e}")
+            
+            return None
+            
         except Exception as e:
             logger.error(f"Failed to get analytics results for {dataset_id}: {e}")
             return None

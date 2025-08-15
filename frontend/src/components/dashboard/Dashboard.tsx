@@ -12,13 +12,16 @@ import {
   Share2,
   Info,
   BarChart3,
+  Plus,
+  Edit3,
 } from "lucide-react";
-import { DashboardConfig, QueryResult, FilterState, DomainType } from "@/types";
+import { DashboardConfig, QueryResult, FilterState, DomainType, ChartConfig } from "@/types";
 import { KPICard } from "./KPICard";
 import { BaseChart } from "../charts/BaseChart";
 import { Button } from "../ui/Button";
 import { executeQuery, getDataSample } from "@/lib/api";
 import { FilterComponent } from "./FilterComponent";
+import { NaturalLanguageButton } from "../natural-language/NaturalLanguageButton";
 
 interface DashboardProps {
   config: DashboardConfig;
@@ -33,6 +36,35 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const [dynamicCharts, setDynamicCharts] = useState<{ config: ChartConfig; data: QueryResult }[]>([]);
+
+  // Handle chart creation from natural language
+  const handleChartCreated = (chartConfig: ChartConfig, data: QueryResult) => {
+    setDynamicCharts(prev => [...prev, { config: chartConfig, data }]);
+  };
+
+  // Handle chart modification from natural language
+  const handleChartModified = (originalChart: ChartConfig, newChart: ChartConfig, data: QueryResult) => {
+    // Update chart data (using the chart ID which should be the same as original)
+    setChartData(prev => ({
+      ...prev,
+      [newChart.id]: data
+    }));
+    
+    // Update dynamic charts - replace the chart with the same ID
+    setDynamicCharts(prev => 
+      prev.map(item => 
+        item.config.id === newChart.id  // Use newChart.id since it should be the same as originalChart.id
+          ? { config: newChart, data }
+          : item
+      )
+    );
+  };
+
+  // Remove dynamic chart
+  const removeDynamicChart = (chartId: string) => {
+    setDynamicCharts(prev => prev.filter(item => item.config.id !== chartId));
+  };
 
   // Initialize filters with default values
   useEffect(() => {
@@ -558,6 +590,15 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
             </div>
 
             <div className="flex items-center space-x-3">
+              <NaturalLanguageButton
+                datasetId={datasetId}
+                mode="create"
+                onChartCreated={handleChartCreated}
+                buttonText="Create Chart with AI"
+                variant="ghost"
+                className="text-white hover:bg-white/20 border border-white/30"
+              />
+
               <Button
                 onClick={() => setShowFilters(!showFilters)}
                 variant="ghost"
@@ -680,9 +721,21 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
                       </p>
                     )}
                   </div>
-                  <Button variant="ghost" size="sm">
-                    <Download className="h-4 w-4" />
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <NaturalLanguageButton
+                      datasetId={datasetId}
+                      mode="modify"
+                      existingChart={chart}
+                      onChartModified={handleChartModified}
+                      buttonText=""
+                      variant="ghost"
+                      size="sm"
+                      className="p-2"
+                    />
+                    <Button variant="ghost" size="sm">
+                      <Download className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
 
                 {loading ? (
@@ -713,8 +766,86 @@ export function Dashboard({ config, datasetId, onError }: DashboardProps) {
           </div>
         )}
 
+        {/* Dynamic Charts from Natural Language */}
+        {dynamicCharts.length > 0 && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">
+                AI Generated Charts
+              </h2>
+              <p className="text-sm text-gray-500">
+                {dynamicCharts.length} chart{dynamicCharts.length !== 1 ? 's' : ''} created with AI
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {dynamicCharts.map(({ config: chart, data }, index) => (
+                <div
+                  key={chart.id}
+                  className="bg-white border border-gray-200 rounded-lg p-6 relative"
+                  style={{
+                    gridColumn: chart.width > 6 ? "span 2" : "span 1",
+                    minHeight: `${chart.height * 60}px`,
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-lg font-medium text-gray-900 flex items-center gap-2">
+                        {chart.title}
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">
+                          AI Generated
+                        </span>
+                      </h3>
+                      {chart.description && (
+                        <p className="text-sm text-gray-500 mt-1">
+                          {chart.description}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <NaturalLanguageButton
+                        datasetId={datasetId}
+                        mode="modify"
+                        existingChart={chart}
+                        onChartModified={handleChartModified}
+                        buttonText=""
+                        variant="ghost"
+                        size="sm"
+                        className="p-2"
+                      />
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => removeDynamicChart(chart.id)}
+                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                      >
+                        <span className="sr-only">Remove chart</span>
+                        ×
+                      </Button>
+                    </div>
+                  </div>
+
+                  <BaseChart
+                    config={chart}
+                    data={data}
+                    onError={onError}
+                  />
+
+                  {chart.explanation && (
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <p className="text-xs text-gray-500 leading-relaxed">
+                        {chart.explanation}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Empty state */}
-        {config.kpis.length === 0 && config.charts.length === 0 && (
+        {config.kpis.length === 0 && config.charts.length === 0 && dynamicCharts.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-500">
               <BarChart3 className="h-12 w-12 mx-auto mb-4" />
